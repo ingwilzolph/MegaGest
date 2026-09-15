@@ -1,0 +1,260 @@
+<section class="inicio-admin" id="inicioAdmin" aria-labelledby="tituloInicioAdmin">
+
+    <!-- Encabezado principal -->
+    <header class="inicio-hero">
+        <div class="inicio-hero-contenido">
+            <div class="inicio-hero-icono" aria-hidden="true">📊</div>
+
+            <div class="inicio-hero-texto">
+                <span class="inicio-etiqueta">PANEL GENERAL</span>
+
+                <h1 id="tituloInicioAdmin">
+                    <span id="saludoInicio">Buenos días</span>,
+                    <span id="nombreUsuarioInicio">usuario</span>
+                </h1>
+
+                <p id="mensajeInicio">
+                    Este es el resumen operativo de AlianzaPro para hoy.
+                </p>
+
+                <div class="inicio-identidad">
+                    <span class="inicio-rol" id="rolUsuarioInicio">Usuario</span>
+                    <span class="inicio-fecha" id="fechaInicio">—</span>
+                    <span class="inicio-hora" id="horaInicio">—</span>
+                </div>
+            </div>
+        </div>
+
+        <button
+            type="button"
+            class="btn-actualizar-inicio"
+            id="btnActualizarInicio"
+            aria-label="Actualizar información de Inicio"
+            title="Actualizar información"
+        >
+            <span class="btn-actualizar-icono" aria-hidden="true">↻</span>
+            <span>Actualizar</span>
+        </button>
+    </header>
+
+    <!-- Estado de carga y errores -->
+    <div class="inicio-mensaje sistema oculto" id="mensajeSistemaInicio" role="status"></div>
+
+    <!-- Indicadores -->
+    <section class="inicio-tarjetas" aria-label="Indicadores principales">
+
+        <article class="inicio-tarjeta tarjeta-ventas" data-tarjeta="ventas_hoy">
+            <div class="tarjeta-icono" aria-hidden="true">💵</div>
+            <div class="tarjeta-contenido">
+                <span class="tarjeta-etiqueta">Ventas de hoy</span>
+                <strong class="tarjeta-valor" id="inicioVentasHoy">$0</strong>
+                <small>Ventas y cobros aprobados</small>
+            </div>
+            <span class="tarjeta-brillo" aria-hidden="true"></span>
+        </article>
+
+        <article class="inicio-tarjeta tarjeta-ganancia" data-tarjeta="ganancia_hoy">
+            <div class="tarjeta-icono" aria-hidden="true">📈</div>
+            <div class="tarjeta-contenido">
+                <span class="tarjeta-etiqueta">Ganancia de hoy</span>
+                <strong class="tarjeta-valor" id="inicioGananciaHoy">$0</strong>
+                <small id="inicioCostoHoy">Costos: $0</small>
+            </div>
+            <span class="tarjeta-brillo" aria-hidden="true"></span>
+        </article>
+
+        <article class="inicio-tarjeta tarjeta-citas" data-tarjeta="citas_hoy">
+            <div class="tarjeta-icono" aria-hidden="true">📅</div>
+            <div class="tarjeta-contenido">
+                <span class="tarjeta-etiqueta">Citas de hoy</span>
+                <strong class="tarjeta-valor" id="inicioCitasHoy">0</strong>
+                <small>Vehículos programados</small>
+            </div>
+            <span class="tarjeta-brillo" aria-hidden="true"></span>
+        </article>
+
+        <article class="inicio-tarjeta tarjeta-ordenes" data-tarjeta="ordenes_activas">
+            <div class="tarjeta-icono" aria-hidden="true">🔧</div>
+            <div class="tarjeta-contenido">
+                <span class="tarjeta-etiqueta">Órdenes activas</span>
+                <strong class="tarjeta-valor" id="inicioOrdenesActivas">0</strong>
+                <small>Abiertas o en proceso</small>
+            </div>
+            <span class="tarjeta-brillo" aria-hidden="true"></span>
+        </article>
+
+        <article class="inicio-tarjeta tarjeta-cobros" data-tarjeta="pendientes_cobro">
+            <div class="tarjeta-icono" aria-hidden="true">🧾</div>
+            <div class="tarjeta-contenido">
+                <span class="tarjeta-etiqueta">Pendientes de cobro</span>
+                <strong class="tarjeta-valor" id="inicioPendientesCobro">0</strong>
+                <small>OT terminadas sin facturar</small>
+            </div>
+            <span class="tarjeta-brillo" aria-hidden="true"></span>
+        </article>
+
+        <article class="inicio-tarjeta tarjeta-stock" data-tarjeta="stock_critico">
+            <div class="tarjeta-icono" aria-hidden="true">📦</div>
+            <div class="tarjeta-contenido">
+                <span class="tarjeta-etiqueta">Stock crítico</span>
+                <strong class="tarjeta-valor" id="inicioStockCritico">0</strong>
+                <small>Agotados o bajo el mínimo</small>
+            </div>
+            <span class="tarjeta-brillo" aria-hidden="true"></span>
+        </article>
+
+        <article class="inicio-tarjeta tarjeta-pedidos" data-tarjeta="pedidos_pendientes">
+            <div class="tarjeta-icono" aria-hidden="true">🛒</div>
+            <div class="tarjeta-contenido">
+                <span class="tarjeta-etiqueta">Pedidos pendientes</span>
+                <strong class="tarjeta-valor" id="inicioPedidosPendientes">0</strong>
+                <small>Pedidos que requieren seguimiento</small>
+            </div>
+            <span class="tarjeta-brillo" aria-hidden="true"></span>
+        </article>
+
+        <article class="inicio-tarjeta tarjeta-comisiones" data-tarjeta="comisiones_propias">
+            <div class="tarjeta-icono" aria-hidden="true">💰</div>
+            <div class="tarjeta-contenido">
+                <span class="tarjeta-etiqueta">Mis comisiones</span>
+                <strong class="tarjeta-valor" id="inicioComisionesPropias">$0</strong>
+                <small>Comisiones pendientes</small>
+            </div>
+            <span class="tarjeta-brillo" aria-hidden="true"></span>
+        </article>
+
+    </section>
+
+    <!-- Área analítica y agenda -->
+    <div class="inicio-grid inicio-grid-superior">
+
+        <article class="inicio-panel panel-grafico" id="panelGraficoInicio">
+            <header class="inicio-panel-cabecera">
+                <div>
+                    <span class="panel-sobretitulo">ÚLTIMOS 7 DÍAS</span>
+                    <h2>Actividad comercial</h2>
+                    <p>Ingresos de ventas y trabajos del taller.</p>
+                </div>
+
+                <div class="grafico-leyenda" aria-label="Leyenda del gráfico">
+                    <span><i class="leyenda-punto punto-ventas"></i> Ventas</span>
+                    <span><i class="leyenda-punto punto-taller"></i> Taller</span>
+                </div>
+            </header>
+
+            <div class="grafico-resumen">
+                <div>
+                    <span>Total del período</span>
+                    <strong id="totalGraficoInicio">$0</strong>
+                </div>
+                <span class="grafico-tendencia neutra" id="tendenciaGraficoInicio">7 días</span>
+            </div>
+
+            <div class="grafico-inicio" id="graficoInicio" aria-label="Gráfico de ingresos de los últimos siete días">
+                <div class="inicio-cargando compacto">
+                    <span class="inicio-spinner"></span>
+                    <span>Preparando gráfico…</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="inicio-panel panel-agenda">
+            <header class="inicio-panel-cabecera">
+                <div>
+                    <span class="panel-sobretitulo">PLANIFICACIÓN</span>
+                    <h2>Agenda de hoy</h2>
+                    <p>Próximas citas del taller.</p>
+                </div>
+
+                <button type="button" class="btn-panel-enlace" onclick="cargar('citas')">
+                    Ver agenda <span aria-hidden="true">→</span>
+                </button>
+            </header>
+
+            <div class="agenda-inicio" id="listaAgendaInicio">
+                <div class="inicio-cargando">
+                    <span class="inicio-spinner"></span>
+                    <span>Cargando citas…</span>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- Órdenes y alertas -->
+    <div class="inicio-grid inicio-grid-inferior">
+
+        <article class="inicio-panel panel-ordenes">
+            <header class="inicio-panel-cabecera">
+                <div>
+                    <span class="panel-sobretitulo">OPERACIÓN DEL TALLER</span>
+                    <h2>Órdenes que requieren atención</h2>
+                    <p>Trabajos abiertos, en proceso o pendientes de cobro.</p>
+                </div>
+            </header>
+
+            <div class="tabla-inicio-contenedor">
+                <table class="tabla-inicio">
+                    <thead>
+                        <tr>
+                            <th>Orden</th>
+                            <th>Cliente y vehículo</th>
+                            <th>Responsable</th>
+                            <th>Estado</th>
+                            <th><span class="texto-oculto">Acción</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaOrdenesInicio">
+                        <tr>
+                            <td colspan="5">
+                                <div class="inicio-cargando compacto">
+                                    <span class="inicio-spinner"></span>
+                                    <span>Cargando órdenes…</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <article class="inicio-panel panel-alertas">
+            <header class="inicio-panel-cabecera">
+                <div>
+                    <span class="panel-sobretitulo">ATENCIÓN PRIORITARIA</span>
+                    <h2>Alertas importantes</h2>
+                    <p>Situaciones que necesitan una acción.</p>
+                </div>
+
+                <span class="contador-alertas" id="contadorAlertasInicio">0</span>
+            </header>
+
+            <div class="alertas-inicio" id="listaAlertasInicio">
+                <div class="inicio-cargando">
+                    <span class="inicio-spinner"></span>
+                    <span>Revisando alertas…</span>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- Actividad reciente -->
+    <article class="inicio-panel panel-actividad" id="panelActividadInicio">
+        <header class="inicio-panel-cabecera">
+            <div>
+                <span class="panel-sobretitulo">MOVIMIENTOS RECIENTES</span>
+                <h2>Actividad del negocio</h2>
+                <p>Últimas ventas, pedidos y operaciones del taller.</p>
+            </div>
+        </header>
+
+        <div class="actividad-inicio" id="listaActividadInicio">
+            <div class="inicio-cargando compacto">
+                <span class="inicio-spinner"></span>
+                <span>Cargando actividad…</span>
+            </div>
+        </div>
+    </article>
+
+</section>

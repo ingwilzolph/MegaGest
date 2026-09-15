@@ -1,0 +1,751 @@
+:root {
+    --login-azul: #1769e8;
+    --login-azul-oscuro: #071d42;
+    --login-naranja: #ff8b2d;
+    --login-texto: #172238;
+    --login-gris: #69758a;
+    --login-borde: #d9e2ee;
+    --login-fondo: #f3f7fc;
+    --login-verde: #159766;
+    --login-rojo: #c83f38;
+}
+
+.paginaLoginAdmin {
+    min-height: 100vh;
+    background: var(--login-fondo);
+}
+
+.escenarioLoginAdmin {
+    position: relative;
+    min-height: calc(100vh - 132px);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 9% 15%, rgba(39, 122, 245, .13), transparent 28%),
+        radial-gradient(circle at 92% 84%, rgba(255, 139, 45, .12), transparent 27%),
+        linear-gradient(135deg, #f7faff, #eef4fb);
+}
+
+.decoracionLoginAdmin {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.decoracionLoginUno {
+    width: 330px;
+    height: 330px;
+    top: -180px;
+    right: 11%;
+    border: 70px solid rgba(23, 105, 232, .06);
+}
+
+.decoracionLoginDos {
+    width: 220px;
+    height: 220px;
+    left: -110px;
+    bottom: -100px;
+    background: rgba(255, 139, 45, .07);
+}
+
+.contenedorLoginAdmin {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(420px, .72fr);
+    gap: 85px;
+    align-items: center;
+    width: min(1240px, calc(100% - 48px));
+    min-height: calc(100vh - 132px);
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.presentacionLoginAdmin {
+    max-width: 650px;
+}
+
+.volverSitioLogin {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 48px;
+    color: #526178;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.volverSitioLogin:hover {
+    color: var(--login-azul);
+    transform: translateX(-3px);
+}
+
+.etiquetaLoginAdmin {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 12px;
+    border: 1px solid #c9dbf4;
+    border-radius: 999px;
+    background: #eaf2ff;
+    color: var(--login-azul);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+}
+
+.presentacionLoginAdmin h1 {
+    max-width: 650px;
+    margin: 20px 0 20px;
+    color: var(--login-texto);
+    font-size: clamp(42px, 5vw, 66px);
+    line-height: 1.04;
+    letter-spacing: -3px;
+}
+
+.presentacionLoginAdmin h1 strong {
+    color: var(--login-azul);
+}
+
+.presentacionLoginAdmin > p {
+    max-width: 610px;
+    color: var(--login-gris);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.ventajasLoginAdmin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 40px;
+}
+
+.ventajasLoginAdmin article {
+    padding: 20px 17px;
+    border: 1px solid var(--login-borde);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, .72);
+}
+
+.ventajasLoginAdmin article > i {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    background: #e5effe;
+    color: var(--login-azul);
+}
+
+.ventajasLoginAdmin article:nth-child(2) > i {
+    background: #fff0e4;
+    color: #dc6d14;
+}
+
+.ventajasLoginAdmin article:nth-child(3) > i {
+    background: #e5f7f0;
+    color: #11865b;
+}
+
+.ventajasLoginAdmin strong,
+.ventajasLoginAdmin span {
+    display: block;
+}
+
+.ventajasLoginAdmin strong {
+    color: var(--login-texto);
+    font-size: 13px;
+}
+
+.ventajasLoginAdmin span {
+    margin-top: 6px;
+    color: var(--login-gris);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.zonaFormularioLoginAdmin {
+    width: 100%;
+    max-width: 480px;
+    justify-self: end;
+}
+
+.marcaFormularioLogin {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 17px 10px;
+}
+
+.marcaFormularioLogin img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+.marcaFormularioLogin strong,
+.marcaFormularioLogin small {
+    display: block;
+}
+
+.marcaFormularioLogin strong {
+    color: var(--login-texto);
+    font-size: 17px;
+}
+
+.marcaFormularioLogin small {
+    margin-top: 2px;
+    color: var(--login-gris);
+    font-size: 11px;
+}
+
+.smart-forms {
+    min-height: 500px;
+}
+
+.smart-container {
+    position: relative;
+    padding: 38px;
+    border: 1px solid rgba(201, 213, 229, .9);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .97);
+    box-shadow: 0 25px 75px rgba(24, 49, 84, .14);
+}
+
+.encabezadoLoginAdmin {
+    margin-bottom: 30px;
+}
+
+.encabezadoLoginAdmin > span,
+.tagline span {
+    color: var(--login-azul);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.encabezadoLoginAdmin h2 {
+    margin: 7px 0 9px;
+    color: var(--login-texto);
+    font-size: 34px;
+    letter-spacing: -1.2px;
+}
+
+.encabezadoLoginAdmin p {
+    margin: 0;
+    color: var(--login-gris);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+#form-login,
+.recuperacionAdmin form {
+    display: grid;
+    gap: 20px;
+}
+
+.section > label:not(.field),
+.cabeceraCampoPassword label {
+    display: block;
+    margin-bottom: 8px;
+    color: #344055;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.cabeceraCampoPassword {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.cabeceraCampoPassword label {
+    margin: 0;
+}
+
+.cabeceraCampoPassword a {
+    color: var(--login-azul);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.field {
+    position: relative;
+    display: block;
+}
+
+.gui-input {
+    width: 100%;
+    height: 55px;
+    padding: 0 48px;
+    border: 1px solid #ccd7e5;
+    border-radius: 12px;
+    outline: 0;
+    background: #fbfcfe;
+    color: var(--login-texto);
+    font: inherit;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.gui-input:focus {
+    border-color: var(--login-azul);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(23, 105, 232, .1);
+}
+
+.field-icon {
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    color: #8491a5;
+    transform: translateY(-50%);
+}
+
+.mostrarPasswordLogin,
+.mostrarPasswordAdmin {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: #718097;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.mostrarPasswordLogin:hover,
+.mostrarPasswordAdmin:hover {
+    background: #eaf2ff;
+    color: var(--login-azul);
+}
+
+.recordarLoginAdmin {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #5f6c80;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.recordarLoginAdmin input {
+    position: absolute;
+    opacity: 0;
+}
+
+.recordarLoginAdmin > span {
+    display: grid;
+    place-items: center;
+    width: 19px;
+    height: 19px;
+    border: 1px solid #becadd;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.recordarLoginAdmin input:checked + span {
+    border-color: var(--login-azul);
+    background: var(--login-azul);
+}
+
+.recordarLoginAdmin input:checked + span::after {
+    content: "✓";
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.iniciarSesion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 55px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #267cf2, #1259c9);
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 900;
+    box-shadow: 0 13px 28px rgba(23, 105, 232, .25);
+    cursor: pointer;
+    transition: .25s;
+}
+
+.iniciarSesion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 17px 32px rgba(23, 105, 232, .32);
+}
+
+.iniciarSesion:disabled {
+    opacity: .65;
+    cursor: wait;
+    transform: none;
+}
+
+.respuesta,
+.mensajeRecuperacionAdmin {
+    display: none;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.respuesta.visible,
+.mensajeRecuperacionAdmin.visible,
+.mensajeRecuperacionAdmin.correcto,
+.mensajeRecuperacionAdmin.exito,
+.mensajeRecuperacionAdmin.error {
+    display: block;
+}
+
+.respuesta.error,
+.mensajeRecuperacionAdmin.error {
+    border: 1px solid #f1c5c2;
+    background: #fff0ef;
+    color: var(--login-rojo);
+}
+
+.respuesta.correcto,
+.mensajeRecuperacionAdmin.correcto,
+.mensajeRecuperacionAdmin.exito {
+    border: 1px solid #bce7d5;
+    background: #e9f8f1;
+    color: #08734b;
+}
+
+.seguridadLoginAdmin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+    padding-top: 22px;
+    border-top: 1px solid #e4e9f0;
+    color: #8591a3;
+    font-size: 10px;
+}
+
+.seguridadLoginAdmin i {
+    color: var(--login-verde);
+}
+
+.ayudaLoginAdmin {
+    margin: 18px 0 0;
+    text-align: center;
+    color: #768398;
+    font-size: 11px;
+}
+
+.ayudaLoginAdmin a {
+    color: var(--login-azul);
+    font-weight: 800;
+}
+
+/* Recuperación de contraseña */
+
+.recuperacionAdmin {
+    min-height: 500px;
+}
+
+.volverRecuperacionAdmin {
+    position: absolute;
+    top: 23px;
+    left: 23px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--login-borde);
+    border-radius: 11px;
+    background: #f5f8fc;
+    color: #536179;
+    cursor: pointer;
+}
+
+.spacer-b30 {
+    margin: 0 0 26px 52px;
+}
+
+.tagline {
+    padding-top: 7px;
+}
+
+.encabezadoRecuperacionAdmin {
+    margin-bottom: 27px;
+    text-align: center;
+}
+
+.iconoRecuperacionAdmin,
+.iconoExitoRecuperacionAdmin {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 17px;
+    border-radius: 18px;
+    background: #e8f1ff;
+    color: var(--login-azul);
+    font-size: 25px;
+}
+
+.iconoExitoRecuperacionAdmin {
+    background: #e6f8ef;
+    color: var(--login-verde);
+}
+
+.encabezadoRecuperacionAdmin h3 {
+    margin: 0 0 8px;
+    color: var(--login-texto);
+    font-size: 25px;
+}
+
+.encabezadoRecuperacionAdmin p {
+    margin: 0;
+    color: var(--login-gris);
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.encabezadoRecuperacionAdmin strong {
+    display: block;
+    margin-top: 7px;
+    color: var(--login-azul);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.codigoVerificacionAdmin {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+}
+
+.codigoAdmin {
+    width: 100%;
+    height: 55px;
+    border: 1px solid #ccd7e5;
+    border-radius: 11px;
+    outline: 0;
+    color: var(--login-texto);
+    font: inherit;
+    font-size: 21px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.codigoAdmin:focus {
+    border-color: var(--login-azul);
+    box-shadow: 0 0 0 3px rgba(23, 105, 232, .1);
+}
+
+.reenviarCodigoAdmin {
+    margin-top: 22px;
+    text-align: center;
+    color: var(--login-gris);
+    font-size: 11px;
+}
+
+.reenviarCodigoAdmin button {
+    border: 0;
+    background: transparent;
+    color: var(--login-azul);
+    font: inherit;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.reenviarCodigoAdmin small {
+    display: block;
+    margin-top: 6px;
+}
+
+.avisoSeguridadAdmin {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin: 18px 0 0;
+    color: #8792a3;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.requisitosPasswordAdmin {
+    padding: 15px 17px;
+    border-radius: 11px;
+    background: #f4f7fb;
+    color: #68758a;
+    font-size: 10px;
+}
+
+.requisitosPasswordAdmin strong {
+    color: #435067;
+}
+
+.requisitosPasswordAdmin ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 18px;
+    margin: 10px 0 0;
+    padding-left: 17px;
+}
+
+.requisitosPasswordAdmin li.cumplida {
+    color: var(--login-verde);
+    font-weight: 800;
+}
+
+.resultadoRecuperacionAdmin {
+    padding: 20px 0 8px;
+    text-align: center;
+}
+
+.resultadoRecuperacionAdmin h3 {
+    color: var(--login-texto);
+}
+
+.resultadoRecuperacionAdmin p {
+    color: var(--login-gris);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.pieLoginAdmin {
+    background: var(--login-azul-oscuro);
+    color: #9fb0c8;
+}
+
+.pieLoginAdmin > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 11px;
+}
+
+@media (max-width: 1050px) {
+    .contenedorLoginAdmin {
+        grid-template-columns: 1fr 430px;
+        gap: 45px;
+    }
+
+    .ventajasLoginAdmin {
+        grid-template-columns: 1fr;
+    }
+
+    .ventajasLoginAdmin article {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+    }
+
+    .ventajasLoginAdmin article > i {
+        flex: 0 0 42px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 850px) {
+    .contenedorLoginAdmin {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 55px 0 70px;
+    }
+
+    .presentacionLoginAdmin {
+        max-width: 700px;
+    }
+
+    .presentacionLoginAdmin h1 {
+        font-size: 48px;
+    }
+
+    .volverSitioLogin {
+        margin-bottom: 30px;
+    }
+
+    .ventajasLoginAdmin {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ventajasLoginAdmin article {
+        display: block;
+    }
+
+    .ventajasLoginAdmin article > i {
+        margin-bottom: 14px;
+    }
+
+    .zonaFormularioLoginAdmin {
+        justify-self: center;
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedorLoginAdmin {
+        width: min(100% - 28px, 1240px);
+        padding-top: 38px;
+    }
+
+    .presentacionLoginAdmin h1 {
+        font-size: 39px;
+        letter-spacing: -2px;
+    }
+
+    .presentacionLoginAdmin > p {
+        font-size: 15px;
+    }
+
+    .ventajasLoginAdmin {
+        grid-template-columns: 1fr;
+    }
+
+    .ventajasLoginAdmin article {
+        display: flex;
+    }
+
+    .smart-container {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .marcaFormularioLogin {
+        margin-left: 4px;
+    }
+
+    .codigoVerificacionAdmin {
+        gap: 5px;
+    }
+
+    .codigoAdmin {
+        height: 49px;
+        font-size: 18px;
+    }
+
+    .requisitosPasswordAdmin ul {
+        grid-template-columns: 1fr;
+    }
+
+    .pieLoginAdmin > div {
+        flex-direction: column;
+        align-items: center;
+    }
+}

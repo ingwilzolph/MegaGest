@@ -1,0 +1,555 @@
+/* =====================================================
+   GANANCIAS Y RENTABILIDAD
+===================================================== */
+
+.gestionRentabilidadAdmin {
+    display: grid;
+    gap: 28px;
+    color: #29313d;
+}
+
+.encabezadoRentabilidadAdmin,
+.tituloRentabilidadAdmin,
+.nombreCanalRentabilidad,
+.productoRentabilidadAdmin {
+    display: flex;
+    align-items: center;
+}
+
+.encabezadoRentabilidadAdmin {
+    justify-content: space-between;
+}
+
+.tituloRentabilidadAdmin {
+    gap: 18px;
+}
+
+.tituloRentabilidadAdmin h1 {
+    margin: 0 0 5px;
+    font-size: clamp(1.8rem, 3vw, 2.65rem);
+}
+
+.tituloRentabilidadAdmin p,
+.encabezadoPanelRentabilidad p {
+    margin: 0;
+    color: #707783;
+}
+
+.iconoTituloRentabilidad {
+    display: grid;
+    place-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    color: #2878e8;
+    background: #e8f1ff;
+    font-size: 2rem;
+}
+
+.filtrosRentabilidadAdmin {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(170px, 1fr)) auto auto;
+    gap: 16px;
+    align-items: end;
+    padding: 22px;
+    border: 1px solid #dce1e7;
+    border-radius: 15px;
+    background: #f7f8fa;
+}
+
+.campoFiltroRentabilidad {
+    display: grid;
+    gap: 8px;
+}
+
+.campoFiltroRentabilidad label {
+    font-weight: 700;
+}
+
+.campoFiltroRentabilidad input,
+.campoFiltroRentabilidad select {
+    width: 100%;
+    height: 50px;
+    padding: 0 14px;
+    border: 1px solid #cfd6df;
+    border-radius: 10px;
+    background: #fff;
+    color: #313946;
+}
+
+.btnAplicarRentabilidad,
+.btnLimpiarRentabilidad {
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btnAplicarRentabilidad {
+    border: 0;
+    color: #fff;
+    background: #2878e8;
+}
+
+.btnAplicarRentabilidad:hover {
+    background: #1766d1;
+}
+
+.btnLimpiarRentabilidad {
+    border: 1px solid #cfd6df;
+    color: #4c5563;
+    background: #fff;
+}
+
+.alertaCostosRentabilidad {
+    padding: 15px 18px;
+    border: 1px solid #f1c46c;
+    border-radius: 11px;
+    color: #8a5900;
+    background: #fff8e1;
+}
+
+.resumenRentabilidadAdmin {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tarjetaRentabilidad {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    min-height: 125px;
+    padding: 22px;
+    border: 1px solid #dce1e7;
+    border-left: 7px solid #2878e8;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 9px 24px rgba(31, 41, 55, .07);
+}
+
+.tarjetaCostosRentabilidad { border-left-color: #f59f00; }
+.tarjetaGananciaRentabilidad { border-left-color: #16a269; }
+.tarjetaMargenRentabilidad { border-left-color: #7d3dd0; }
+.tarjetaTicketRentabilidad { border-left-color: #159db5; }
+.tarjetaPedidosRentabilidad { border-left-color: #e03131; }
+
+.iconoTarjetaRentabilidad {
+    display: grid;
+    place-items: center;
+    flex: 0 0 58px;
+    width: 58px;
+    height: 58px;
+    border-radius: 15px;
+    font-size: 1.45rem;
+}
+
+.iconoTarjetaRentabilidad.azul { color: #2878e8; background: #e8f1ff; }
+.iconoTarjetaRentabilidad.naranja { color: #d98200; background: #fff0d3; }
+.iconoTarjetaRentabilidad.verde { color: #12845a; background: #dcf8ec; }
+.iconoTarjetaRentabilidad.morado { color: #7d3dd0; background: #f0e3ff; }
+.iconoTarjetaRentabilidad.celeste { color: #148ca0; background: #ddf7fb; }
+.iconoTarjetaRentabilidad.rojo { color: #d92d2d; background: #fee4e4; }
+
+.tarjetaRentabilidad small,
+.filaCanalRentabilidad span {
+    display: block;
+    color: #6f7681;
+}
+
+.tarjetaRentabilidad strong {
+    display: block;
+    margin-top: 7px;
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+.gridAnalisisRentabilidad {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(360px, .75fr);
+    gap: 24px;
+}
+
+.panelRentabilidad {
+    min-width: 0;
+    padding: 25px;
+    border: 1px solid #dce1e7;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, .05);
+}
+
+.encabezadoPanelRentabilidad {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.encabezadoPanelRentabilidad h2 {
+    margin: 0 0 5px;
+    color: #333c00;
+}
+
+.leyendaGraficoRentabilidad {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 22px;
+    color: #626b78;
+    font-size: .88rem;
+}
+
+.leyendaGraficoRentabilidad i {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.leyendaVentas { background: #2878e8; }
+.leyendaCostos { background: #f59f00; }
+.leyendaGanancia { background: #16a269; }
+
+.barrasRentabilidad {
+    display: grid;
+    gap: 18px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.filaGraficoRentabilidad {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+}
+
+.fechaGraficoRentabilidad {
+    color: #626b78;
+    font-size: .85rem;
+}
+
+.grupoBarrasRentabilidad {
+    display: grid;
+    gap: 5px;
+}
+
+.barraRentabilidad {
+    min-height: 19px;
+    border-radius: 5px;
+    transition: width .3s ease;
+}
+
+.barraRentabilidad span {
+    display: block;
+    padding-left: 7px;
+    color: #fff;
+    font-size: .7rem;
+    line-height: 19px;
+    white-space: nowrap;
+}
+
+.barraVentasRentabilidad { background: #2878e8; }
+.barraCostosRentabilidad { background: #f59f00; }
+.barraGananciaRentabilidad { background: #16a269; }
+
+#contenidoCanalesRentabilidad {
+    display: grid;
+    gap: 15px;
+}
+
+.filaCanalRentabilidad {
+    display: grid;
+    grid-template-columns: 1.25fr repeat(3, 1fr);
+    gap: 15px;
+    align-items: center;
+    padding: 18px;
+    border: 1px solid #e1e5ea;
+    border-radius: 12px;
+    background: #fafbfc;
+}
+
+.nombreCanalRentabilidad {
+    gap: 12px;
+}
+
+.nombreCanalRentabilidad > i {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    color: #2878e8;
+    background: #e8f1ff;
+}
+
+.nombreCanalRentabilidad small {
+    display: block;
+    margin-top: 4px;
+    color: #7a8390;
+}
+
+.textoGananciaRentabilidad {
+    color: #118357;
+}
+
+.contenedorTablaRentabilidad {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #dce1e7;
+    border-radius: 13px;
+}
+
+.contenedorTablaRentabilidad table {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: collapse;
+}
+
+.contenedorTablaRentabilidad th {
+    padding: 16px 18px;
+    color: #fff;
+    background: #343d00;
+    text-align: left;
+}
+
+.contenedorTablaRentabilidad td {
+    padding: 15px 18px;
+    border-bottom: 1px solid #e1e5ea;
+    vertical-align: middle;
+}
+
+.contenedorTablaRentabilidad tr:last-child td {
+    border-bottom: 0;
+}
+
+.productoRentabilidadAdmin {
+    gap: 13px;
+}
+
+.productoRentabilidadAdmin small {
+    display: block;
+    margin-top: 5px;
+    color: #7a8390;
+}
+
+.posicionProductoRentabilidad {
+    display: grid;
+    place-items: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #2878e8;
+    background: #e8f1ff;
+    font-weight: 800;
+}
+
+.badgeMargenRentabilidad {
+    display: inline-block;
+    padding: 7px 11px;
+    border-radius: 999px;
+    color: #087f5b;
+    background: #dcfce7;
+    font-weight: 800;
+}
+
+.resumenReembolsosRentabilidad {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 24px;
+    border: 1px solid #f1c7c7;
+    border-left: 6px solid #e03131;
+    border-radius: 13px;
+    background: #fff5f5;
+}
+
+.resumenReembolsosRentabilidad > i {
+    color: #e03131;
+    font-size: 1.55rem;
+}
+
+.resumenReembolsosRentabilidad span,
+.resumenReembolsosRentabilidad strong {
+    display: block;
+}
+
+.resumenReembolsosRentabilidad span {
+    color: #737b87;
+    margin-bottom: 4px;
+}
+
+.sinDatosRentabilidad,
+.errorRentabilidad,
+.cargandoRentabilidad {
+    padding: 32px;
+    text-align: center;
+    color: #737b87;
+}
+
+.errorRentabilidad {
+    color: #c92a2a;
+}
+
+@media (max-width: 1200px) {
+    .filtrosRentabilidadAdmin {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .resumenRentabilidadAdmin {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gridAnalisisRentabilidad {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .filtrosRentabilidadAdmin,
+    .resumenRentabilidadAdmin {
+        grid-template-columns: 1fr;
+    }
+
+    .filaCanalRentabilidad {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .nombreCanalRentabilidad {
+        grid-column: 1 / -1;
+    }
+
+    .filaGraficoRentabilidad {
+        grid-template-columns: 70px minmax(0, 1fr);
+    }
+}
+
+
+
+
+
+/* =====================================================
+   GRÁFICO DE RENTABILIDAD RESPONSIVE
+===================================================== */
+
+.barraRentabilidad {
+    position: relative;
+    width: var(--ancho-barra, 0%);
+}
+
+/* =====================================================
+   TELÉFONOS
+===================================================== */
+
+@media (max-width: 720px) {
+
+    .gestionRentabilidadAdmin {
+        gap: 18px;
+        min-width: 0;
+    }
+
+    .gridAnalisisRentabilidad {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .panelRentabilidad {
+        width: 100%;
+        min-width: 0;
+        padding: 20px 14px;
+        overflow: hidden;
+    }
+
+    .encabezadoPanelRentabilidad {
+        margin-bottom: 18px;
+    }
+
+    .encabezadoPanelRentabilidad h2 {
+        font-size: 1.65rem;
+        line-height: 1.2;
+    }
+
+    .encabezadoPanelRentabilidad p {
+        font-size: 0.95rem;
+    }
+
+    .leyendaGraficoRentabilidad {
+        gap: 10px 16px;
+        margin-bottom: 20px;
+    }
+
+    .barrasRentabilidad {
+        display: grid;
+        gap: 22px;
+        width: 100%;
+        padding-right: 0;
+        overflow-x: hidden;
+    }
+
+    .filaGraficoRentabilidad {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 7px;
+        width: 100%;
+    }
+
+    .fechaGraficoRentabilidad {
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
+
+    .grupoBarrasRentabilidad {
+        display: grid;
+        gap: 6px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .barraRentabilidad {
+        position: relative;
+        width: 100%;
+        min-height: 25px;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #edf1f5;
+    }
+
+    .barraRentabilidad::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: var(--ancho-barra, 0%);
+        border-radius: 6px;
+        content: "";
+    }
+
+    .barraVentasRentabilidad::before {
+        background: #2878e8;
+    }
+
+    .barraCostosRentabilidad::before {
+        background: #f59f00;
+    }
+
+    .barraGananciaRentabilidad::before {
+        background: #16a269;
+    }
+
+    .barraRentabilidad span {
+        position: relative;
+        z-index: 1;
+        display: block;
+        padding: 0 8px;
+        color: #29313d;
+        font-size: 0.76rem;
+        font-weight: 800;
+        line-height: 25px;
+        white-space: nowrap;
+    }
+}

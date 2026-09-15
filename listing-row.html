@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <link href="./images/logoCabeza.webp" rel="icon" type="image/x-icon">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Repuestos | AlianzaPro</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,0,0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <!-- Plugins CSS -->
+        <link href="css/base.css" rel="stylesheet">
+        <!--smart form-->
+        <link type="text/css" rel="stylesheet"  href="smart-form/contact/css/smart-forms.css">
+        <link href="./css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/carrito.css?v=3">
+        <link rel="stylesheet" href="./css/tienda.css?v=2">
+        <link rel="stylesheet" href="./css/index.css?v=2">
+        <link rel="stylesheet" href="./css/carritoUnificado.css?v=1">
+        <link rel="stylesheet" href="./css/repuestoMenu.css?v=3">
+    </head>
+
+    <body>
+        <div id="preloader">
+            <div id="preloader-inner"></div>
+        </div><!--/preloader-->
+
+        <a class="saltoContenido" href="#contenidoRepuestos">Saltar al contenido</a>
+
+        <header class="cabeceraInicio">
+            <div class="barraContacto">
+                <div class="contenedorInicio barraContactoInterior">
+                    <span><i class="fa-solid fa-location-dot"></i> Santiago, Chile</span>
+                    <span><i class="fa-regular fa-clock"></i> Lun-Vie 09:00-18:00 · Sáb 09:00-14:00</span>
+                    <a href="contacto.html"><i class="fa-solid fa-phone"></i> Contáctenos</a>
+                </div>
+            </div>
+
+            <nav class="navegacionInicio contenedorInicio" aria-label="Navegación principal">
+                <a class="marcaInicio" href="index.html">
+                    <img src="images/logoAlianzaPro.webp" alt="AlianzaPro">
+                </a>
+
+                <button class="botonMenuInicio" id="botonMenuInicio" type="button" aria-expanded="false" aria-controls="menuInicio">
+                    <span></span><span></span><span></span><b>Menú</b>
+                </button>
+
+                <div class="menuInicio" id="menuInicio">
+                    <a href="index.html">Inicio</a>
+                    <a href="services.html">Servicios</a>
+                    <a class="activo" href="listing-row.html">Repuestos</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="page-login.html"><i class="fa-regular fa-circle-user"></i> Admin</a>
+                </div>
+
+                <div class="accionesCabecera">
+                    <a class="botonCuentaInicio" href="mi-cuenta.html" aria-label="Mi cuenta">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                    <button class="botonCarritoInicio" id="abrirCarritoInicio" type="button" aria-label="Abrir carrito">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="contadorCarrito">0</span>
+                    </button>
+                    <a class="botonReservaCabecera" href="services.html#formCita">Reservar cita</a>
+                </div>
+            </nav>
+        </header>
+
+
+        <aside class="carritoLateral carritoLateralInicio" id="carritoLateralInicio" aria-hidden="true" aria-label="Carrito de compras">
+            <header class="tituloCarrito">
+                <div class="tituloCarritoTexto">
+                    <div class="iconoTituloCarrito"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <div><h4 id="titleCarrito">Carrito (0)</h4><small>Resumen de su compra</small></div>
+                </div>
+                <div class="accionesTituloCarrito">
+                    <button type="button" id="btnVaciarCarrito" class="btnVaciarCarrito" title="Vaciar carrito" aria-label="Vaciar carrito"><i class="fa-solid fa-trash-can"></i></button>
+                    <button type="button" id="cerrarCarritoInicio" class="btnCerrarCarritoUnificado" onclick="cerrarPanelCarritoRepuestos()" aria-label="Cerrar carrito"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </header>
+            <div id="mi-elemento" class="contenidoCarrito"></div>
+            <div id="footerCarrito" class="footerCarrito"></div>
+        </aside>
+
+        <button class="fondoCarritoInicio" id="fondoCarritoInicio" type="button" aria-label="Cerrar carrito" hidden></button>
+
+        <section class="portadaRepuestos">
+
+            <div class="fondoPortadaRepuestos"></div>
+
+            <div class="contenedorInicio contenidoPortadaRepuestos">
+
+                <div class="textoPortadaRepuestos">
+
+                    <nav class="migaPortadaRepuestos" aria-label="Miga de pan">
+
+                        <a href="index.html">Inicio</a>
+                        
+                        <i class="fa-solid fa-chevron-right"></i>
+                        
+                        <span>Repuestos</span>
+
+                    </nav>
+
+                    <span class="etiquetaPortadaRepuestos"><i class="fa-solid fa-gears"></i>Tienda AlianzaPro</span>
+
+                    <h1>
+                        Repuestos para mantener
+                        <strong>su vehículo en movimiento.</strong>
+                    </h1>
+
+                    <p>
+                        Explore nuestro catálogo, consulte disponibilidad
+                        y encuentre los productos que necesita.
+                    </p>
+
+                    <a href="#contenidoRepuestos" class="btnExplorarRepuestos">Explorar catálogo<i class="fa-solid fa-arrow-down"></i></a>
+
+                </div>
+
+            </div>
+
+        </section>
+        
+            <!-- ==================================================
+                TIENDA DE PRODUCTOS
+            =================================================== -->
+
+            <main class="tiendaPublica" id="contenidoRepuestos">
+
+                <div class="container">
+
+                    <!-- ENCABEZADO DEL CATÁLOGO -->
+
+                    <section class="encabezadoTienda">
+
+                        <div>
+
+                            <span class="etiquetaTienda">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                                Repuestos y accesorios
+                            </span>
+
+                            <h1>
+                                Encuentre lo que necesita para su vehículo
+                            </h1>
+
+                            <p>
+                                Explore nuestro catálogo de productos disponibles,
+                                consulte el stock y compre de forma segura.
+                            </p>
+
+                        </div>
+
+                        <div class="beneficiosTienda">
+
+                            <div>
+                                <i class="fa-solid fa-box-open"></i>
+
+                                <span>
+                                    <strong id="productosDisponiblesTienda">
+                                        0 productos disponibles
+                                    </strong>
+
+                                    <small id="unidadesDisponiblesTienda">
+                                        0 unidades en stock
+                                    </small>
+                                </span>
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-store"></i>
+
+                                <span>
+                                    <strong>Retiro en tienda</strong>
+                                    <small>Baquedano 687, Lampa</small>
+                                </span>
+                            </div>
+
+                            <a
+                                href="./mi-cuenta.html"
+                                id="accesoCuentaTienda"
+                                class="beneficioCuentaTienda">
+
+                                <div class="iconoBeneficioCuenta">
+
+                                    <i class="fa-solid fa-user"></i>
+
+                                    <span
+                                        id="indicadorSesionTienda"
+                                        class="indicadorSesionTienda">
+                                    </span>
+
+                                </div>
+
+                                <span>
+
+                                    <strong id="tituloCuentaTienda">
+                                        Mi cuenta
+                                    </strong>
+
+                                    <small id="descripcionCuentaTienda">
+                                        Ingrese para revisar sus pedidos
+                                    </small>
+
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right flechaCuentaTienda"></i>
+
+                            </a>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+
+                    <section class="barraHerramientasTienda">
+
+                        <div class="buscadorTienda">
+
+                            <label for="buscar">
+                                Buscar producto
+                            </label>
+
+                            <div class="campoBuscadorTienda">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                <input
+                                    id="buscar"
+                                    type="search"
+                                    placeholder="Buscar SKU, producto o marca..."
+                                    autocomplete="off">
+
+                                <button
+                                    type="button"
+                                    id="btnLimpiarBusquedaTienda"
+                                    title="Limpiar búsqueda">
+
+                                    <i class="fa-solid fa-xmark"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div
+                                id="lista"
+                                class="sugerenciasTienda">
+                            </div>
+
+                        </div>
+
+
+                        <div class="filtroTienda">
+
+                            <label for="filtroMarcaTienda">
+                                Marca
+                            </label>
+
+                            <select id="filtroMarcaTienda">
+
+                                <option value="">
+                                    Todas las marcas
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filtroTienda">
+
+                            <label for="filtroDisponibilidadTienda">
+                                Disponibilidad
+                            </label>
+
+                            <select id="filtroDisponibilidadTienda">
+
+                                <option value="">
+                                    Todos
+                                </option>
+
+                                <option value="disponible">
+                                    Disponibles
+                                </option>
+
+                                <option value="agotado">
+                                    Agotados
+                                </option>
+
+                                <option value="oferta">
+                                    En oferta
+                                </option>
+
+                                <option value="destacado">
+                                    Destacados
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filtroTienda">
+
+                            <label for="ordenar">
+                                Ordenar
+                            </label>
+
+                            <select id="ordenar">
+
+                                <option value="orden_alfabetico">
+                                    Nombre A–Z
+                                </option>
+
+                                <option value="nombre_desc">
+                                    Nombre Z–A
+                                </option>
+
+                                <option value="precio_bajo">
+                                    Menor precio
+                                </option>
+
+                                <option value="precio_alto">
+                                    Mayor precio
+                                </option>
+
+                                <option value="mayor_stock">
+                                    Mayor stock
+                                </option>
+
+                                <option value="destacados">
+                                    Destacados
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="btnLimpiarFiltrosTienda"
+                            class="btnLimpiarFiltrosTienda">
+
+                            <i class="fa-solid fa-filter-circle-xmark"></i>
+
+                            Limpiar
+
+                        </button>
+
+                    </section>
+
+
+                    <!-- CATEGORÍAS -->
+
+                    <section class="seccionCategoriasTienda">
+
+                        <div class="encabezadoCategoriasTienda">
+
+                            <div>
+                                <h2>Categorías</h2>
+
+                                <p>
+                                    Seleccione una categoría para explorar
+                                    sus productos.
+                                </p>
+                            </div>
+
+                            <button
+                                type="button"
+                                id="btnTodasCategoriasTienda"
+                                class="btnTodasCategoriasTienda">
+
+                                Ver todos
+
+                            </button>
+
+                        </div>
+
+                        <div
+                            id="contenidoCategoria"
+                            class="categoriasTienda">
+
+                            <!-- Categorías dinámicas -->
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- ENCABEZADO DE RESULTADOS -->
+
+                    <section class="encabezadoResultadosTienda">
+
+                        <div>
+
+                            <h2 id="tituloProductosTienda">
+                                Productos disponibles
+                            </h2>
+
+                            <p id="descripcionProductosTienda">
+                                Repuestos y accesorios disponibles para comprar.
+                            </p>
+
+                        </div>
+
+                        <div class="contadorResultadosTienda">
+
+                            <strong id="cantidadProductosTienda">
+                                0
+                            </strong>
+
+                            <span id="textoCantidadProductosTienda">
+                                productos
+                            </span>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- ESTADO DE CARGA -->
+
+                    <div
+                        id="cargandoProductosTienda"
+                        class="cargandoProductosTienda">
+
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                        <span>
+                            Cargando productos...
+                        </span>
+
+                    </div>
+
+
+                    <!-- PRODUCTOS -->
+
+                    <section
+                        id="productos-container"
+                        class="gridProductosTienda">
+
+                        <!-- Tarjetas generadas con JavaScript -->
+
+                    </section>
+
+
+                    <!-- SIN PRODUCTOS -->
+
+                    <section
+                        id="sinProductosTienda"
+                        class="sinProductosTienda">
+
+                        <div class="iconoSinProductos">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+
+                        <h3>
+                            No encontramos productos
+                        </h3>
+
+                        <p>
+                            Intente cambiar la categoría,
+                            los filtros o el texto de búsqueda.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="btnRestablecerTienda">
+
+                            Restablecer filtros
+
+                        </button>
+
+                    </section>
+
+
+                    <!-- PAGINACIÓN -->
+
+                    <nav
+                        id="paginacionProductosTienda"
+                        class="paginacionProductosTienda"
+                        aria-label="Paginación de productos">
+
+                        <!-- Botones generados con JavaScript -->
+
+                    </nav>
+
+                </div>
+
+            </main>
+
+        <!-- ===============================================
+             FOOTER PRINCIPAL
+        ================================================ -->
+
+        <footer class="pieInicio"><div class="contenedorInicio pieGrid">
+            <div class="pieMarca"><img src="images/logoAlianzaPro.webp" alt="AlianzaPro"><p>Servicios automotrices y repuestos con una atención cercana, ordenada y transparente.</p><div class="redesInicio"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+            <div><h3>Navegación</h3><a href="services.html">Servicios</a><a href="listing-row.html">Repuestos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></div>
+            <div><h3>Atención</h3><p>Lunes a viernes<br><strong>09:00 a 18:00</strong></p><p>Sábado<br><strong>09:00 a 14:00</strong></p></div>
+            <div><h3>Accesos</h3><a href="mi-cuenta.html">Mi cuenta</a><a href="services.html#formCita">Reservar cita</a><a href="page-login.html">Acceso administrativo</a></div>
+            </div><div class="contenedorInicio pieInferior"><span>© <span id="anioInicio"></span> AlianzaPro SPA</span><span>Su auto, nuestro compromiso.</span></div></footer>
+
+        <a class="whatsappFlotante"
+            href="https://wa.me/56933339047?text=Hola%20AlianzaPro%2C%20necesito%20informaci%C3%B3n%20sobre%20sus%20servicios."
+            target="_blank"
+            rel="noopener"
+            aria-label="Contactar a AlianzaPro por WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <button class="volverArribaInicio" id="volverArribaInicio" type="button" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></button>
+
+        <script src="js/vendor/jquery.min.js"></script>
+        <script src="./js/assan.custom.js"></script>
+
+        <script src="./js/categorias.js?v=3"></script>
+        <script type="module" src="./js/carrito-global.js?v=8"></script>
+        <script
+            type="module"
+            src="./js/listing-row-product.js?v=6">
+        </script>
+
+    </body>
+</html>

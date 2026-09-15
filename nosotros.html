@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Conozca AlianzaPro, taller automotriz y tienda de repuestos comprometida con una atención clara, profesional y organizada.">
+    <title>Nosotros | AlianzaPro</title>
+    <link rel="icon" type="image/png" href="./images/logoCabeza.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/carrito.css?v=12">
+    <link rel="stylesheet" href="css/index.css?v=2">
+    <link rel="stylesheet" href="css/nosotros.css?v=1">
+    <link rel="stylesheet" href="css/carritoUnificado.css?v=1">
+</head>
+<body>
+<a class="saltoContenido" href="#contenidoPrincipal">Saltar al contenido</a>
+
+<header class="cabeceraInicio">
+    <div class="barraContacto">
+        <div class="contenedorInicio barraContactoInterior">
+            <span><i class="fa-solid fa-location-dot"></i> Santiago, Chile</span>
+            <span><i class="fa-regular fa-clock"></i> Lun–Vie 09:00–18:00 · Sáb 09:00–14:00</span>
+            <a href="contacto.html"><i class="fa-solid fa-phone"></i> Contáctenos</a>
+        </div>
+    </div>
+    <nav class="navegacionInicio contenedorInicio" aria-label="Navegación principal">
+        <a class="marcaInicio" href="index.html"><img src="images/logoAlianzaPro.webp" alt="AlianzaPro"></a>
+        <button class="botonMenuInicio" id="botonMenuInicio" type="button" aria-expanded="false" aria-controls="menuInicio"><span></span><span></span><span></span><b>Menú</b></button>
+        <div class="menuInicio" id="menuInicio">
+            <a href="index.html">Inicio</a>
+            <a href="services.html">Servicios</a>
+            <a href="listing-row.html">Repuestos</a>
+            <a class="activo" href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="page-login.html"><i class="fa-regular fa-circle-user"></i> Admin</a>
+        </div>
+        <div class="accionesCabecera">
+            <a class="botonCuentaInicio" href="mi-cuenta.html" aria-label="Mi cuenta"><i class="fa-regular fa-user"></i></a>
+            <button class="botonCarritoInicio" id="abrirCarritoInicio" type="button" aria-label="Abrir carrito"><i class="fa-solid fa-cart-shopping"></i><span id="contadorCarrito">0</span></button>
+            <a class="botonReservaCabecera" href="services.html#formCita">Reservar cita</a>
+        </div>
+    </nav>
+</header>
+
+<aside class="carritoLateral carritoLateralInicio" id="carritoLateralInicio" aria-hidden="true" aria-label="Carrito de compras">
+    <header class="tituloCarrito">
+        <div class="tituloCarritoTexto">
+            <div class="iconoTituloCarrito"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div><h4 id="titleCarrito">Carrito (0)</h4><small>Resumen de su compra</small></div>
+        </div>
+        <div class="accionesTituloCarrito">
+            <button type="button" id="btnVaciarCarrito" class="btnVaciarCarrito" title="Vaciar carrito" aria-label="Vaciar carrito"><i class="fa-solid fa-trash-can"></i></button>
+            <button type="button" id="cerrarCarritoInicio" class="btnCerrarCarritoUnificado" aria-label="Cerrar carrito"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </header>
+    <div id="mi-elemento" class="contenidoCarrito"></div>
+    <div id="footerCarrito" class="footerCarrito"></div>
+</aside>
+<button class="fondoCarritoInicio" id="fondoCarritoInicio" type="button" aria-label="Cerrar carrito" hidden></button>
+
+<main id="contenidoPrincipal">
+    <section class="portadaNosotros">
+        <div class="contenedorInicio portadaNosotrosGrid">
+            <div class="textoPortadaNosotros" data-revelar>
+                <nav class="migaNosotros" aria-label="Miga de pan"><a href="index.html">Inicio</a><i class="fa-solid fa-chevron-right"></i><span>Nosotros</span></nav>
+                <span class="sobreTitulo claro">Conozca AlianzaPro</span>
+                <h1>Una alianza profesional para cuidar <strong>su vehículo.</strong></h1>
+                <p>Integramos taller automotriz, repuestos y tecnología para entregar una atención más clara, organizada y confiable.</p>
+                <div class="accionesNosotros">
+                    <a class="botonNosotrosPrincipal" href="services.html#formCita"><i class="fa-regular fa-calendar-check"></i> Reservar una cita</a>
+                    <a class="botonNosotrosSecundario" href="listing-row.html">Explorar repuestos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="identidadNosotros" data-revelar>
+                <div class="circuloIdentidad"><img src="images/logoAlianzaPro.webp" alt="Logo AlianzaPro"></div>
+                <div class="datoFlotante datoUno"><i class="fa-solid fa-screwdriver-wrench"></i><span><strong>Taller</strong><small>Atención especializada</small></span></div>
+                <div class="datoFlotante datoDos"><i class="fa-solid fa-box-open"></i><span><strong>Repuestos</strong><small>Stock actualizado</small></span></div>
+                <div class="datoFlotante datoTres"><i class="fa-solid fa-laptop"></i><span><strong>MegaGest</strong><small>Gestión integrada</small></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="estadisticasNosotros" aria-label="Resumen de AlianzaPro">
+        <div class="contenedorInicio gridEstadisticasNosotros">
+            <article><i class="fa-solid fa-screwdriver-wrench"></i><div><strong id="cantidadServiciosNosotros">—</strong><span>Servicios publicados</span></div></article>
+            <article><i class="fa-solid fa-boxes-stacked"></i><div><strong id="cantidadProductosNosotros">—</strong><span>Productos disponibles</span></div></article>
+            <article><i class="fa-solid fa-cubes"></i><div><strong id="unidadesNosotros">—</strong><span>Unidades en inventario</span></div></article>
+            <article><i class="fa-solid fa-layer-group"></i><div><strong>2</strong><span>Áreas conectadas</span></div></article>
+        </div>
+    </section>
+
+    <section class="historiaNosotros">
+        <div class="contenedorInicio historiaNosotrosGrid">
+            <div class="composicionHistoria" data-revelar>
+                <div class="tarjetaHistoriaPrincipal">
+                    <span>AlianzaPro SPA</span>
+                    <i class="fa-solid fa-handshake"></i>
+                    <h2>Confianza que se construye en cada atención.</h2>
+                </div>
+                <div class="selloHistoria"><strong>AP</strong><span>Su auto,<br>nuestro compromiso.</span></div>
+            </div>
+            <div class="textoHistoria" data-revelar>
+                <span class="sobreTitulo">Nuestra historia</span>
+                <h2>Una empresa familiar con una visión profesional.</h2>
+                <p>AlianzaPro nace del compromiso de la familia Milord por crear una relación firme y transparente con cada cliente. El nombre representa precisamente esa idea: construir una alianza profesional alrededor de las necesidades de cada vehículo.</p>
+                <p>La empresa reúne servicios mecánicos y comercialización de repuestos en una experiencia conectada. Con MegaGest, la información del taller, las ventas, el inventario y las reservas se organiza en un mismo sistema.</p>
+                <div class="firmaHistoria"><span>A</span><div><strong>AlianzaPro</strong><small>Una atención cercana respaldada por tecnología.</small></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="propositoNosotros">
+        <div class="contenedorInicio">
+            <div class="encabezadoSeccionNosotros" data-revelar><span class="sobreTitulo">Nuestro propósito</span><h2>Lo que guía cada decisión.</h2><p>Principios sencillos que conectan el servicio técnico con una experiencia responsable para el cliente.</p></div>
+            <div class="gridPropositoNosotros">
+                <article data-revelar><span>01</span><i class="fa-solid fa-bullseye"></i><h3>Misión</h3><p>Proporcionar servicios mecánicos y repuestos con estándares de calidad, atención eficiente y soluciones confiables para las necesidades del mercado local.</p></article>
+                <article data-revelar><span>02</span><i class="fa-regular fa-eye"></i><h3>Visión</h3><p>Ser una empresa reconocida por la calidad de su trabajo, la confianza de sus clientes y el uso responsable de tecnología para mejorar la atención.</p></article>
+                <article data-revelar><span>03</span><i class="fa-solid fa-arrow-trend-up"></i><h3>Compromiso</h3><p>Mejorar continuamente nuestros procesos para entregar información clara, disponibilidad actualizada y seguimiento en cada operación.</p></article>
+            </div>
+        </div>
+    </section>
+
+    <section class="valoresNosotros">
+        <div class="contenedorInicio valoresNosotrosGrid">
+            <div data-revelar><span class="sobreTitulo claro">Nuestros valores</span><h2>Una mejor experiencia comienza con una forma correcta de trabajar.</h2><p>AlianzaPro busca que cada interacción sea comprensible, ordenada y útil para el cliente.</p><a href="contacto.html">Conversemos <i class="fa-solid fa-arrow-right"></i></a></div>
+            <div class="listaValoresNosotros">
+                <article data-revelar><i class="fa-solid fa-shield-halved"></i><div><h3>Confianza</h3><p>Información transparente antes, durante y después de cada atención.</p></div></article>
+                <article data-revelar><i class="fa-solid fa-medal"></i><div><h3>Calidad</h3><p>Cuidado en los procesos, los productos y las soluciones entregadas.</p></div></article>
+                <article data-revelar><i class="fa-solid fa-list-check"></i><div><h3>Organización</h3><p>Reservas, inventario y órdenes de trabajo conectadas digitalmente.</p></div></article>
+                <article data-revelar><i class="fa-solid fa-people-group"></i><div><h3>Cercanía</h3><p>Una comunicación respetuosa y orientada a resolver necesidades reales.</p></div></article>
+            </div>
+        </div>
+    </section>
+
+    <section class="diferenciasNosotros">
+        <div class="contenedorInicio">
+            <div class="encabezadoSeccionNosotros" data-revelar><span class="sobreTitulo">¿Por qué elegirnos?</span><h2>Taller, repuestos y gestión en un solo lugar.</h2></div>
+            <div class="gridDiferenciasNosotros">
+                <article data-revelar><i class="fa-regular fa-calendar-check"></i><h3>Reservas organizadas</h3><p>Horarios disponibles y confirmación de cada solicitud.</p></article>
+                <article data-revelar><i class="fa-solid fa-clipboard-check"></i><h3>Seguimiento del trabajo</h3><p>Órdenes de trabajo con servicios, repuestos y responsables.</p></article>
+                <article data-revelar><i class="fa-solid fa-boxes-stacked"></i><h3>Inventario conectado</h3><p>Disponibilidad actualizada para ventas y trabajos del taller.</p></article>
+                <article data-revelar><i class="fa-solid fa-file-invoice-dollar"></i><h3>Información clara</h3><p>Detalle de productos, servicios y valores asociados.</p></article>
+            </div>
+        </div>
+    </section>
+
+    <section class="llamadaNosotros">
+        <div class="contenedorInicio llamadaNosotrosInterior" data-revelar>
+            <div><span>¿Podemos ayudarle?</span><h2>Dé el próximo paso con AlianzaPro.</h2><p>Reserve una atención para su vehículo o explore nuestro catálogo de repuestos.</p></div>
+            <div><a href="services.html#formCita">Reservar cita</a><a href="listing-row.html">Ver repuestos</a></div>
+        </div>
+    </section>
+</main>
+
+<footer class="pieInicio">
+    <div class="contenedorInicio pieGrid">
+        <div class="pieMarca"><img src="images/logoAlianzaPro.webp" alt="AlianzaPro"><p>Servicios automotrices y repuestos con una atención cercana, ordenada y transparente.</p></div>
+        <div><h3>Navegación</h3><a href="index.html">Inicio</a><a href="services.html">Servicios</a><a href="listing-row.html">Repuestos</a></div>
+        <div><h3>Atención</h3><p>Lunes a viernes<br><strong>09:00 a 18:00</strong></p><p>Sábado<br><strong>09:00 a 14:00</strong></p></div>
+        <div><h3>Accesos</h3><a href="mi-cuenta.html">Mi cuenta</a><a href="services.html#formCita">Reservar cita</a><a href="page-login.html">Acceso administrativo</a></div>
+    </div>
+    <div class="contenedorInicio pieInferior"><span>© <span id="anioInicio"></span> AlianzaPro SPA</span><span>Su auto, nuestro compromiso.</span></div>
+</footer>
+
+<a class="whatsappFlotante"
+   href="https://wa.me/56933339047?text=Hola%20AlianzaPro%2C%20necesito%20informaci%C3%B3n%20sobre%20sus%20servicios."
+   target="_blank"
+   rel="noopener"
+   aria-label="Contactar a AlianzaPro por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+<button class="volverArribaInicio" id="volverArribaInicio" type="button" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script type="module" src="js/carrito-global.js?v=8"></script>
+<script type="module" src="js/nosotros.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+/* =====================================================
+   GESTIÓN DE COTIZACIONES
+===================================================== */
+
+#gestionCotizacionesAdmin {
+    --cot-azul: #1769dc;
+    --cot-azul-oscuro: #0f4fae;
+    --cot-oliva: #303900;
+    --cot-verde: #118453;
+    --cot-rojo: #c63f49;
+    --cot-texto: #293140;
+    --cot-secundario: #707989;
+    --cot-borde: #dce3ec;
+    --cot-fondo: #f5f7fa;
+    --cot-blanco: #fff;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 24px;
+    color: var(--cot-texto);
+}
+
+#gestionCotizacionesAdmin *,
+#gestionCotizacionesAdmin *::before,
+#gestionCotizacionesAdmin *::after {
+    box-sizing: border-box;
+}
+
+#gestionCotizacionesAdmin > h1 {
+    margin: 0 0 8px;
+    color: var(--cot-texto);
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -.02em;
+}
+
+#gestionCotizacionesAdmin > p {
+    margin: 0;
+    color: var(--cot-secundario);
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+/* Filtros */
+
+#gestionCotizacionesAdmin .filtrosCotizacionesAdmin {
+    display: grid;
+    grid-template-columns: minmax(260px, 1.5fr) minmax(170px, .7fr) auto auto;
+    align-items: end;
+    gap: 14px;
+    margin: 28px 0 18px;
+    padding: 20px;
+    border: 1px solid var(--cot-borde);
+    border-radius: 18px;
+    background: var(--cot-fondo);
+}
+
+#gestionCotizacionesAdmin .filtrosCotizacionesAdmin > div {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 7px;
+}
+
+#gestionCotizacionesAdmin label {
+    color: #424b59;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+#gestionCotizacionesAdmin input,
+#gestionCotizacionesAdmin select,
+#gestionCotizacionesAdmin button {
+    min-height: 48px;
+    padding: 11px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 11px;
+    font: inherit;
+}
+
+#gestionCotizacionesAdmin input,
+#gestionCotizacionesAdmin select {
+    width: 100%;
+    color: var(--cot-texto);
+    outline: none;
+    background: var(--cot-blanco);
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+#gestionCotizacionesAdmin input:focus,
+#gestionCotizacionesAdmin select:focus {
+    border-color: var(--cot-azul);
+    box-shadow: 0 0 0 4px rgb(23 105 220 / 13%);
+}
+
+#gestionCotizacionesAdmin button {
+    cursor: pointer;
+    white-space: nowrap;
+    color: #fff;
+    font-weight: 750;
+    background: var(--cot-azul);
+    transition: transform .18s ease, background-color .18s ease,
+        box-shadow .18s ease;
+}
+
+#gestionCotizacionesAdmin button:hover:not(:disabled) {
+    background: var(--cot-azul-oscuro);
+    box-shadow: 0 7px 16px rgb(23 105 220 / 20%);
+    transform: translateY(-1px);
+}
+
+#gestionCotizacionesAdmin button:disabled {
+    cursor: wait;
+    opacity: .6;
+}
+
+#gestionCotizacionesAdmin #actualizarCotizacionesAdmin {
+    color: var(--cot-azul);
+    background: #edf4ff;
+}
+
+#gestionCotizacionesAdmin #actualizarCotizacionesAdmin:hover:not(:disabled) {
+    color: #fff;
+    background: var(--cot-azul);
+}
+
+#mensajeCotizacionesAdmin {
+    min-height: 24px;
+    margin: 0 0 12px !important;
+    color: var(--cot-secundario) !important;
+    font-size: 14px !important;
+    font-weight: 650;
+}
+
+/* Tabla */
+
+#gestionCotizacionesAdmin .tablaCotizacionesContenedor {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--cot-borde);
+    border-radius: 18px;
+    background: var(--cot-blanco);
+    box-shadow: 0 12px 32px rgb(31 49 77 / 8%);
+}
+
+#gestionCotizacionesAdmin .tablaCotizacionesAdmin {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#gestionCotizacionesAdmin .tablaCotizacionesAdmin[hidden] {
+    display: none !important;
+}
+
+#gestionCotizacionesAdmin caption {
+    padding: 18px 20px;
+    color: var(--cot-texto);
+    font-size: 17px;
+    font-weight: 800;
+    text-align: left;
+    caption-side: top;
+}
+
+#gestionCotizacionesAdmin th,
+#gestionCotizacionesAdmin td {
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--cot-borde);
+    text-align: left;
+    vertical-align: middle;
+}
+
+#gestionCotizacionesAdmin th {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+    background: var(--cot-oliva);
+}
+
+#gestionCotizacionesAdmin tbody tr {
+    transition: background-color .18s ease;
+}
+
+#gestionCotizacionesAdmin tbody tr:hover {
+    background: #f7faff;
+}
+
+#gestionCotizacionesAdmin tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+#gestionCotizacionesAdmin td:first-child {
+    color: #253047;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+}
+
+#gestionCotizacionesAdmin td:nth-child(5),
+#gestionCotizacionesAdmin td:nth-child(6) {
+    font-weight: 750;
+}
+
+#gestionCotizacionesAdmin td:last-child {
+    min-width: 135px;
+}
+
+#gestionCotizacionesAdmin td:last-child button {
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 12px;
+}
+
+#gestionCotizacionesAdmin td:last-child a {
+    display: block;
+    margin-top: 8px;
+    color: var(--cot-azul);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+#gestionCotizacionesAdmin td:last-child a:hover {
+    text-decoration: underline;
+}
+
+/* Diálogo de detalle */
+
+#gestionCotizacionesAdmin .dialogDetalleCotizacion {
+    box-sizing: border-box;
+    width: min(880px, 94vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 20px;
+    color: var(--cot-texto);
+    background: #fff;
+    box-shadow: 0 24px 70px rgb(0 0 0 / 24%);
+}
+
+#gestionCotizacionesAdmin .dialogDetalleCotizacion::backdrop {
+    background: rgb(15 23 42 / 62%);
+    backdrop-filter: blur(3px);
+}
+
+#gestionCotizacionesAdmin .cabeceraDetalleCotizacion {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr) 52px;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 30px;
+    border-bottom: 1px solid var(--cot-borde);
+    background: #fff;
+}
+
+#gestionCotizacionesAdmin .iconoCabeceraCotizacion {
+    display: grid;
+    width: 76px;
+    height: 76px;
+    place-items: center;
+    border-radius: 20px;
+    color: var(--cot-azul);
+    font-size: 31px;
+    background: #eaf2ff;
+}
+
+#gestionCotizacionesAdmin .textoCabeceraCotizacion {
+    min-width: 0;
+}
+
+#gestionCotizacionesAdmin .etiquetaCabeceraCotizacion {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--cot-azul);
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: .08em;
+}
+
+#gestionCotizacionesAdmin .cabeceraDetalleCotizacion h2 {
+    margin: 0 0 5px;
+    color: #202838;
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 850;
+    line-height: 1.1;
+}
+
+#gestionCotizacionesAdmin .cerrarDetalleCotizacion {
+    width: 52px;
+    height: 52px;
+    min-height: 52px;
+    padding: 0;
+    border: 1px solid #d3dce8;
+    color: #667085;
+    font-size: 23px;
+    background: #f8fafc;
+    box-shadow: none;
+}
+
+#gestionCotizacionesAdmin .cerrarDetalleCotizacion:hover:not(:disabled) {
+    color: #b4232c;
+    background: #fff0f1;
+    box-shadow: none;
+    transform: none;
+}
+
+#gestionCotizacionesAdmin .numeroDetalleCotizacion {
+    margin: 0;
+    color: var(--cot-secundario);
+    font-size: 15px;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+}
+
+#gestionCotizacionesAdmin .cuerpoDetalleCotizacion {
+    padding: 26px 30px 30px;
+    background: var(--cot-fondo);
+}
+
+#gestionCotizacionesAdmin .contenidoDetalleCotizacion {
+    display: grid;
+    gap: 20px;
+    padding: 0;
+}
+
+#gestionCotizacionesAdmin .datosDetalleCotizacion,
+#gestionCotizacionesAdmin .totalesDetalleCotizacion {
+    display: grid;
+    grid-template-columns: minmax(130px, auto) minmax(0, 1fr);
+    gap: 9px 18px;
+    padding: 18px;
+    border: 1px solid var(--cot-borde);
+    border-radius: 14px;
+    background: #fff;
+}
+
+#gestionCotizacionesAdmin .dialogDetalleCotizacion dt {
+    font-weight: 800;
+}
+
+#gestionCotizacionesAdmin .dialogDetalleCotizacion dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+#gestionCotizacionesAdmin .mensajeDetalleCotizacion {
+    margin: 0;
+    color: var(--cot-secundario);
+    text-align: center;
+}
+
+#gestionCotizacionesAdmin .skuDebajoProducto {
+    display: block;
+    margin-top: 3px;
+    color: var(--cot-secundario);
+    font-size: 12px;
+}
+
+#gestionCotizacionesAdmin .notaDetalleCotizacion {
+    margin: 0;
+    padding: 14px 16px;
+    border-radius: 12px;
+    color: #586375;
+    font-size: 13px;
+    background: #edf3fb;
+}
+
+@media (max-width: 1050px) {
+    #gestionCotizacionesAdmin .filtrosCotizacionesAdmin {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    #gestionCotizacionesAdmin {
+        padding: 16px;
+    }
+
+    #gestionCotizacionesAdmin .filtrosCotizacionesAdmin {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    #gestionCotizacionesAdmin .filtrosCotizacionesAdmin button {
+        width: 100%;
+    }
+
+    #gestionCotizacionesAdmin .datosDetalleCotizacion,
+    #gestionCotizacionesAdmin .totalesDetalleCotizacion {
+        grid-template-columns: 1fr;
+    }
+
+    #gestionCotizacionesAdmin .cabeceraDetalleCotizacion {
+        grid-template-columns: 58px minmax(0, 1fr) 44px;
+        gap: 12px;
+        padding: 20px 16px;
+    }
+
+    #gestionCotizacionesAdmin .iconoCabeceraCotizacion {
+        width: 58px;
+        height: 58px;
+        border-radius: 16px;
+        font-size: 24px;
+    }
+
+    #gestionCotizacionesAdmin .cerrarDetalleCotizacion {
+        width: 44px;
+        height: 44px;
+        min-height: 44px;
+    }
+
+    #gestionCotizacionesAdmin .cuerpoDetalleCotizacion {
+        padding: 18px 16px 22px;
+    }
+}

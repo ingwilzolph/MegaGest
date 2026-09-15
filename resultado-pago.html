@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Resultado del pago | AlianzaPro</title>
+
+    <link
+        href="./images/logoCabeza.webp"
+        rel="icon"
+        type="image/x-icon">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link
+        rel="stylesheet"
+        href="./css/resultado-pago.css">
+
+</head>
+
+<body>
+
+    <header class="encabezadoResultadoPago">
+
+        <a
+            href="./index.html"
+            class="marcaResultadoPago">
+
+            <img
+                src="./images/logoAlianzaPro.webp"
+                alt="AlianzaPro">
+
+            <div>
+                <strong>AlianzaPro</strong>
+                <span>Taller y repuestos</span>
+            </div>
+
+        </a>
+
+        <div class="pagoProtegidoResultado">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>Pago procesado de forma segura</span>
+
+        </div>
+
+    </header>
+
+    <main class="paginaResultadoPago">
+
+        <section
+            id="tarjetaResultadoPago"
+            class="tarjetaResultadoPago">
+
+            <!-- ICONO -->
+
+            <div
+                id="iconoResultadoPago"
+                class="iconoResultadoPago">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+            </div>
+
+            <!-- TEXTO -->
+
+            <span
+                id="etiquetaResultadoPago"
+                class="etiquetaResultadoPago">
+
+                Consultando resultado
+
+            </span>
+
+            <h1 id="tituloResultadoPago">
+
+                Procesando su pago...
+
+            </h1>
+
+            <p
+                id="descripcionResultadoPago"
+                class="descripcionResultadoPago">
+
+                Espere un momento mientras mostramos el resultado
+                de la transacción.
+
+            </p>
+
+            <!-- NÚMERO DE PEDIDO -->
+
+            <div
+                id="contenedorPedidoResultado"
+                class="contenedorPedidoResultado"
+                hidden>
+
+                <span>Número de pedido</span>
+
+                <strong id="numeroPedidoResultado"></strong>
+
+            </div>
+
+            <!-- INFORMACIÓN DE DESPACHO -->
+
+            <div
+                id="informacionDespachoResultado"
+                class="informacionRetiroResultado"
+                hidden>
+
+                <div class="iconoRetiroResultado">
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>Despacho a domicilio</strong>
+
+                    <p id="direccionDespachoResultado"></p>
+
+                    <small id="detalleDespachoResultado">
+                        Le avisaremos cuando el pedido
+                        se encuentre en camino.
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- INFORMACIÓN RETIRO -->
+
+            <div
+                id="informacionRetiroResultado"
+                class="informacionRetiroResultado"
+                hidden>
+
+                
+
+                <div class="iconoRetiroResultado">
+
+                    <i class="fa-solid fa-store"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>Retiro en tienda</strong>
+
+                    <p>
+                        Baquedano 687, Lampa,
+                        Santiago de Chile.
+                    </p>
+
+                    <small>
+                        Le avisaremos cuando su pedido esté listo
+                        para ser retirado.
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- MENSAJE -->
+
+            <div
+                id="mensajeImportanteResultado"
+                class="mensajeImportanteResultado"
+                hidden>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span id="textoImportanteResultado"></span>
+
+            </div>
+
+            <!-- BOTONES -->
+
+            <div class="accionesResultadoPago">
+                <button
+                    type="button"
+                    id="btnImprimirResultado"
+                    class="btnImprimirResultado"
+                    hidden>
+
+                    <i class="fa-solid fa-print"></i>
+
+                    Imprimir comprobante
+
+                </button>
+
+                <a
+                    id="btnVolverTiendaResultado"
+                    href="./listing-row.html"
+                    class="btnPrincipalResultado">
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    Volver a productos
+
+                </a>
+
+                <a
+                    href="./index.html"
+                    class="btnSecundarioResultado">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Ir al inicio
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- AYUDA -->
+
+        <section class="ayudaResultadoPago">
+
+            <div>
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <span>
+                    <strong>¿Necesita ayuda?</strong>
+                    soporte@alianzapro.cl
+                </span>
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-phone"></i>
+
+                <span>
+                    <strong>Contacto</strong>
+                    +56 9 33339047
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footerResultadoPago">
+
+        <p>
+            &copy; 2026 AlianzaPro SPA.
+            Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+    <script
+        type="module"
+        src="./js/resultado-pago.js?v=2">
+    </script>
+
+</body>
+
+</html>

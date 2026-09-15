@@ -1,0 +1,834 @@
+.portadaNosotros {
+    position: relative;
+    overflow: hidden;
+    padding: 94px 0 108px;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(45, 128, 255, .2), transparent 30%),
+        linear-gradient(125deg, #101a2d 0%, #132b51 58%, #0d58ba 100%);
+    color: #ffffff;
+}
+
+.portadaNosotros::before {
+    position: absolute;
+    right: -120px;
+    bottom: -220px;
+    width: 520px;
+    height: 520px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 50%;
+    content: "";
+}
+
+.portadaNosotrosGrid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(390px, .9fr);
+    align-items: center;
+    gap: 76px;
+}
+
+.migaNosotros {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 42px;
+    color: #c8d8ef;
+    font-size: 13px;
+}
+
+.migaNosotros a:hover {
+    color: #ffffff;
+}
+
+.migaNosotros i {
+    color: #70a9ff;
+    font-size: 9px;
+}
+
+.textoPortadaNosotros h1 {
+    max-width: 720px;
+    margin: 16px 0 22px;
+    font-size: clamp(42px, 5.2vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -.045em;
+}
+
+.textoPortadaNosotros h1 strong {
+    color: #ff933c;
+}
+
+.textoPortadaNosotros > p {
+    max-width: 650px;
+    margin: 0;
+    color: #c9d6e8;
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+.accionesNosotros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 34px;
+}
+
+.accionesNosotros a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 23px;
+    border-radius: 13px;
+    font-weight: 800;
+}
+
+.botonNosotrosPrincipal {
+    background: #ff7a1a;
+    color: #ffffff;
+    box-shadow: 0 14px 32px rgba(255, 122, 26, .25);
+}
+
+.botonNosotrosPrincipal:hover {
+    background: #ff8e3d;
+    transform: translateY(-2px);
+}
+
+.botonNosotrosSecundario {
+    border: 1px solid rgba(255, 255, 255, .28);
+    background: rgba(255, 255, 255, .08);
+    color: #ffffff;
+}
+
+.botonNosotrosSecundario:hover {
+    background: rgba(255, 255, 255, .15);
+}
+
+.identidadNosotros {
+    position: relative;
+    display: grid;
+    min-height: 430px;
+    place-items: center;
+}
+
+.circuloIdentidad {
+    display: grid;
+    width: 285px;
+    height: 285px;
+    padding: 52px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 35px 75px rgba(0, 0, 0, .25);
+}
+
+.circuloIdentidad::before,
+.circuloIdentidad::after {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, .13);
+    border-radius: 50%;
+    content: "";
+}
+
+.circuloIdentidad::before {
+    width: 350px;
+    height: 350px;
+}
+
+.circuloIdentidad::after {
+    width: 415px;
+    height: 415px;
+}
+
+.circuloIdentidad img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.datoFlotante {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 185px;
+    padding: 13px 15px;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 14px;
+    background: rgba(13, 28, 51, .82);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(12px);
+}
+
+.datoFlotante i {
+    display: grid;
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 10px;
+    background: #2178ef;
+}
+
+.datoFlotante strong,
+.datoFlotante small {
+    display: block;
+}
+
+.datoFlotante strong {
+    font-size: 13px;
+}
+
+.datoFlotante small {
+    margin-top: 3px;
+    color: #b8c7db;
+    font-size: 10px;
+}
+
+.datoUno {
+    top: 32px;
+    left: 0;
+}
+
+.datoDos {
+    right: -15px;
+    top: 128px;
+}
+
+.datoTres {
+    bottom: 24px;
+    left: 24px;
+}
+
+.estadisticasNosotros {
+    position: relative;
+    z-index: 4;
+    margin-top: -39px;
+}
+
+.gridEstadisticasNosotros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+    border: 1px solid #e0e7f0;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 22px 55px rgba(16, 31, 55, .13);
+}
+
+.gridEstadisticasNosotros article {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 108px;
+    padding: 24px;
+    border-right: 1px solid #e5ebf2;
+}
+
+.gridEstadisticasNosotros article:last-child {
+    border-right: 0;
+}
+
+.gridEstadisticasNosotros i {
+    display: grid;
+    flex: 0 0 45px;
+    width: 45px;
+    height: 45px;
+    place-items: center;
+    border-radius: 12px;
+    background: #eaf2ff;
+    color: #1769e8;
+}
+
+.gridEstadisticasNosotros strong,
+.gridEstadisticasNosotros span {
+    display: block;
+}
+
+.gridEstadisticasNosotros strong {
+    color: #172033;
+    font-size: 25px;
+}
+
+.gridEstadisticasNosotros span {
+    margin-top: 3px;
+    color: #758196;
+    font-size: 11px;
+}
+
+.historiaNosotros {
+    padding: 120px 0;
+}
+
+.historiaNosotrosGrid {
+    display: grid;
+    grid-template-columns: minmax(360px, .9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 90px;
+}
+
+.composicionHistoria {
+    position: relative;
+    min-height: 500px;
+}
+
+.tarjetaHistoriaPrincipal {
+    position: absolute;
+    inset: 0 45px 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 42px;
+    border-radius: 28px;
+    background:
+        linear-gradient(160deg, rgba(23, 105, 232, .12), transparent 46%),
+        #111c30;
+    color: #ffffff;
+}
+
+.tarjetaHistoriaPrincipal::before {
+    position: absolute;
+    top: -100px;
+    right: -90px;
+    width: 330px;
+    height: 330px;
+    border: 70px solid rgba(38, 121, 246, .18);
+    border-radius: 50%;
+    content: "";
+}
+
+.tarjetaHistoriaPrincipal > span {
+    color: #70a9ff;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.tarjetaHistoriaPrincipal > i {
+    position: absolute;
+    top: 62px;
+    left: 42px;
+    color: #ff8d35;
+    font-size: 70px;
+}
+
+.tarjetaHistoriaPrincipal h2 {
+    position: relative;
+    max-width: 360px;
+    margin: 12px 0 0;
+    font-size: 34px;
+    line-height: 1.15;
+}
+
+.selloHistoria {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 18px 45px rgba(20, 35, 60, .16);
+}
+
+.selloHistoria > strong {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 12px;
+    background: #ff7a1a;
+    color: #ffffff;
+}
+
+.selloHistoria span {
+    color: #596579;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.textoHistoria h2,
+.encabezadoSeccionNosotros h2,
+.valoresNosotros h2,
+.llamadaNosotros h2 {
+    margin: 12px 0 20px;
+    color: #172033;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.12;
+    letter-spacing: -.035em;
+}
+
+.textoHistoria > p {
+    margin: 0 0 18px;
+    color: #68758a;
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.firmaHistoria {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #e4eaf2;
+}
+
+.firmaHistoria > span {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 50%;
+    background: #1769e8;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.firmaHistoria strong,
+.firmaHistoria small {
+    display: block;
+}
+
+.firmaHistoria small {
+    margin-top: 4px;
+    color: #778397;
+}
+
+.propositoNosotros,
+.diferenciasNosotros {
+    padding: 105px 0;
+    background: #f4f7fb;
+}
+
+.encabezadoSeccionNosotros {
+    max-width: 760px;
+    margin: 0 auto 52px;
+    text-align: center;
+}
+
+.encabezadoSeccionNosotros > p {
+    color: #708096;
+    line-height: 1.7;
+}
+
+.gridPropositoNosotros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gridPropositoNosotros article {
+    position: relative;
+    min-height: 330px;
+    overflow: hidden;
+    padding: 34px;
+    border: 1px solid #dfe6ef;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 15px 40px rgba(25, 40, 65, .06);
+}
+
+.gridPropositoNosotros article > span {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    color: #e8edf5;
+    font-size: 58px;
+    font-weight: 900;
+}
+
+.gridPropositoNosotros article > i {
+    position: relative;
+    display: grid;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 55px;
+    place-items: center;
+    border-radius: 14px;
+    background: #e9f2ff;
+    color: #1769e8;
+    font-size: 21px;
+}
+
+.gridPropositoNosotros article:nth-child(2) > i {
+    background: #fff0e4;
+    color: #ef7418;
+}
+
+.gridPropositoNosotros article:nth-child(3) > i {
+    background: #e5f7f0;
+    color: #159269;
+}
+
+.gridPropositoNosotros h3 {
+    margin: 0 0 14px;
+    font-size: 23px;
+}
+
+.gridPropositoNosotros p {
+    margin: 0;
+    color: #69768a;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.valoresNosotros {
+    padding: 110px 0;
+    background: #111c30;
+    color: #ffffff;
+}
+
+.valoresNosotrosGrid {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    align-items: center;
+    gap: 90px;
+}
+
+.valoresNosotros h2 {
+    color: #ffffff;
+}
+
+.valoresNosotrosGrid > div:first-child > p {
+    color: #aebcd0;
+    line-height: 1.8;
+}
+
+.valoresNosotrosGrid > div:first-child > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: #ff913d;
+    font-weight: 800;
+}
+
+.listaValoresNosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.listaValoresNosotros article {
+    display: flex;
+    gap: 15px;
+    min-height: 155px;
+    padding: 24px;
+    border: 1px solid #2a3950;
+    border-radius: 17px;
+    background: #17243a;
+}
+
+.listaValoresNosotros i {
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 11px;
+    background: #1d6cda;
+    color: #ffffff;
+}
+
+.listaValoresNosotros h3 {
+    margin: 2px 0 9px;
+    font-size: 17px;
+}
+
+.listaValoresNosotros p {
+    margin: 0;
+    color: #aebbcf;
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.diferenciasNosotros {
+    background: #ffffff;
+}
+
+.gridDiferenciasNosotros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.gridDiferenciasNosotros article {
+    padding: 28px;
+    border: 1px solid #e0e7ef;
+    border-radius: 18px;
+    background: #ffffff;
+    transition: .25s ease;
+}
+
+.gridDiferenciasNosotros article:hover {
+    transform: translateY(-6px);
+    border-color: #b9d4fa;
+    box-shadow: 0 18px 45px rgba(20, 48, 90, .1);
+}
+
+.gridDiferenciasNosotros i {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 32px;
+    place-items: center;
+    border-radius: 14px;
+    background: #eaf2ff;
+    color: #1769e8;
+    font-size: 20px;
+}
+
+.gridDiferenciasNosotros h3 {
+    margin: 0 0 11px;
+    font-size: 17px;
+}
+
+.gridDiferenciasNosotros p {
+    margin: 0;
+    color: #758196;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.llamadaNosotros {
+    padding: 0 0 105px;
+}
+
+.llamadaNosotrosInterior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 52px 58px;
+    border-radius: 24px;
+    background: linear-gradient(120deg, #1769e8, #084798);
+    color: #ffffff;
+    box-shadow: 0 25px 55px rgba(17, 92, 195, .22);
+}
+
+.llamadaNosotrosInterior > div:first-child > span {
+    color: #bcd8ff;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.llamadaNosotros h2 {
+    margin: 9px 0;
+    color: #ffffff;
+    font-size: 35px;
+}
+
+.llamadaNosotros p {
+    margin: 0;
+    color: #d5e5fb;
+}
+
+.llamadaNosotrosInterior > div:last-child {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 10px;
+}
+
+.llamadaNosotrosInterior > div:last-child a {
+    display: inline-flex;
+    min-height: 48px;
+    padding: 0 20px;
+    align-items: center;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #1553b7;
+    font-weight: 800;
+}
+
+.llamadaNosotrosInterior > div:last-child a:last-child {
+    border: 1px solid rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .1);
+    color: #ffffff;
+}
+
+[data-revelar] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .65s ease, transform .65s ease;
+}
+
+[data-revelar].visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (max-width: 1050px) {
+    .portadaNosotrosGrid,
+    .historiaNosotrosGrid,
+    .valoresNosotrosGrid {
+        gap: 50px;
+    }
+
+    .gridEstadisticasNosotros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gridEstadisticasNosotros article:nth-child(2) {
+        border-right: 0;
+    }
+
+    .gridEstadisticasNosotros article:nth-child(-n+2) {
+        border-bottom: 1px solid #e5ebf2;
+    }
+
+    .gridDiferenciasNosotros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .portadaNosotrosGrid,
+    .historiaNosotrosGrid,
+    .valoresNosotrosGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .identidadNosotros {
+        min-height: 390px;
+    }
+
+    .gridPropositoNosotros {
+        grid-template-columns: 1fr;
+    }
+
+    .gridPropositoNosotros article {
+        min-height: 0;
+    }
+
+    .gridPropositoNosotros article > i {
+        margin-bottom: 35px;
+    }
+
+    .llamadaNosotrosInterior {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .portadaNosotros {
+        padding: 65px 0 85px;
+    }
+
+    .portadaNosotrosGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .textoPortadaNosotros h1 {
+        font-size: 42px;
+    }
+
+    .textoPortadaNosotros > p {
+        font-size: 15px;
+    }
+
+    .identidadNosotros {
+        min-height: 330px;
+    }
+
+    .circuloIdentidad {
+        width: 220px;
+        height: 220px;
+        padding: 42px;
+    }
+
+    .circuloIdentidad::before {
+        width: 265px;
+        height: 265px;
+    }
+
+    .circuloIdentidad::after {
+        width: 310px;
+        height: 310px;
+    }
+
+    .datoFlotante {
+        min-width: 155px;
+        padding: 10px;
+    }
+
+    .datoUno {
+        top: 12px;
+    }
+
+    .datoDos {
+        right: 0;
+    }
+
+    .gridEstadisticasNosotros {
+        grid-template-columns: 1fr;
+    }
+
+    .gridEstadisticasNosotros article {
+        min-height: 90px;
+        border-right: 0;
+        border-bottom: 1px solid #e5ebf2;
+    }
+
+    .historiaNosotros,
+    .propositoNosotros,
+    .valoresNosotros,
+    .diferenciasNosotros {
+        padding: 75px 0;
+    }
+
+    .historiaNosotrosGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .composicionHistoria {
+        min-height: 430px;
+    }
+
+    .tarjetaHistoriaPrincipal {
+        inset: 0 18px 35px 0;
+        padding: 28px;
+    }
+
+    .tarjetaHistoriaPrincipal > i {
+        top: 42px;
+        left: 28px;
+    }
+
+    .tarjetaHistoriaPrincipal h2 {
+        font-size: 28px;
+    }
+
+    .listaValoresNosotros,
+    .gridDiferenciasNosotros {
+        grid-template-columns: 1fr;
+    }
+
+    .llamadaNosotros {
+        padding-bottom: 75px;
+    }
+
+    .llamadaNosotrosInterior {
+        padding: 35px 25px;
+    }
+
+    .llamadaNosotrosInterior > div:last-child {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .llamadaNosotrosInterior > div:last-child a {
+        justify-content: center;
+    }
+}

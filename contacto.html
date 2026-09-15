@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Contacto de AlianzaPro: taller automotriz y repuestos en Lampa.">
+<title>Contacto | AlianzaPro</title>
+<link rel="icon" type="image/png" href="./images/logoCabeza.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/carrito.css?v=12">
+<link rel="stylesheet" href="css/index.css?v=2">
+<link rel="stylesheet" href="css/contacto.css?v=1">
+<link rel="stylesheet" href="css/carritoUnificado.css?v=1">
+</head>
+<body>
+<a class="saltoContenido" href="#contenidoPrincipal">Saltar al contenido</a>
+<header class="cabeceraInicio">
+<div class="barraContacto">
+<div class="contenedorInicio barraContactoInterior">
+<span>
+<i class="fa-solid fa-location-dot">
+</i> Santiago, Chile</span>
+<span>
+<i class="fa-regular fa-clock">
+</i> Lun–Vie 09:00–18:00 · Sáb 09:00–14:00</span>
+<a href="tel:+56933339047">
+<i class="fa-solid fa-phone">
+</i> +56 9 3333 9047</a>
+</div>
+</div>
+<nav class="navegacionInicio contenedorInicio" aria-label="Navegación principal">
+<a class="marcaInicio" href="index.html">
+<img src="images/logoAlianzaPro.webp" alt="AlianzaPro">
+</a>
+<button class="botonMenuInicio" id="botonMenuInicio" type="button" aria-expanded="false" aria-controls="menuInicio">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+<b>Menú</b>
+</button>
+<div class="menuInicio" id="menuInicio">
+<a href="index.html">Inicio</a>
+<a href="services.html">Servicios</a>
+<a href="listing-row.html">Repuestos</a>
+<a href="nosotros.html">Nosotros</a>
+<a class="activo" href="contacto.html">Contacto</a>
+<a href="page-login.html">
+<i class="fa-regular fa-circle-user">
+</i> Admin</a>
+</div>
+<div class="accionesCabecera">
+<a class="botonCuentaInicio" href="mi-cuenta.html" aria-label="Mi cuenta">
+<i class="fa-regular fa-user">
+</i>
+</a>
+<button class="botonCarritoInicio" id="abrirCarritoInicio" type="button" aria-label="Abrir carrito">
+<i class="fa-solid fa-cart-shopping">
+</i>
+<span id="contadorCarrito">0</span>
+</button>
+<a class="botonReservaCabecera" href="services.html#formCita">Reservar cita</a>
+</div>
+</nav>
+</header>
+
+<aside class="carritoLateral carritoLateralInicio" id="carritoLateralInicio" aria-hidden="true" aria-label="Carrito de compras">
+<header class="tituloCarrito">
+<div class="tituloCarritoTexto">
+<div class="iconoTituloCarrito">
+<i class="fa-solid fa-cart-shopping">
+</i>
+</div>
+<div>
+<h4 id="titleCarrito">Carrito (0)</h4>
+<small>Resumen de su compra</small>
+</div>
+</div>
+<div class="accionesTituloCarrito">
+<button type="button" id="btnVaciarCarrito" class="btnVaciarCarrito" title="Vaciar carrito" aria-label="Vaciar carrito">
+<i class="fa-solid fa-trash-can">
+</i>
+</button>
+<button type="button" id="cerrarCarritoInicio" class="btnCerrarCarritoUnificado" aria-label="Cerrar carrito">
+<i class="fa-solid fa-xmark">
+</i>
+</button>
+</div>
+</header>
+<div id="mi-elemento" class="contenidoCarrito">
+</div>
+<div id="footerCarrito" class="footerCarrito">
+</div>
+</aside>
+<button class="fondoCarritoInicio" id="fondoCarritoInicio" type="button" aria-label="Cerrar carrito" hidden>
+</button>
+
+<main id="contenidoPrincipal">
+<section class="portadaContacto">
+<div class="decoracionContacto uno">
+</div>
+<div class="decoracionContacto dos">
+</div>
+<div class="contenedorInicio portadaContactoGrid">
+<div class="textoPortadaContacto" data-revelar>
+<nav class="migaContacto" aria-label="Miga de pan">
+<a href="index.html">Inicio</a>
+<i class="fa-solid fa-chevron-right">
+</i>
+<span>Contacto</span>
+</nav>
+<span class="sobreTitulo claro">Estamos para ayudarle</span>
+<h1>Encantados de saber de <strong>usted y de su auto.</strong>
+</h1>
+<p>Resolvemos consultas sobre servicios, repuestos, reservas y atención de taller. Elija el medio que le resulte más cómodo.</p>
+<div class="accionesPortadaContacto">
+<a href="https://wa.me/56933339047" target="_blank" rel="noopener">
+<i class="fa-brands fa-whatsapp">
+</i> Escribir por WhatsApp</a>
+<a href="tel:+56933339047">
+<i class="fa-solid fa-phone">
+</i> Llamar ahora</a>
+</div>
+</div>
+<div class="panelRapidoContacto" data-revelar>
+<span>Respuesta directa</span>
+<h2>¿Qué necesita consultar?</h2>
+<a href="services.html#formCita">
+<i class="fa-regular fa-calendar-check">
+</i>
+<div>
+<strong>Reservar una cita</strong>
+<small>Seleccione servicio, fecha y horario.</small>
+</div>
+<i class="fa-solid fa-arrow-right">
+</i>
+</a>
+<a href="listing-row.html">
+<i class="fa-solid fa-gears">
+</i>
+<div>
+<strong>Buscar un repuesto</strong>
+<small>Consulte disponibilidad y precios.</small>
+</div>
+<i class="fa-solid fa-arrow-right">
+</i>
+</a>
+<a href="#formularioContacto">
+<i class="fa-regular fa-envelope">
+</i>
+<div>
+<strong>Enviar un mensaje</strong>
+<small>Cuéntenos su consulta detalladamente.</small>
+</div>
+<i class="fa-solid fa-arrow-right">
+</i>
+</a>
+</div>
+</div>
+</section>
+
+<section class="canalesContacto">
+<div class="contenedorInicio gridCanalesContacto">
+<a href="tel:+56933339047" data-revelar>
+<i class="fa-solid fa-phone-volume">
+</i>
+<div>
+<span>Teléfono</span>
+<strong>+56 9 3333 9047</strong>
+<small>Llámenos durante el horario de atención.</small>
+</div>
+</a>
+<a href="mailto:soporte@alianzapro.cl" data-revelar>
+<i class="fa-regular fa-envelope">
+</i>
+<div>
+<span>Correo electrónico</span>
+<strong>soporte@alianzapro.cl</strong>
+<small>Consultas generales y soporte.</small>
+</div>
+</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Baquedano+687+Lampa+Chile" target="_blank" rel="noopener" data-revelar>
+<i class="fa-solid fa-location-dot">
+</i>
+<div>
+<span>Ubicación</span>
+<strong>Baquedano 687, Lampa</strong>
+<small>Santiago de Chile.</small>
+</div>
+</a>
+</div>
+</section>
+
+<section class="seccionFormularioContacto" id="formularioContacto">
+<div class="contenedorInicio contactoContenidoGrid">
+<div class="columnaFormularioContacto" data-revelar>
+<div class="encabezadoFormularioContacto">
+<span class="sobreTitulo">Escríbanos</span>
+<h2>¿Cómo podemos ayudarle?</h2>
+<p>Complete el formulario y recibiremos su mensaje directamente.</p>
+</div>
+<form action="php/smartprocess.php" method="post" id="formContacto" novalidate>
+<div class="gridCamposContacto">
+<label>
+<span>Nombre completo *</span>
+<div>
+<i class="fa-regular fa-user">
+</i>
+<input type="text" name="sendername" id="sendername" minlength="2" autocomplete="name" placeholder="Ingrese su nombre" required>
+</div>
+</label>
+<label>
+<span>Correo electrónico *</span>
+<div>
+<i class="fa-regular fa-envelope">
+</i>
+<input type="email" name="emailaddress" id="emailaddress" autocomplete="email" placeholder="nombre@correo.cl" required>
+</div>
+</label>
+</div>
+<label>
+<span>Asunto *</span>
+<div>
+<i class="fa-regular fa-lightbulb">
+</i>
+<input type="text" name="sendersubject" id="sendersubject" minlength="4" placeholder="¿Sobre qué desea consultar?" required>
+</div>
+</label>
+<label>
+<span>Mensaje *</span>
+<div class="campoMensajeContacto">
+<i class="fa-regular fa-comment-dots">
+</i>
+<textarea name="sendermessage" id="sendermessage" minlength="10" maxlength="500" rows="6" placeholder="Escriba los detalles de su consulta…" required>
+</textarea>
+</div>
+<small>
+<span id="contadorMensajeContacto">0</span>/500 caracteres</small>
+</label>
+<div class="filaCaptchaContacto">
+<label>
+<span>Código de seguridad *</span>
+<div>
+<i class="fa-solid fa-shield-halved">
+</i>
+<input type="text" name="captcha" id="captcha" maxlength="6" autocomplete="off" placeholder="Ingrese el código" required>
+</div>
+</label>
+<div class="captchaContacto">
+<img id="imagenCaptchaContacto" src="smart-form/contact/php/captcha/captcha.php" alt="Código CAPTCHA">
+<button type="button" id="actualizarCaptchaContacto" aria-label="Generar otro código">
+<i class="fa-solid fa-rotate">
+</i>
+</button>
+</div>
+</div>
+<div class="mensajeFormularioContacto" id="mensajeFormularioContacto" role="status" aria-live="polite">
+</div>
+<div class="accionesFormularioContacto">
+<button type="reset" id="reiniciarFormularioContacto">
+<i class="fa-solid fa-rotate-left">
+</i> Limpiar</button>
+<button type="submit" id="enviarFormularioContacto">
+<i class="fa-regular fa-paper-plane">
+</i>
+<span>Enviar mensaje</span>
+</button>
+</div>
+</form>
+</div>
+<aside class="informacionContacto" data-revelar>
+<div class="tarjetaHorarioContacto">
+<span class="sobreTitulo naranja">Horario de atención</span>
+<h2>Visítenos en nuestro taller.</h2>
+<div>
+<span>Lunes a viernes</span>
+<strong>09:00 – 18:00</strong>
+</div>
+<div>
+<span>Sábado</span>
+<strong>09:00 – 14:00</strong>
+</div>
+<div class="cerrado">
+<span>Domingo</span>
+<strong>Cerrado</strong>
+</div>
+<p>
+<i class="fa-solid fa-circle-info">
+</i> Para asegurar disponibilidad, recomendamos reservar previamente.</p>
+<a href="services.html#formCita">Reservar una cita <i class="fa-solid fa-arrow-right">
+</i>
+</a>
+</div>
+<div class="tarjetaRedesContacto">
+<h3>Síganos en redes sociales</h3>
+<p>Conozca novedades, servicios y productos.</p>
+<div>
+<a href="https://www.facebook.com/profile.php?id=61575844586491" target="_blank" rel="noopener" aria-label="Facebook">
+<i class="fa-brands fa-facebook-f">
+</i>
+</a>
+<a href="https://www.instagram.com/alianzapro_chile" target="_blank" rel="noopener" aria-label="Instagram">
+<i class="fa-brands fa-instagram">
+</i>
+</a>
+<a href="#" aria-label="TikTok">
+<i class="fa-brands fa-tiktok">
+</i>
+</a>
+</div>
+</div>
+</aside>
+</div>
+</section>
+
+<section class="ubicacionContacto">
+<div class="contenedorInicio encabezadoUbicacionContacto" data-revelar>
+<div>
+<span class="sobreTitulo">Nuestra ubicación</span>
+<h2>Encuentre AlianzaPro en Lampa.</h2>
+<p>Baquedano 687, Lampa, Santiago de Chile.</p>
+</div>
+<a class="whatsappFlotante"
+   href="https://wa.me/56933339047?text=Hola%20AlianzaPro%2C%20necesito%20informaci%C3%B3n%20sobre%20sus%20servicios."
+   target="_blank"
+   rel="noopener"
+   aria-label="Contactar a AlianzaPro por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+<i class="fa-solid fa-diamond-turn-right">
+</i> Cómo llegar</a>
+</div>
+<div id="mapaContacto" aria-label="Mapa de ubicación de AlianzaPro">
+</div>
+</section>
+</main>
+
+<footer class="pieInicio">
+<div class="contenedorInicio pieGrid">
+<div class="pieMarca">
+<img src="images/logoAlianzaPro.webp" alt="AlianzaPro">
+<p>Servicios automotrices y repuestos con una atención cercana, ordenada y transparente.</p>
+</div>
+<div>
+<h3>Navegación</h3>
+<a href="index.html">Inicio</a>
+<a href="services.html">Servicios</a>
+<a href="listing-row.html">Repuestos</a>
+<a href="nosotros.html">Nosotros</a>
+</div>
+<div>
+<h3>Atención</h3>
+<p>Lunes a viernes<br>
+<strong>09:00 a 18:00</strong>
+</p>
+<p>Sábado<br>
+<strong>09:00 a 14:00</strong>
+</p>
+</div>
+<div>
+<h3>Accesos</h3>
+<a href="mi-cuenta.html">Mi cuenta</a>
+<a href="services.html#formCita">Reservar cita</a>
+<a href="page-login.html">Acceso administrativo</a>
+</div>
+</div>
+<div class="contenedorInicio pieInferior">
+<span>© <span id="anioInicio">
+</span> AlianzaPro SPA</span>
+<span>Su auto, nuestro compromiso.</span>
+</div>
+</footer>
+<a class="whatsappFlotante" href="https://wa.me/56933339047" target="_blank" rel="noopener" aria-label="WhatsApp">
+<i class="fa-brands fa-whatsapp">
+</i>
+</a>
+<button class="volverArribaInicio" id="volverArribaInicio" type="button" aria-label="Volver arriba">
+<i class="fa-solid fa-arrow-up">
+</i>
+</button>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+<script type="module" src="js/carrito-global.js?v=8">
+</script>
+<script type="module" src="js/contacto.js?v=1">
+</script>
+</body>
+</html>

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+<link href="images/logoCabeza.webp" rel="icon" type="image/x-icon">
+<meta charset="UTF-8">
+
+    <title>Orden de Trabajo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/adminOrdenTrabajo.css">
+
+</head>
+
+<body>
+
+<div class="ot-container">
+
+    <header class="ot-header">
+
+        <div>
+
+            <button
+                type="button"
+                id="btnVolverOT"
+                class="btnVolverOT"
+                onclick="volverDesdeOT()">
+                <i class="fa-solid fa-arrow-left"></i>
+                Volver
+            </button>
+
+            <h1>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Orden de Trabajo
+            </h1>
+
+            <small id="numeroOT">OT-000000</small>
+
+        </div>
+
+        <div>
+
+            <span id="estadoOT" class="estado estadoProceso">
+                En Proceso
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <div class="grid-2">
+
+        <!-- CLIENTE -->
+
+        <section class="card">
+
+            <div class="card-title">
+                <i class="fa-solid fa-user"></i>
+                Cliente
+            </div>
+
+            <div class="card-body">
+
+                <div class="campo">
+
+                    <label>Nombre</label>
+
+                    <input
+                        id="nombreCliente"
+                        readonly>
+
+                </div>
+
+                <div class="campo">
+
+                    <label>Teléfono</label>
+
+                    <input
+                        id="telefono"
+                        readonly>
+
+                </div>
+
+                <div class="campo">
+
+                    <label>Correo</label>
+
+                    <input
+                        id="correo"
+                        readonly>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- VEHÍCULO -->
+
+        <section class="card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-car"></i>
+
+                Vehículo
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="campo">
+
+                    <label>Vehículo</label>
+
+                    <input
+                        id="vehiculo"
+                        readonly>
+
+                </div>
+
+                <div class="campo">
+
+                    <label>Patente</label>
+
+                    <input
+                        id="patente"
+                        readonly>
+
+                </div>
+
+                <div class="campo">
+
+                    <label>Reserva</label>
+
+                    <input
+                        id="numeroReserva"
+                        readonly>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- RECEPCIÓN -->
+
+    <section class="card">
+
+        <div class="card-title">
+
+            <i class="fa-solid fa-clipboard-check"></i>
+
+            Recepción
+
+        </div>
+
+        <div class="card-body grid-2">
+
+            <div class="campo">
+
+                <label>Kilometraje</label>
+
+                <input
+                    type="number"
+                    id="kilometraje">
+
+            </div>
+
+            <div class="campo">
+
+                <label>Combustible</label>
+
+                <select id="combustible">
+
+                    <option>Vacío</option>
+                    <option>1/4</option>
+                    <option>1/2</option>
+                    <option>3/4</option>
+                    <option>Lleno</option>
+
+                </select>
+
+            </div>
+
+            <div class="campo campo-completo">
+
+                <label>Observaciones de Recepción</label>
+
+                <textarea
+                    id="observacionesRecepcion"
+                    rows="5">
+                </textarea>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICIOS -->
+
+    <section class="card">
+
+        <div class="card-title">
+
+            <i class="fa-solid fa-screwdriver"></i>
+
+            Servicios Realizados
+
+            <button
+                type="button"
+                class="btnAgregar"
+                onclick="abrirDialogServicio()">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Agregar Servicio
+
+            </button>
+
+        </div>
+
+        <div class="card-body">
+
+            <table id="tablaServicios">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Servicio</th>
+
+                        <th>Mecánico</th>
+
+                        <th>Cantidad</th>
+
+                        <th>Valor</th>
+
+                        <th></th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="tbodyServiciosOT">
+
+                </tbody>
+
+            </table>
+
+            <div class="totalServicios">
+
+                Total Servicios:
+
+                <span id="totalServicios">
+                    $0
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <dialog id="dialogServicioOT">
+
+    <div class="dialog-header">
+    <span>
+        <i class="fa-solid fa-user-gear"></i>
+        Agregar Servicio
+    </span>
+    </div>
+
+    <div class="campo">
+
+        <label>Servicio</label>
+
+        <select id="selectServicioOT">
+
+            <option value="">Seleccione...</option>
+
+        </select>
+
+    </div>
+
+    <div class="dialog-body">
+
+    <div class="campo">
+
+        <label>Cantidad</label>
+
+        <input
+            type="number"
+            id="cantidadServicioOT"
+            value="1"
+            min="1">
+
+    </div>
+
+    <div class="campo">
+
+        <label>Precio</label>
+
+        <input
+            type="number"
+            id="precioServicioOT"
+            min="1"
+            step="1">
+
+    </div>
+
+    <div
+        class="campo"
+        id="campoCostoServicioOT"
+        hidden>
+
+        <label>Costo interno</label>
+
+        <input
+            type="number"
+            id="costoServicioOT"
+            min="0"
+            step="1"
+            placeholder="Costo para calcular rentabilidad">
+
+    </div>
+
+    </div>
+
+    <div class="dialog-footer">
+
+    <button class="btnDialogCancelar" onclick="dialogServicioOT.close()">
+        Cancelar
+    </button>
+
+
+    <button class="btnDialogGuardar" onclick="guardarServicioOT()">
+        Guardar
+    </button>
+
+</div>
+
+</dialog>
+
+
+    <!-- PRODUCTOS -->
+
+<section class="card">
+
+    <div class="card-title">
+
+        <i class="fa-solid fa-box"></i>
+
+        Productos Utilizados
+
+        <button
+            type="button"
+            class="btnAgregar"
+            onclick="abrirDialogProducto()">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Agregar Producto
+
+        </button>
+
+    </div>
+
+    <div class="card-body">
+
+        <table id="tablaProductos">
+
+            <thead>
+
+                <tr>
+
+                    <th>Producto</th>
+
+                    <th>Usuario</th>
+
+                    <th>Cantidad</th>
+
+                    <th>Valor</th>
+
+                    <th></th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tbodyProductosOT">
+
+            </tbody>
+
+        </table>
+
+        <div class="totalServicios">
+
+            Total Productos:
+
+            <span id="totalProductos">
+                $0
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<dialog id="dialogProductoOT">
+
+    <div class="dialog-header">
+    <span>
+        <i class="fa-solid fa-user-gear"></i>
+        Agregar producto
+    </span>
+ </div>
+
+  <div class="dialog-body">
+    <div class="campo">
+
+        <label>Buscar Producto</label>
+
+        <input
+            type="text"
+            id="buscarProductoOT"
+            placeholder="Escriba mínimo 2 letras..."
+            autocomplete="off">
+
+    </div>
+
+
+    <!-- RESULTADOS DE BUSQUEDA -->
+
+    <div id="resultadoProductosOT"></div>
+
+
+
+    <div class="campo">
+
+        <label>Producto seleccionado</label>
+
+        <input
+            id="nombreProductoOT"
+            readonly>
+
+    </div>
+
+
+    <div class="campo">
+
+        <label>Stock disponible</label>
+
+        <input
+            id="stockProductoOT"
+            readonly>
+
+    </div>
+
+
+    <div class="campo">
+
+        <label>Cantidad</label>
+
+        <input
+            type="number"
+            id="cantidadProductoOT"
+            value="1"
+            min="1">
+
+    </div>
+
+
+    <div class="campo">
+
+        <label>Precio</label>
+
+        <input
+            type="number"
+            id="precioProductoOT"
+            readonly>
+
+    </div>
+
+    </div>
+
+    <div class="dialog-footer">
+
+    <button class="btnDialogCancelar" onclick="dialogProductoOT.close()">
+        Cancelar
+    </button>
+
+
+    <button class="btnDialogGuardar" onclick="guardarProductoOT()">
+        Guardar
+    </button>
+
+</div>
+
+    
+
+
+</dialog>
+
+<section class="card">
+
+    <div class="card-title">
+
+        <i class="fa-solid fa-user-gear"></i>
+
+        Mano de Obra
+
+
+        <button
+            type="button"
+            class="btnAgregar"
+            onclick="abrirDialogManoObra()">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Agregar
+
+        </button>
+
+
+    </div>
+
+
+    <div class="card-body">
+
+
+        <table>
+
+
+            <thead>
+
+                <tr>
+
+                    <th>Mano de Obra</th>
+
+                    <th>Mecánico</th>
+
+                    <th>Cantidad</th>
+
+                    <th>Valor</th>
+
+                    <th></th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="tbodyManoObraOT">
+
+
+            </tbody>
+
+
+        </table>
+
+
+        <div class="totalServicios">
+
+            Total Mano de Obra:
+
+            <span id="totalManoObra">
+
+                $0
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<dialog id="dialogManoObraOT">
+
+
+<div class="dialog-header">
+    <span>
+        <i class="fa-solid fa-user-gear"></i>
+        Agregar Mano de Obra
+    </span>
+</div>
+
+<div class="dialog-body">
+
+<div class="campo">
+
+<label>Descripción</label>
+
+<input id="descripcionManoObra" placeholder="Ej: Reparación sistema freno">
+
+</div>
+
+<div class="campo">
+
+<label>Cantidad</label>
+
+<input type="number" id="cantidadManoObra" value="1" min="1">
+
+</div>
+
+
+
+<div class="campo">
+
+<label>Precio</label>
+
+
+<input type="number" id="precioManoObra">
+
+</div>
+
+<div
+    class="campo"
+    id="campoCostoManoObra"
+    hidden>
+
+<label>Costo interno</label>
+
+<input
+    type="number"
+    id="costoManoObra"
+    min="0"
+    step="1"
+    placeholder="Costo interno de la mano de obra">
+
+</div>
+
+</div>
+
+
+<div class="dialog-footer">
+
+    <button class="btnDialogCancelar" onclick="dialogManoObraOT.close()">
+        Cancelar
+    </button>
+
+
+    <button class="btnDialogGuardar" onclick="guardarManoObra()">
+        Guardar
+    </button>
+
+</div>
+
+
+
+</dialog>
+
+
+<dialog id="dialogFinalizarOT">
+
+    <div class="dialog-header">
+
+        <span>
+            <i class="fa-solid fa-flag-checkered"></i>
+            Finalizar Orden de Trabajo
+        </span>
+
+    </div>
+
+
+    <div class="dialog-body">
+
+        <div class="campo">
+
+            <label>Observaciones de entrega</label>
+
+            <textarea
+                id="observacionesEntrega"
+                rows="6"
+                placeholder="Ingrese las observaciones finales para el cliente...">
+            </textarea>
+
+        </div>
+
+        <p style="margin-top:15px;color:#6c757d;">
+            Una vez finalizada la orden ya no podrá modificarse.
+        </p>
+
+    </div>
+
+
+    <div class="dialog-footer">
+
+        <button
+            class="btnDialogCancelar"
+            onclick="dialogFinalizarOT.close()">
+
+            Cancelar
+
+        </button>
+
+
+        <button
+            class="btnDialogGuardar"
+            onclick="finalizarOT()">
+
+            <i class="fa-solid fa-check"></i>
+
+            Finalizar OT
+
+        </button>
+
+    </div>
+
+</dialog>
+
+
+<dialog id="dialogCobroOT">
+
+    <div class="dialog-header">
+
+        <span>
+            <i class="fa-solid fa-cash-register"></i>
+            Cobrar y facturar
+        </span>
+
+    </div>
+
+    <div class="dialog-body">
+
+        <div class="resumenLinea">
+            <span>Servicios</span>
+            <strong id="cobroServiciosOT">$0</strong>
+        </div>
+
+        <div class="resumenLinea">
+            <span>Productos</span>
+            <strong id="cobroProductosOT">$0</strong>
+        </div>
+
+        <div class="resumenLinea">
+            <span>Mano de obra</span>
+            <strong id="cobroManoObraOT">$0</strong>
+        </div>
+
+        <hr>
+
+        <div class="totalFinalOT">
+            TOTAL A COBRAR
+            <span id="cobroTotalOT">$0</span>
+        </div>
+
+        <div class="campo" style="margin-top:20px;">
+
+            <label for="metodoPagoOT">Método de pago</label>
+
+            <select id="metodoPagoOT">
+                <option value="">Seleccione...</option>
+                <option value="efectivo">Efectivo</option>
+                <option value="debito">Débito</option>
+                <option value="credito">Crédito</option>
+                <option value="transferencia">Transferencia</option>
+            </select>
+
+        </div>
+
+        <div class="campo">
+
+            <label for="observacionesCobroOT">Observaciones</label>
+
+            <textarea
+                id="observacionesCobroOT"
+                rows="3"
+                maxlength="500"
+                placeholder="Observación opcional del pago..."></textarea>
+
+        </div>
+
+        <p style="margin-top:15px;color:#6c757d;">
+            Al confirmar, el pago quedará registrado y la orden pasará a Facturada.
+        </p>
+
+    </div>
+
+    <div class="dialog-footer">
+
+        <button
+            type="button"
+            class="btnDialogCancelar"
+            onclick="document.getElementById('dialogCobroOT').close()">
+            Cancelar
+        </button>
+
+        <button
+            type="button"
+            class="btnDialogGuardar"
+            id="btnConfirmarCobroOT"
+            onclick="cobrarYFacturarOT()">
+            <i class="fa-solid fa-cash-register"></i>
+            Confirmar cobro
+        </button>
+
+    </div>
+
+</dialog>
+
+
+    <!-- FOTOS -->
+
+    <!-- FOTOS -->
+
+<section class="card">
+
+    <div class="card-title">
+
+        <i class="fa-solid fa-camera"></i>
+
+        Fotografías
+
+    </div>
+
+
+    <div class="card-body">
+
+        <div class="acciones-fotos">
+
+            <button 
+                type="button"
+                class="btnAgregar"
+                onclick="document.getElementById('inputFotos').click()">
+
+                <i class="fa-solid fa-camera"></i>
+
+                Tomar fotografía
+
+            </button>
+
+
+            <input
+                type="file"
+                id="inputFotos"
+                name="fotos"
+                accept="image/jpeg,image/png,image/webp,image/gif,image/bmp,image/tiff,image/avif,image/heic,image/heif"
+                capture="environment"
+                multiple
+                hidden>
+
+        </div>
+
+
+        <div id="galeriaFotos"></div>
+
+
+    </div>
+
+</section>
+
+
+<section class="card resumenOT">
+
+    <div class="card-title">
+
+        <i class="fa-solid fa-file-invoice-dollar"></i>
+
+        Resumen de la Orden
+
+    </div>
+
+
+    <div class="card-body">
+
+        <div class="resumenLinea">
+            <span id="serviciosCantidad">Total Servicios:</span>
+            <strong id="resumenServicios">$0</strong>
+        </div>
+
+
+        <div class="resumenLinea">
+            <span id="productosCantidad">Total Productos:</span>
+            <strong id="resumenProductos">$0</strong>
+        </div>
+
+
+        <div class="resumenLinea">
+            <span id="manoObraCantidad">Total Mano de Obra:</span>
+            <strong id="resumenManoObra">$0</strong>
+        </div>
+
+
+        <hr>
+
+
+        <div class="totalFinalOT">
+
+            TOTAL OT
+
+            <span id="totalGeneralOT">
+                $0
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+    <!-- BOTONES -->
+
+    <div class="acciones">
+
+        <button
+            class="btnGuardar"
+            onclick="guardarOrdenTrabajo()">
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Guardar
+
+        </button>
+
+        <button
+            class="btnFinalizar"
+            onclick="abrirDialogFinalizar()">
+
+            <i class="fa-solid fa-check-circle"></i>
+
+            Finalizar OT
+
+        </button>
+
+        <button
+            type="button"
+            class="btnGuardar"
+            id="btnFacturarOT"
+            onclick="abrirDialogCobroOT()"
+            hidden>
+
+            <i class="fa-solid fa-cash-register"></i>
+
+            Cobrar y facturar
+
+        </button>
+
+    </div>
+
+</div>
+
+<div id="visorFoto" class="visorFoto">
+
+    <span id="cerrarFoto">
+        <i class="fa-solid fa-xmark"></i>
+    </span>
+
+    <img id="imagenGrande">
+
+</div>
+
+<script src="./js/admin/otFotos.js"></script>
+<script src="./js/admin/adminOrdenTrabajo.js"></script>
+
+
+</body>
+
+</html>

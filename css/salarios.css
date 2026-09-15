@@ -1,0 +1,1149 @@
+.salarios-admin {
+    --azul:#2479ed;
+    --verde:#079669;
+    --oliva:#384000;
+    --borde:#dce2ea;
+    --texto:#252b36;
+    --gris:#697386;
+    color:var(--texto);
+    font-family:inherit;
+    padding:26px
+}
+.salarios-encabezado {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:28px
+}
+.salarios-etiqueta {
+    color:var(--azul);
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em
+}
+.salarios-encabezado h1 {
+    font-size:2rem;
+    margin:5px 0
+}
+.salarios-encabezado h1 i {
+    margin-right:10px
+}
+.salarios-encabezado p,.salarios-titulo-tabla p {
+    color:var(--gris);
+    margin:0
+}
+.salarios-recargar {
+    width:58px;
+    height:58px;
+    border:0;
+    border-radius:50%;
+    color:#fff;
+    background:var(--azul);
+    font-size:1.25rem;
+    box-shadow:0 8px 18px #2479ed50;
+    cursor:pointer
+}
+.salarios-resumen {
+    display:grid;
+    grid-template-columns:repeat(4,minmax(190px,1fr));
+    gap:18px;
+    margin-bottom:25px
+}
+.salario-tarjeta {
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:17px;
+    min-height:112px;
+    padding:20px;
+    border:1px solid var(--borde);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 6px 18px #1e293b0c
+}
+.salario-tarjeta:before {
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width:7px;
+    background:currentColor
+}
+.salario-icono {
+    display:grid;
+    place-items:center;
+    width:58px;
+    height:58px;
+    border-radius:16px;
+    background:#fff9;
+    font-size:1.4rem
+}
+.salario-tarjeta small {
+    display:block;
+    color:#667085;
+    margin-bottom:8px
+}
+.salario-tarjeta strong {
+    font-size:1.5rem
+}
+.salario-tarjeta-azul {
+    color:#1976e9;
+    background:#f2f7ff
+}
+.salario-tarjeta-verde {
+    color:#079669;
+    background:#f0fbf7
+}
+.salario-tarjeta-naranja {
+    color:#db8500;
+    background:#fff8ed
+}
+.salario-tarjeta-morada {
+    color:#7438cb;
+    background:#f8f3ff
+}
+.salarios-panel {
+    border:1px solid var(--borde);
+    border-radius:18px;
+    background:#fff;
+    padding:20px
+}
+.salarios-filtros {
+    display:grid;
+    grid-template-columns:minmax(260px,1.7fr) 1fr 1fr auto;
+    gap:12px;
+    padding:16px;
+    background:#f7f9fc;
+    border:1px solid var(--borde);
+    border-radius:14px
+}
+.salarios-filtros input,.salarios-filtros select,.remuneracion-grid input,.remuneracion-grid select {
+    width:100%;
+    height:48px;
+    border:1px solid #cfd7e3;
+    border-radius:10px;
+    background:#fff;
+    padding:0 14px;
+    color:var(--texto);
+    box-sizing:border-box
+}
+.salarios-buscador {
+    position:relative
+}
+.salarios-buscador i {
+    position:absolute;
+    left:16px;
+    top:16px;
+    color:#7d8796
+}
+.salarios-buscador input {
+    padding-left:43px
+}
+.salarios-limpiar {
+    border:1px solid #cfd7e3;
+    border-radius:10px;
+    background:#fff;
+    padding:0 18px;
+    font-weight:700;
+    color:#46505f;
+    cursor:pointer
+}
+.salarios-titulo-tabla {
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin:28px 2px 14px
+}
+.salarios-titulo-tabla h2 {
+    color:var(--oliva);
+    font-size:1.45rem;
+    margin:0 0 5px
+}
+.salarios-titulo-tabla span {
+    font-weight:700;
+    color:#596273
+}
+.salarios-tabla-contenedor {
+    overflow-x:auto;
+    border-radius:12px;
+    border:1px solid var(--borde)
+}
+.salarios-tabla {
+    width:100%;
+    min-width:1150px;
+    border-collapse:collapse
+}
+.salarios-tabla th {
+    background:var(--oliva);
+    color:#fff;
+    padding:15px 13px;
+    text-align:left;
+    white-space:nowrap
+}
+.salarios-tabla td {
+    padding:15px 13px;
+    border-bottom:1px solid #e5e9ef;
+    vertical-align:middle
+}
+.salarios-tabla tbody tr:hover {
+    background:#fafbf7
+}
+.salarios-usuario strong,.salarios-usuario small {
+    display:block
+}
+.salarios-usuario small {
+    color:#7b8494;
+    margin-top:4px
+}
+.salarios-porcentaje {
+    font-weight:750;
+    color:#176ed0
+}
+.salarios-dinero {
+    font-weight:750;
+    white-space:nowrap
+}
+.salarios-total {
+    color:#079669
+}
+.salarios-insignia {
+    display:inline-flex;
+    padding:7px 11px;
+    border-radius:999px;
+    font-size:.82rem;
+    font-weight:800;
+    text-transform:capitalize
+}
+.salarios-insignia.activo {
+    color:#087b58;
+    background:#dcf8ec
+}
+.salarios-insignia.inactivo {
+    color:#a43b36;
+    background:#fee9e7
+}
+.salarios-editar {
+    width:40px;
+    height:40px;
+    border:0;
+    border-radius:10px;
+    background:var(--azul);
+    color:#fff;
+    cursor:pointer
+}
+.salarios-vacio {
+    text-align:center!important;
+    padding:38px!important;
+    color:#6d7685
+}
+.salarios-col-acciones {
+    text-align:center!important
+}
+.dialog-remuneracion {
+    width:min(920px,calc(100% - 30px));
+    max-height:92vh;
+    padding:0;
+    border:0;
+    border-radius:22px;
+    box-shadow:0 24px 70px #0f172a55;
+    overflow:hidden
+}
+.dialog-remuneracion::backdrop {
+    background:#11182799;
+    backdrop-filter:blur(3px)
+}
+.dialog-remuneracion form {
+    display: flex !important;
+    width: 100% !important;
+    max-height: 92vh !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    flex-direction: column !important;
+}
+.remuneracion-dialog-header {
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:25px 28px;
+    min-height: 122px;
+    box-sizing: border-box;
+    background: #ffffff !important;
+    flex: 0 0 auto;
+    border-bottom:1px solid #dfe4eb
+}
+.remuneracion-dialog-icono {
+    display:grid;
+    place-items:center;
+    flex:0 0 64px;
+    height:64px;
+    border-radius:17px;
+    background:#eaf3ff;
+    color:var(--azul);
+    font-size:1.55rem
+}
+
+.dialog-remuneracion .remuneracion-dialog-header .remuneracion-dialog-icono,
+.dialog-remuneracion .remuneracion-dialog-header .remuneracion-dialog-icono i {
+    color: #2479ed !important;
+    background-color: #eaf3ff !important;
+}
+
+.dialog-remuneracion .remuneracion-dialog-header > div {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.remuneracion-dialog-header small {
+    color:var(--azul);
+    font-weight:850;
+    letter-spacing:.07em
+}
+
+.dialog-remuneracion .remuneracion-dialog-header small {
+    display: block !important;
+    margin: 0 0 4px !important;
+    padding: 0 !important;
+    color: #2479ed !important;
+    background: transparent !important;
+    font-size: .78rem !important;
+    font-weight: 850 !important;
+    line-height: 1.2 !important;
+    letter-spacing: .08em !important;
+    text-transform: uppercase !important;
+}
+.remuneracion-dialog-header h2 {
+    font-size:1.65rem;
+    margin:3px 0
+}
+
+.dialog-remuneracion .remuneracion-dialog-header h2 {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 0 4px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    color: #202938 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    font-size: 1.7rem !important;
+    font-weight: 800 !important;
+    line-height: 1.18 !important;
+    text-align: left !important;
+}
+.remuneracion-dialog-header p {
+    color:#6c7687;
+    margin:0
+}
+
+.dialog-remuneracion .remuneracion-dialog-header p {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #6c7687 !important;
+    background: transparent !important;
+    font-size: .95rem !important;
+    font-weight: 400 !important;
+    line-height: 1.35 !important;
+}
+.remuneracion-dialog-header button {
+    margin-left:auto;
+    width:48px;
+    height:48px;
+    border:1px solid #d5dce7;
+    border-radius:13px;
+    background:#fff;
+    color:#6d7786;
+    font-size:1.25rem;
+    cursor:pointer
+}
+
+.dialog-remuneracion .remuneracion-dialog-header > button {
+    display: grid !important;
+    place-items: center !important;
+    flex: 0 0 48px !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+    color: #6d7786 !important;
+    background: #ffffff !important;
+}
+.remuneracion-dialog-cuerpo {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    padding:25px;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    background:#f5f7fa
+}
+.remuneracion-bloque {
+    padding:22px;
+    margin-bottom:18px;
+    background:#fff;
+    border:1px solid #dce2e9;
+    border-radius:16px
+}
+.remuneracion-bloque:last-child {
+    margin-bottom:0
+}
+.remuneracion-bloque h3 {
+    color:var(--oliva);
+    margin:0 0 20px;
+    padding-bottom:13px;
+    border-bottom:1px solid #e4e7ec
+}
+.remuneracion-bloque h3 i {
+    color:var(--azul);
+    margin-right:8px
+}
+.remuneracion-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px
+}
+.remuneracion-grid-tres {
+    grid-template-columns:repeat(3,1fr)
+}
+.remuneracion-grid label {
+    font-weight:750
+}
+.remuneracion-grid input,.remuneracion-grid select {
+    display:block;
+    margin-top:8px
+}
+.remuneracion-ayuda {
+    font-size:.87rem;
+    color:#6c7687;
+    margin:16px 0 0
+}
+.remuneracion-dialog-footer {
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    padding:18px 28px;
+    border-top:1px solid #dfe4eb
+}
+
+.dialog-remuneracion .remuneracion-dialog-footer {
+    display: flex !important;
+    width: 100% !important;
+    flex: 0 0 84px !important;
+    min-height: 84px !important;
+    box-sizing: border-box !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 18px 28px !important;
+    background: #ffffff !important;
+    border-top: 1px solid #dfe4eb !important;
+    box-shadow: 0 -8px 20px rgba(15, 23, 42, .05) !important;
+    z-index: 4 !important;
+}
+.remuneracion-dialog-footer button {
+    min-height:48px;
+    border:0;
+    border-radius:11px;
+    padding:0 21px;
+    font-weight:800;
+    cursor:pointer
+}
+
+.dialog-remuneracion .remuneracion-dialog-footer button {
+    position: static !important;
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    min-width: 150px !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 0 22px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 9px !important;
+    border: 0 !important;
+    border-radius: 11px !important;
+    font-size: .95rem !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+}
+.remuneracion-cancelar {
+    color:#4b5769;
+    background:#edf2f8
+}
+
+.dialog-remuneracion .remuneracion-dialog-footer .remuneracion-cancelar {
+    color: #4b5769 !important;
+    background: #edf2f8 !important;
+}
+.remuneracion-guardar {
+    color:#fff;
+    background:var(--azul)
+}
+
+.dialog-remuneracion .remuneracion-dialog-footer .remuneracion-guardar {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+    background: #2479ed !important;
+    box-shadow: 0 7px 15px rgba(36, 121, 237, .22) !important;
+}
+
+.dialog-remuneracion .remuneracion-dialog-footer .remuneracion-guardar:hover {
+    background: #1268da !important;
+}
+
+.dialog-remuneracion .remuneracion-dialog-footer .remuneracion-guardar:disabled {
+    opacity: .6 !important;
+    cursor: wait !important;
+}
+@media(max-width:1050px) {
+    .salarios-resumen {
+        grid-template-columns:repeat(2,1fr)
+    }
+    .salarios-filtros {
+        grid-template-columns:1fr 1fr
+    }
+    .salarios-buscador {
+        grid-column:1/-1
+    }
+}
+@media(max-width:650px) {
+    .salarios-admin {
+        padding:16px
+    }
+    .salarios-resumen {
+        grid-template-columns:1fr
+    }
+    .salarios-filtros,.remuneracion-grid,.remuneracion-grid-tres {
+        grid-template-columns:1fr
+    }
+    .salarios-filtros>* {
+        grid-column:auto
+    }
+    .salarios-encabezado h1 {
+        font-size:1.55rem
+    }
+    .remuneracion-dialog-header {
+        padding:18px
+    }
+    .remuneracion-dialog-icono {
+        flex-basis:50px;
+        height:50px
+    }
+    .remuneracion-dialog-cuerpo {
+        padding:14px
+    }
+    .remuneracion-dialog-footer {
+        padding:14px
+    }
+    .remuneracion-dialog-footer button {
+        flex:1
+    }
+}
+
+.comisiones-panel {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    background: #fff;
+}
+
+.comisiones-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.comisiones-cabecera h2 {
+    margin: 0 0 5px;
+    color: var(--oliva);
+    font-size: 1.45rem;
+}
+
+.comisiones-cabecera p {
+    margin: 0;
+    color: var(--gris);
+}
+
+.comisiones-actualizar,
+.comisiones-filtrar {
+    min-height: 46px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--azul);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.comisiones-filtros {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(130px, 1fr)) auto;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    background: #f7f9fc;
+}
+
+.comisiones-filtros label {
+    color: #3d4655;
+    font-size: .84rem;
+    font-weight: 750;
+}
+
+.comisiones-filtros input,
+.comisiones-filtros select {
+    display: block;
+    width: 100%;
+    height: 44px;
+    margin-top: 7px;
+    padding: 0 11px;
+    box-sizing: border-box;
+    border: 1px solid #cfd7e3;
+    border-radius: 9px;
+    background: #fff;
+}
+
+.comisiones-filtrar {
+    align-self: end;
+}
+
+.comisiones-resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.comisiones-resumen div {
+    padding: 16px;
+    border: 1px solid #dce3ec;
+    border-radius: 13px;
+    background: #fbfcfe;
+}
+
+.comisiones-resumen small,
+.comisiones-resumen strong {
+    display: block;
+}
+
+.comisiones-resumen small {
+    margin-bottom: 7px;
+    color: #6b7586;
+}
+
+.comisiones-resumen strong {
+    color: #27303e;
+    font-size: 1.22rem;
+}
+
+.comisiones-tabla-contenedor {
+    overflow-x: auto;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+}
+
+.comisiones-tabla {
+    width: 100%;
+    min-width: 1250px;
+    border-collapse: collapse;
+}
+
+.comisiones-tabla th {
+    padding: 14px 12px;
+    color: #fff;
+    background: var(--oliva);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.comisiones-tabla td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e5e9ef;
+    vertical-align: middle;
+}
+
+.comisiones-tipo,
+.comisiones-estado {
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.comisiones-tipo {
+    color: #176ed0;
+    background: #e8f2ff;
+}
+
+.comisiones-estado.pendiente {
+    color: #a96200;
+    background: #fff1d6;
+}
+
+.comisiones-estado.liquidada {
+    color: #5d3bb0;
+    background: #efe8ff;
+}
+
+.comisiones-estado.pagada {
+    color: #087b58;
+    background: #dcf8ec;
+}
+
+.comisiones-estado.anulada {
+    color: #a43b36;
+    background: #fee9e7;
+}
+
+@media(max-width:1100px) {
+    .comisiones-filtros {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width:700px) {
+    .comisiones-cabecera {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .comisiones-filtros,
+    .comisiones-resumen {
+        grid-template-columns: 1fr;
+    }
+}
+
+.liquidaciones-panel {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    background: #fff;
+}
+
+.liquidaciones-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.liquidaciones-cabecera h2 {
+    margin: 0 0 5px;
+    color: var(--oliva);
+    font-size: 1.45rem;
+}
+
+.liquidaciones-cabecera p {
+    margin: 0;
+    color: var(--gris);
+}
+
+.liquidaciones-nueva,
+.liquidaciones-filtrar {
+    min-height: 46px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--azul);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.liquidaciones-filtros {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(145px, 1fr)) auto;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    background: #f7f9fc;
+}
+
+.liquidaciones-filtros label {
+    color: #3d4655;
+    font-size: .84rem;
+    font-weight: 750;
+}
+
+.liquidaciones-filtros input,
+.liquidaciones-filtros select {
+    display: block;
+    width: 100%;
+    height: 44px;
+    margin-top: 7px;
+    padding: 0 11px;
+    box-sizing: border-box;
+    border: 1px solid #cfd7e3;
+    border-radius: 9px;
+    background: #fff;
+}
+
+.liquidaciones-filtrar {
+    align-self: end;
+}
+
+.liquidaciones-resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.liquidaciones-resumen div {
+    padding: 16px;
+    border: 1px solid #dce3ec;
+    border-radius: 13px;
+    background: #fbfcfe;
+}
+
+.liquidaciones-resumen small,
+.liquidaciones-resumen strong {
+    display: block;
+}
+
+.liquidaciones-resumen small {
+    margin-bottom: 7px;
+    color: #6b7586;
+}
+
+.liquidaciones-resumen strong {
+    color: #27303e;
+    font-size: 1.22rem;
+}
+
+.liquidaciones-tabla-contenedor {
+    overflow-x: auto;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+}
+
+.liquidaciones-tabla {
+    width: 100%;
+    min-width: 1250px;
+    border-collapse: collapse;
+}
+
+.liquidaciones-tabla th {
+    padding: 14px 12px;
+    color: #fff;
+    background: var(--oliva);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.liquidaciones-tabla td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e5e9ef;
+    vertical-align: middle;
+}
+
+.liquidacion-estado {
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.liquidacion-estado.borrador {
+    color: #596273;
+    background: #edf1f5;
+}
+
+.liquidacion-estado.cerrada {
+    color: #a96200;
+    background: #fff1d6;
+}
+
+.liquidacion-estado.pagada {
+    color: #087b58;
+    background: #dcf8ec;
+}
+
+.liquidacion-estado.anulada {
+    color: #a43b36;
+    background: #fee9e7;
+}
+
+.liquidacion-ver {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--azul);
+    cursor: pointer;
+}
+
+.liquidacion-observaciones {
+    display: block;
+    margin-top: 18px;
+    font-weight: 750;
+}
+
+.liquidacion-observaciones textarea {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    box-sizing: border-box;
+    resize: vertical;
+    border: 1px solid #cfd7e3;
+    border-radius: 10px;
+    font: inherit;
+}
+
+@media(max-width:950px) {
+    .liquidaciones-filtros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .liquidaciones-resumen {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:650px) {
+    .liquidaciones-cabecera {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .liquidaciones-filtros,
+    .liquidaciones-resumen {
+        grid-template-columns: 1fr;
+    }
+}
+.liquidacion-acciones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.liquidacion-accion {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.liquidacion-accion:hover {
+    transform: translateY(-2px);
+}
+
+.liquidacion-accion:disabled {
+    cursor: wait;
+    opacity: 0.55;
+    transform: none;
+}
+
+.liquidacion-ver {
+    background: #2878e8;
+}
+
+.liquidacion-cerrar {
+    background: #d97706;
+}
+
+.liquidacion-pagar {
+    background: #16a34a;
+}
+
+.liquidacion-anular {
+    background: #dc2626;
+}
+
+.dialog-detalle-liquidacion {
+    width: min(1050px, calc(100% - 30px));
+}
+
+.detalle-liquidacion-contenedor {
+    display: flex;
+    width: 100%;
+    max-height: 92vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.detalle-liquidacion-cuerpo {
+    min-height: 0;
+}
+
+.detalle-liquidacion-datos,
+.detalle-liquidacion-totales {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.detalle-liquidacion-datos > div,
+.detalle-liquidacion-totales > div {
+    display: flex;
+    min-height: 82px;
+    padding: 14px 16px;
+    border: 1px solid #e1e6ed;
+    border-radius: 13px;
+    background: #f8fafc;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detalle-liquidacion-datos small,
+.detalle-liquidacion-totales small {
+    margin-bottom: 7px;
+    color: #727d8e;
+    font-size: .78rem;
+    font-weight: 750;
+}
+
+.detalle-liquidacion-datos strong,
+.detalle-liquidacion-totales strong {
+    color: #202938;
+    font-size: 1rem;
+}
+
+.detalle-liquidacion-totales {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.detalle-liquidacion-totales .detalle-liquidacion-total {
+    border-color: #c8dcfa;
+    background: #eaf3ff;
+}
+
+.detalle-liquidacion-totales .detalle-liquidacion-total strong {
+    color: #2479ed;
+    font-size: 1.2rem;
+}
+
+.detalle-liquidacion-tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #dfe4eb;
+    border-radius: 13px;
+}
+
+.detalle-liquidacion-tabla {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+}
+
+.detalle-liquidacion-tabla th {
+    padding: 13px 14px;
+    color: #ffffff;
+    background: var(--oliva);
+    font-size: .82rem;
+    text-align: left;
+}
+
+.detalle-liquidacion-tabla td {
+    padding: 13px 14px;
+    border-bottom: 1px solid #e5e9ef;
+    color: #303949;
+    font-size: .86rem;
+}
+
+.detalle-liquidacion-tabla tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.detalle-bono {
+    color: #079669 !important;
+}
+
+.detalle-descuento {
+    color: #dc2626 !important;
+}
+
+.detalle-liquidacion-observaciones p {
+    margin: 0;
+    color: #4f5969;
+    line-height: 1.55;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 820px) {
+    .detalle-liquidacion-datos,
+    .detalle-liquidacion-totales {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .detalle-liquidacion-datos,
+    .detalle-liquidacion-totales {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    body.imprimiendo-liquidacion * {
+        visibility: hidden !important;
+    }
+
+    body.imprimiendo-liquidacion #dialogDetalleLiquidacion,
+    body.imprimiendo-liquidacion #dialogDetalleLiquidacion * {
+        visibility: visible !important;
+    }
+
+    body.imprimiendo-liquidacion #dialogDetalleLiquidacion {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        max-height: none;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    body.imprimiendo-liquidacion .detalle-liquidacion-contenedor,
+    body.imprimiendo-liquidacion .detalle-liquidacion-cuerpo {
+        max-height: none;
+        overflow: visible !important;
+    }
+
+    body.imprimiendo-liquidacion .remuneracion-dialog-header > button,
+    body.imprimiendo-liquidacion .remuneracion-dialog-footer {
+        display: none !important;
+    }
+
+    body.imprimiendo-liquidacion .remuneracion-dialog-cuerpo {
+        padding: 16px;
+        background: #ffffff;
+    }
+
+    body.imprimiendo-liquidacion .remuneracion-bloque {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+}

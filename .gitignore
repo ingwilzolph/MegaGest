@@ -1,0 +1,6 @@
+.DS_Store
+php/conexion.php
+vendor/
+pdf/*.pdf
+pdf/qr.png
+images/ordenesTrabajo/*.webp

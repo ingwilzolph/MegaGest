@@ -1,0 +1,1296 @@
+   MÓDULO USUARIOS
+===================================================== */
+
+.gestionUsuariosAdmin {
+    --usuario-azul: #1649d8;
+    --usuario-verde: #11875c;
+    --usuario-naranja: #d98200;
+    --usuario-rojo: #d92b22;
+    --usuario-morado: #7839c6;
+    --usuario-oliva: #303600;
+
+    width: 100%;
+    min-width: 0;
+    color: #353940;
+}
+
+.gestionUsuariosAdmin *,
+.dialogGestionUsuario *,
+.formularioGestionUsuario * {
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ENCABEZADO
+===================================================== */
+
+.gestionUsuariosAdmin .encabezadoGestionUsuarios {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    margin: 0 0 30px;
+}
+
+.gestionUsuariosAdmin .tituloGestionUsuarios {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+}
+
+.gestionUsuariosAdmin .iconoTituloUsuarios {
+    flex: 0 0 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    color: #252525;
+    font-size: 34px;
+}
+
+.gestionUsuariosAdmin .encabezadoGestionUsuarios h1 {
+    margin: 0 0 5px;
+    color: #26282c;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.gestionUsuariosAdmin .encabezadoGestionUsuarios p {
+    margin: 0;
+    color: #707070;
+    font-size: 14px;
+}
+
+
+/* BOTÓN CIRCULAR */
+
+.gestionUsuariosAdmin .btnNuevoUsuarioAdmin {
+    flex: 0 0 56px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 56px !important;
+    min-width: 56px !important;
+    height: 56px !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 50% !important;
+    background: #1649d8 !important;
+    color: #ffffff !important;
+    font-size: 25px !important;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(22, 73, 216, 0.28);
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.gestionUsuariosAdmin .btnNuevoUsuarioAdmin i {
+    color: #ffffff !important;
+}
+
+.gestionUsuariosAdmin .btnNuevoUsuarioAdmin:hover {
+    background: #103bb4 !important;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+
+.gestionUsuariosAdmin .resumenUsuariosAdmin {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin: 0 0 28px;
+}
+
+.gestionUsuariosAdmin .tarjetaResumenUsuario {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    min-height: 112px;
+    padding: 18px 18px 18px 25px;
+    overflow: hidden;
+    border: 1px solid #dfe2e6;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(32, 38, 49, 0.08);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.gestionUsuariosAdmin .tarjetaResumenUsuario::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 9px;
+}
+
+.gestionUsuariosAdmin .tarjetaResumenUsuario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 11px 23px rgba(32, 38, 49, 0.13);
+}
+
+.gestionUsuariosAdmin .iconoResumenUsuario {
+    flex: 0 0 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 13px;
+    font-size: 22px;
+}
+
+.gestionUsuariosAdmin .tarjetaResumenUsuario > div:last-child {
+    min-width: 0;
+}
+
+.gestionUsuariosAdmin .tarjetaResumenUsuario small {
+    display: block;
+    margin-bottom: 7px;
+    color: #6f7278;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.gestionUsuariosAdmin .tarjetaResumenUsuario strong {
+    display: block;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+
+/* TOTAL */
+
+.gestionUsuariosAdmin .tarjetaTodosUsuarios {
+    background: linear-gradient(135deg, #ffffff, #edf5ff);
+}
+
+.gestionUsuariosAdmin .tarjetaTodosUsuarios::before {
+    background: var(--usuario-azul);
+}
+
+.gestionUsuariosAdmin .tarjetaTodosUsuarios .iconoResumenUsuario {
+    background: #dbeaff;
+    color: var(--usuario-azul);
+}
+
+.gestionUsuariosAdmin .tarjetaTodosUsuarios strong {
+    color: var(--usuario-azul);
+}
+
+
+/* ACTIVOS */
+
+.gestionUsuariosAdmin .tarjetaUsuariosActivos {
+    background: linear-gradient(135deg, #ffffff, #eaf9f3);
+}
+
+.gestionUsuariosAdmin .tarjetaUsuariosActivos::before {
+    background: var(--usuario-verde);
+}
+
+.gestionUsuariosAdmin .tarjetaUsuariosActivos .iconoResumenUsuario {
+    background: #d7f4e8;
+    color: var(--usuario-verde);
+}
+
+.gestionUsuariosAdmin .tarjetaUsuariosActivos strong {
+    color: var(--usuario-verde);
+}
+
+
+/* INACTIVOS */
+
+.gestionUsuariosAdmin .tarjetaUsuariosInactivos {
+    background: linear-gradient(135deg, #ffffff, #fff0f0);
+}
+
+.gestionUsuariosAdmin .tarjetaUsuariosInactivos::before {
+    background: var(--usuario-rojo);
+}
+
+.gestionUsuariosAdmin .tarjetaUsuariosInactivos .iconoResumenUsuario {
+    background: #ffdede;
+    color: var(--usuario-rojo);
+}
+
+.gestionUsuariosAdmin .tarjetaUsuariosInactivos strong {
+    color: var(--usuario-rojo);
+}
+
+
+/* ADMINISTRADORES */
+
+.gestionUsuariosAdmin .tarjetaAdministradores {
+    background: linear-gradient(135deg, #ffffff, #fff7e9);
+}
+
+.gestionUsuariosAdmin .tarjetaAdministradores::before {
+    background: var(--usuario-naranja);
+}
+
+.gestionUsuariosAdmin .tarjetaAdministradores .iconoResumenUsuario {
+    background: #ffeac5;
+    color: #a96a00;
+}
+
+.gestionUsuariosAdmin .tarjetaAdministradores strong {
+    color: #b46e00;
+}
+
+
+/* EMPLEADOS */
+
+.gestionUsuariosAdmin .tarjetaEmpleados {
+    background: linear-gradient(135deg, #ffffff, #f7efff);
+}
+
+.gestionUsuariosAdmin .tarjetaEmpleados::before {
+    background: var(--usuario-morado);
+}
+
+.gestionUsuariosAdmin .tarjetaEmpleados .iconoResumenUsuario {
+    background: #ead9fa;
+    color: var(--usuario-morado);
+}
+
+.gestionUsuariosAdmin .tarjetaEmpleados strong {
+    color: var(--usuario-morado);
+}
+
+
+/* =====================================================
+   PESTAÑAS
+===================================================== */
+
+.gestionUsuariosAdmin .contenedorPestanasUsuarios {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 16px;
+    border: 1px solid #dfe2e6;
+    border-radius: 13px;
+    background: #ffffff;
+}
+
+.gestionUsuariosAdmin .pestanasUsuariosAdmin {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    overflow-x: auto;
+}
+
+.gestionUsuariosAdmin .btnPestanaUsuario {
+    flex: 0 0 auto;
+    min-height: 44px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 9px;
+    background: #f0f1f3;
+    color: #5e6269;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gestionUsuariosAdmin .btnPestanaUsuario:hover {
+    background: #e5e7e9;
+    color: #303400;
+}
+
+.gestionUsuariosAdmin .btnPestanaUsuario.activa {
+    background: var(--usuario-oliva);
+    color: #ffffff !important;
+}
+
+.gestionUsuariosAdmin .btnPestanaUsuario.activa * {
+    color: #ffffff !important;
+}
+
+
+/* =====================================================
+   FILTROS EN UNA FILA
+===================================================== */
+
+.gestionUsuariosAdmin .barraFiltrosUsuariosAdmin {
+    display: grid !important;
+    grid-template-columns:
+        minmax(260px, 1.35fr)
+        minmax(150px, 0.8fr)
+        minmax(150px, 0.8fr)
+        minmax(175px, 0.9fr)
+        minmax(155px, 0.65fr) !important;
+    align-items: end !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 0 0 30px !important;
+    padding: 18px !important;
+    border: 1px solid #dce1e7 !important;
+    border-radius: 13px !important;
+    background: #f7f8fa !important;
+}
+
+.gestionUsuariosAdmin .buscadorUsuarioAdmin,
+.gestionUsuariosAdmin .grupoFiltroUsuario {
+    display: block !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.gestionUsuariosAdmin .buscadorUsuarioAdmin label,
+.gestionUsuariosAdmin .grupoFiltroUsuario label {
+    display: block !important;
+    margin: 0 0 8px !important;
+    padding: 0 !important;
+    color: #45494f !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+}
+
+.gestionUsuariosAdmin .contenedorBuscarUsuario {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.gestionUsuariosAdmin .contenedorBuscarUsuario i {
+    position: absolute !important;
+    top: 50% !important;
+    left: 15px !important;
+    z-index: 2;
+    color: #666d78 !important;
+    pointer-events: none;
+    transform: translateY(-50%) !important;
+}
+
+.gestionUsuariosAdmin #buscarUsuarioAdmin,
+.gestionUsuariosAdmin #filtroRolUsuario,
+.gestionUsuariosAdmin #filtroEstadoUsuario,
+.gestionUsuariosAdmin #ordenUsuarioAdmin {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 47px !important;
+    margin: 0 !important;
+    border: 1px solid #cfd5dd !important;
+    border-radius: 9px !important;
+    outline: none !important;
+    background-color: #ffffff !important;
+    color: #41464f !important;
+    font-family: inherit !important;
+    font-size: 13px !important;
+    line-height: normal !important;
+}
+
+.gestionUsuariosAdmin #buscarUsuarioAdmin {
+    padding: 0 14px 0 45px !important;
+}
+
+.gestionUsuariosAdmin #filtroRolUsuario,
+.gestionUsuariosAdmin #filtroEstadoUsuario,
+.gestionUsuariosAdmin #ordenUsuarioAdmin {
+    padding: 0 35px 0 14px !important;
+    cursor: pointer;
+}
+
+.gestionUsuariosAdmin #buscarUsuarioAdmin:focus,
+.gestionUsuariosAdmin #filtroRolUsuario:focus,
+.gestionUsuariosAdmin #filtroEstadoUsuario:focus,
+.gestionUsuariosAdmin #ordenUsuarioAdmin:focus {
+    border-color: #5c6500 !important;
+    box-shadow: 0 0 0 3px rgba(48, 54, 0, 0.1) !important;
+}
+
+.gestionUsuariosAdmin #btnLimpiarFiltrosUsuario {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 47px !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+    border: 1px solid #cfd5dd !important;
+    border-radius: 9px !important;
+    background: #ffffff !important;
+    color: #454a52 !important;
+    font-family: inherit !important;
+    font-size: 12px !important;
+    font-weight: 750 !important;
+    white-space: nowrap !important;
+    cursor: pointer;
+}
+
+.gestionUsuariosAdmin #btnLimpiarFiltrosUsuario:hover {
+    border-color: #303600 !important;
+    background: #f3f4e8 !important;
+    color: #303600 !important;
+}
+
+
+/* =====================================================
+   RESULTADOS
+===================================================== */
+
+.gestionUsuariosAdmin .encabezadoResultadosUsuarios {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin: 0 0 17px;
+    padding: 0 3px;
+}
+
+.gestionUsuariosAdmin .encabezadoResultadosUsuarios h2 {
+    margin: 0 0 8px;
+    color: #303600;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.gestionUsuariosAdmin .encabezadoResultadosUsuarios p {
+    margin: 0;
+    color: #747474;
+    font-size: 13px;
+}
+
+.gestionUsuariosAdmin .contadorResultadosUsuarios {
+    flex: 0 0 auto;
+    color: #737373;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.gestionUsuariosAdmin #cantidadResultadosUsuarios {
+    color: #303600;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   TABLA COMO PRODUCTOS
+===================================================== */
+
+.gestionUsuariosAdmin .contenedorTablaUsuarios {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #d9ddd7;
+    border-radius: 11px;
+    background: #fafaf6;
+    box-shadow: 0 5px 14px rgba(35, 40, 30, 0.07);
+}
+
+.gestionUsuariosAdmin #table_usuario {
+    width: 100%;
+    min-width: 920px;
+    margin: 0 !important;
+    border-spacing: 0 !important;
+    border-collapse: separate !important;
+    background: #fafaf6 !important;
+}
+
+
+/* HEAD VERDE OSCURO */
+
+.gestionUsuariosAdmin #table_usuario thead,
+.gestionUsuariosAdmin #table_usuario thead tr {
+    background: #303600 !important;
+}
+
+.gestionUsuariosAdmin #table_usuario thead th {
+    height: 55px;
+    padding: 14px 13px !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.23) !important;
+    border-bottom: none !important;
+    background: #303600 !important;
+    color: #ffffff !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    text-transform: none !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+}
+
+.gestionUsuariosAdmin #table_usuario thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.gestionUsuariosAdmin #table_usuario thead th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none !important;
+}
+
+
+/* BODY CREMA */
+
+.gestionUsuariosAdmin #table_usuario tbody tr {
+    background: #fafaf6 !important;
+}
+
+.gestionUsuariosAdmin #table_usuario tbody td {
+    min-height: 72px;
+    padding: 14px 13px !important;
+    border-right: 1px solid #d8dcd6 !important;
+    border-bottom: 1px solid #d8dcd6 !important;
+    background: #fafaf6 !important;
+    color: #50545a !important;
+    font-size: 12px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.gestionUsuariosAdmin #table_usuario tbody td:last-child {
+    border-right: none !important;
+}
+
+.gestionUsuariosAdmin #table_usuario tbody tr:last-child td {
+    border-bottom: none !important;
+}
+
+.gestionUsuariosAdmin #table_usuario tbody tr:hover td {
+    background: #f4f5ed !important;
+}
+
+
+/* =====================================================
+   INFORMACIÓN DEL USUARIO
+===================================================== */
+
+.gestionUsuariosAdmin .infoUsuarioAdmin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    min-width: 190px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.gestionUsuariosAdmin .avatarUsuarioAdmin {
+    flex: 0 0 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: #5d6573;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.gestionUsuariosAdmin .infoUsuarioAdmin strong {
+    display: block;
+    max-width: 190px;
+    overflow: hidden;
+    color: #35383d;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.gestionUsuariosAdmin .infoUsuarioAdmin small {
+    display: block;
+    margin-top: 4px;
+    color: #81858c;
+    font-size: 10px;
+}
+
+.gestionUsuariosAdmin .correoUsuarioAdmin {
+    max-width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   ROL Y ESTADO
+===================================================== */
+
+.gestionUsuariosAdmin .rolUsuarioAdmin,
+.gestionUsuariosAdmin .estadoUsuarioAdmin,
+.gestionUsuariosAdmin .fechaUsuarioAdmin {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.gestionUsuariosAdmin .rolUsuarioAdmin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 110px;
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 18px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.gestionUsuariosAdmin .rolUsuarioAdmin.administrador {
+    background: #fff0cf;
+    color: #916000;
+}
+
+.gestionUsuariosAdmin .rolUsuarioAdmin.empleado {
+    background: #ebe8fa;
+    color: #5944a1;
+}
+
+.gestionUsuariosAdmin .estadoUsuarioAdmin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 85px;
+    min-height: 29px;
+    padding: 0 11px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.gestionUsuariosAdmin .estadoUsuarioAdmin > span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.gestionUsuariosAdmin .estadoUsuarioAdmin.activo {
+    background: #dff5e9;
+    color: #10834f;
+}
+
+.gestionUsuariosAdmin .estadoUsuarioAdmin.inactivo {
+    background: #f9dfe1;
+    color: #b5323b;
+}
+
+.gestionUsuariosAdmin .fechaUsuarioAdmin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #676c74;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   ACCIONES
+===================================================== */
+
+.gestionUsuariosAdmin .accionesUsuarioAdmin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.gestionUsuariosAdmin .btnAccionUsuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff !important;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 4px 9px rgba(30, 35, 44, 0.15);
+}
+
+.gestionUsuariosAdmin .btnAccionUsuario i {
+    color: #ffffff !important;
+}
+
+.gestionUsuariosAdmin .btnModificarUsuarioAdmin {
+    background: #10aa50 !important;
+}
+
+.gestionUsuariosAdmin .btnModificarUsuarioAdmin:hover {
+    background: #0b8b40 !important;
+}
+
+.gestionUsuariosAdmin .btnEliminarUsuarioAdmin {
+    background: #e52b21 !important;
+}
+
+.gestionUsuariosAdmin
+.btnEliminarUsuarioAdmin:hover:not(:disabled) {
+    background: #bc2119 !important;
+}
+
+.gestionUsuariosAdmin .btnAccionUsuario:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   SIN RESULTADOS
+===================================================== */
+
+.gestionUsuariosAdmin #sinUsuariosAdmin {
+    display: none;
+    padding: 50px 20px;
+    border: 1px dashed #d1d5ce;
+    border-radius: 11px;
+    background: #fafaf6;
+    color: #767b82;
+    text-align: center;
+}
+
+.gestionUsuariosAdmin #sinUsuariosAdmin i {
+    display: block;
+    margin-bottom: 12px;
+    color: #9da29a;
+    font-size: 36px;
+}
+
+.gestionUsuariosAdmin #sinUsuariosAdmin h3 {
+    margin: 0 0 6px;
+    color: #44484e;
+    font-size: 16px;
+}
+
+.gestionUsuariosAdmin #sinUsuariosAdmin p {
+    margin: 0;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1250px) {
+
+    .gestionUsuariosAdmin .resumenUsuariosAdmin {
+        grid-template-columns:
+            repeat(3, minmax(170px, 1fr));
+    }
+
+    .gestionUsuariosAdmin .barraFiltrosUsuariosAdmin {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .gestionUsuariosAdmin .buscadorUsuarioAdmin {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .gestionUsuariosAdmin .resumenUsuariosAdmin {
+        grid-template-columns:
+            repeat(2, minmax(150px, 1fr));
+    }
+
+    .gestionUsuariosAdmin .encabezadoGestionUsuarios {
+        align-items: flex-start;
+    }
+
+    .gestionUsuariosAdmin .encabezadoGestionUsuarios h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .gestionUsuariosAdmin .resumenUsuariosAdmin {
+        grid-template-columns: 1fr;
+    }
+
+    .gestionUsuariosAdmin .barraFiltrosUsuariosAdmin {
+        grid-template-columns: 1fr !important;
+    }
+
+    .gestionUsuariosAdmin .buscadorUsuarioAdmin {
+        grid-column: auto;
+    }
+
+    .gestionUsuariosAdmin .encabezadoResultadosUsuarios {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .gestionUsuariosAdmin .iconoTituloUsuarios {
+        display: none;
+    }
+}
+
+
+
+/* =====================================================
+   CREAR USUARIO
+   Archivo: css/admin.css
+===================================================== */
+
+.formularioGestionUsuario {
+    width: 100% !important;
+    max-width: 960px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    overflow: hidden;
+    border: 1px solid #dde1e6 !important;
+    border-radius: 15px !important;
+    background: #ffffff !important;
+    box-shadow: 0 9px 26px rgba(24, 31, 44, 0.08) !important;
+}
+
+.formularioGestionUsuario *,
+.formularioGestionUsuario *::before,
+.formularioGestionUsuario *::after {
+    box-sizing: border-box;
+}
+
+.formularioGestionUsuario #form-inscripcion {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =====================================================
+   ENCABEZADO CREAR USUARIO
+===================================================== */
+
+.formularioGestionUsuario
+.encabezadoFormularioUsuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 21px 24px;
+    border-bottom: 1px solid #e2e5e9;
+    background: #f7f8fa;
+}
+
+.formularioGestionUsuario
+.encabezadoFormularioUsuario h2 {
+    margin: 0 0 4px;
+    color: #2e323a;
+    font-size: 21px;
+    font-weight: 750;
+}
+
+.formularioGestionUsuario
+.encabezadoFormularioUsuario p {
+    margin: 0;
+    color: #767d88;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.formularioGestionUsuario .btnVolverUsuario {
+    flex: 0 0 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #d3d8df;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #505762;
+    font-size: 15px;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.formularioGestionUsuario .btnVolverUsuario:hover {
+    border-color: #1748c8;
+    background: #edf2ff;
+    color: #1748c8;
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.formularioGestionUsuario
+.contenidoFormularioUsuario {
+    width: 100%;
+    padding: 24px;
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   GRUPOS
+===================================================== */
+
+.formularioGestionUsuario
+.grupoFormularioUsuario {
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 20px;
+    border: 1px solid #e2e5e9;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.formularioGestionUsuario
+.grupoFormularioUsuario h3 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 18px;
+    padding: 0 0 13px;
+    border-bottom: 1px solid #e9ebee;
+    color: #41464f;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.formularioGestionUsuario
+.grupoFormularioUsuario h3 i {
+    color: #1748c8;
+}
+
+
+/* =====================================================
+   DISTRIBUCIÓN DE CAMPOS
+===================================================== */
+
+.formularioGestionUsuario
+.gridCamposUsuario {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 17px;
+    width: 100%;
+}
+
+.formularioGestionUsuario .campoUsuario {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.formularioGestionUsuario
+.campoCompletoUsuario {
+    grid-column: 1 / -1;
+}
+
+
+/* =====================================================
+   LABELS, INPUTS Y SELECT
+===================================================== */
+
+.formularioGestionUsuario
+.campoUsuario label {
+    display: block;
+    margin: 0 0 7px;
+    padding: 0;
+    color: #4a5059;
+    font-size: 12px;
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+.formularioGestionUsuario
+.campoUsuario input,
+.formularioGestionUsuario
+.campoUsuario select {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 45px !important;
+    margin: 0 !important;
+    padding: 0 13px !important;
+    border: 1px solid #ccd2da !important;
+    border-radius: 9px !important;
+    outline: none !important;
+    background-color: #ffffff !important;
+    color: #363b44 !important;
+    font-family: inherit !important;
+    font-size: 13px !important;
+    line-height: normal !important;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.formularioGestionUsuario
+.campoUsuario select {
+    padding-right: 36px !important;
+    cursor: pointer;
+}
+
+.formularioGestionUsuario
+.campoUsuario input::placeholder {
+    color: #969ca5;
+}
+
+.formularioGestionUsuario
+.campoUsuario input:focus,
+.formularioGestionUsuario
+.campoUsuario select:focus {
+    border-color: #1748c8 !important;
+    box-shadow:
+        0 0 0 3px rgba(23, 72, 200, 0.11) !important;
+}
+
+.formularioGestionUsuario
+.campoUsuario small {
+    display: block;
+    margin: 6px 0 0;
+    color: #858c96;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+
+/* =====================================================
+   CAMPO CONTRASEÑA
+===================================================== */
+
+.formularioGestionUsuario
+.campoPasswordUsuario {
+    position: relative;
+    width: 100%;
+}
+
+.formularioGestionUsuario
+.campoPasswordUsuario input {
+    padding-right: 48px !important;
+}
+
+.formularioGestionUsuario
+.campoPasswordUsuario button {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #68707b;
+    font-size: 14px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.formularioGestionUsuario
+.campoPasswordUsuario button:hover {
+    background: #edf2ff;
+    color: #1748c8;
+}
+
+
+/* =====================================================
+   RESPUESTA
+===================================================== */
+
+.formularioGestionUsuario
+#respuestaUsuario {
+    width: 100%;
+    margin: 0 0 18px;
+}
+
+.formularioGestionUsuario
+#respuestaUsuario.respuestaUsuario {
+    padding: 11px 14px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 650;
+    text-align: center;
+}
+
+.formularioGestionUsuario
+#respuestaUsuario.correcta {
+    border: 1px solid #b8e4ca;
+    background: #e8f7ee;
+    color: #147845;
+}
+
+.formularioGestionUsuario
+#respuestaUsuario.error {
+    border: 1px solid #edbec3;
+    background: #fbedee;
+    color: #a92e38;
+}
+
+
+/* =====================================================
+   BOTONES CREAR USUARIO
+===================================================== */
+
+.formularioGestionUsuario
+.botonesFormularioUsuario {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 100%;
+    margin: 0;
+    padding-top: 2px;
+}
+
+.formularioGestionUsuario
+.btnCancelarUsuario,
+.formularioGestionUsuario
+.btnReiniciarUsuario,
+.formularioGestionUsuario
+.btnGuardarUsuario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 120px;
+    min-height: 43px;
+    margin: 0;
+    padding: 0 17px;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.formularioGestionUsuario
+.btnCancelarUsuario,
+.formularioGestionUsuario
+.btnReiniciarUsuario {
+    border: 1px solid #ccd2da;
+    background: #ffffff;
+    color: #555b65;
+}
+
+.formularioGestionUsuario
+.btnCancelarUsuario:hover,
+.formularioGestionUsuario
+.btnReiniciarUsuario:hover {
+    border-color: #aeb5bf;
+    background: #eef0f3;
+    color: #363b43;
+}
+
+.formularioGestionUsuario
+.btnGuardarUsuario {
+    border: 1px solid #1748c8;
+    background: #1748c8;
+    color: #ffffff !important;
+    box-shadow:
+        0 5px 12px rgba(23, 72, 200, 0.19);
+}
+
+.formularioGestionUsuario
+.btnGuardarUsuario i,
+.formularioGestionUsuario
+.btnGuardarUsuario span {
+    color: #ffffff !important;
+}
+
+.formularioGestionUsuario
+.btnGuardarUsuario:hover {
+    border-color: #103aa8;
+    background: #103aa8;
+    color: #ffffff !important;
+}
+
+.formularioGestionUsuario
+.btnGuardarUsuario:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+
+/* =====================================================
+   RESPONSIVE CREAR USUARIO
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .formularioGestionUsuario
+    .encabezadoFormularioUsuario {
+        padding: 17px;
+    }
+
+    .formularioGestionUsuario
+    .contenidoFormularioUsuario {
+        padding: 16px;
+    }
+
+    .formularioGestionUsuario
+    .grupoFormularioUsuario {
+        padding: 16px;
+    }
+
+    .formularioGestionUsuario
+    .gridCamposUsuario {
+        grid-template-columns: 1fr;
+    }
+
+    .formularioGestionUsuario
+    .campoCompletoUsuario {
+        grid-column: auto;
+    }
+
+    .formularioGestionUsuario
+    .botonesFormularioUsuario {
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+
+    .formularioGestionUsuario
+    .btnCancelarUsuario,
+    .formularioGestionUsuario
+    .btnReiniciarUsuario,
+    .formularioGestionUsuario
+    .btnGuardarUsuario {
+        width: 100%;
+    }
+}
+
+/* =====================================================

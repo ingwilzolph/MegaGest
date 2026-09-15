@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Mi cuenta | AlianzaPro</title>
+
+    <link rel="icon" type="image/png" href="./images/logoCabeza.webp">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/mi-cuenta.css?v=1">
+
+</head>
+
+<body>
+
+    <!-- ===============================================
+         ENCABEZADO
+    ================================================ -->
+
+    <header class="encabezadoCuenta">
+
+        <div class="contenedorCuenta encabezadoCuentaInterior">
+
+            <a
+                href="./index.html"
+                class="marcaCuenta">
+
+                <img
+                    src="./images/logoAlianzaPro.webp"
+                    alt="AlianzaPro">
+
+            </a>
+
+            <div class="accionesEncabezadoCuenta">
+
+                <!-- Ir a la tienda -->
+
+                <a
+                    href="./listing-row.html"
+                    title="Ir a la tienda"
+                    aria-label="Ir a la tienda">
+
+                    <i
+                        class="fa-solid fa-store"
+                        aria-hidden="true">
+                    </i>
+
+                    <span>
+                        Ir a la tienda
+                    </span>
+
+                </a>
+
+                <!-- Cerrar sesión -->
+
+                <button
+                    type="button"
+                    id="btnCerrarSesionCuenta"
+                    title="Cerrar sesión"
+                    aria-label="Cerrar sesión">
+
+                    <i
+                        class="fa-solid fa-arrow-right-from-bracket"
+                        aria-hidden="true">
+                    </i>
+
+                    <span>
+                        Cerrar sesión
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ===============================================
+         CONTENIDO
+    ================================================ -->
+
+    <main class="paginaCuenta">
+
+        <div class="contenedorCuenta">
+
+            <!-- PRESENTACIÓN -->
+
+            <section class="presentacionCuenta">
+
+                <div class="avatarCuenta">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Mi cuenta</span>
+
+                    <h1 id="nombreClienteCuenta">
+                        Cargando cliente...
+                    </h1>
+
+                    <p id="correoClienteCuenta"></p>
+
+                </div>
+
+            </section>
+
+            <!-- MENSAJES -->
+
+            <div
+                id="mensajeCuenta"
+                class="mensajeCuenta"
+                role="status"
+                aria-live="polite">
+            </div>
+
+            <!-- NAVEGACIÓN -->
+
+            <nav
+                class="navegacionCuenta"
+                aria-label="Opciones de mi cuenta">
+
+                <button
+                    type="button"
+                    class="btnPestanaCuenta activa"
+                    data-seccion="pedidos">
+
+                    <i class="fa-solid fa-box"></i>
+
+                    Mis pedidos
+
+                    <span id="contadorPedidosCuenta">
+                        0
+                    </span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="btnPestanaCuenta"
+                    data-seccion="datos">
+
+                    <i class="fa-solid fa-address-card"></i>
+
+                    Mis datos
+
+                </button>
+
+                <button
+                    type="button"
+                    class="btnPestanaCuenta"
+                    data-seccion="direcciones">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Mis direcciones
+
+                </button>
+
+            </nav>
+
+            <!-- ===========================================
+                 MIS PEDIDOS
+            ============================================ -->
+
+            <section
+                id="seccionPedidosCuenta"
+                class="seccionCuenta activa">
+
+                <div class="tituloSeccionCuenta">
+
+                    <div>
+
+                        <h2>Mis pedidos</h2>
+
+                        <p>
+                            Revise el estado de sus compras,
+                            pagos y entregas.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="./listing-row.html"
+                        class="btnComprarCuenta">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Nueva compra
+
+                    </a>
+
+                </div>
+
+                <!-- FILTROS -->
+
+                <div class="filtrosPedidosCuenta">
+
+                    <div class="buscadorPedidosCuenta">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="buscarPedidoCuenta"
+                            placeholder="Buscar número o producto"
+                            autocomplete="off">
+
+                    </div>
+
+                    <select id="filtroEstadoPedidoCuenta">
+
+                        <option value="">
+                            Todos los estados
+                        </option>
+
+                        <option value="pendiente_pago">
+                            Pendiente de pago
+                        </option>
+
+                        <option value="pagado">
+                            Pagado
+                        </option>
+
+                        <option value="preparando">
+                            Preparando
+                        </option>
+
+                        <option value="listo_retiro">
+                            Listo para retirar
+                        </option>
+
+                        <option value="enviado">
+                            Enviado
+                        </option>
+
+                        <option value="entregado">
+                            Entregado
+                        </option>
+
+                        <option value="cancelacion_solicitada">
+                            Cancelación solicitada
+                        </option>
+
+                        <option value="cancelado">
+                            Cancelado
+                        </option>
+
+                    </select>
+
+                    <select id="filtroEntregaPedidoCuenta">
+
+                        <option value="">
+                            Todos los métodos
+                        </option>
+
+                        <option value="retiro">
+                            Retiro en tienda
+                        </option>
+
+                        <option value="despacho">
+                            Despacho
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- CARGANDO -->
+
+                <div
+                    id="cargandoPedidosCuenta"
+                    class="cargandoCuenta">
+
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                    <span>
+                        Cargando pedidos...
+                    </span>
+
+                </div>
+
+                <!-- LISTADO -->
+
+                <div
+                    id="listaPedidosCuenta"
+                    class="listaPedidosCuenta">
+                </div>
+
+                <!-- SIN PEDIDOS -->
+
+                <div
+                    id="sinPedidosCuenta"
+                    class="sinContenidoCuenta"
+                    hidden>
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                    <h3>No encontramos pedidos</h3>
+
+                    <p>
+                        Todavía no tiene compras o ningún
+                        pedido coincide con los filtros.
+                    </p>
+
+                    <a href="./listing-row.html">
+                        Explorar productos
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- ===========================================
+                 MIS DATOS
+            ============================================ -->
+
+            <section
+                id="seccionDatosCuenta"
+                class="seccionCuenta"
+                hidden>
+
+                <div class="tituloSeccionCuenta">
+
+                    <div>
+
+                        <h2>Mis datos personales</h2>
+
+                        <p>
+                            Mantenga actualizada su información
+                            de contacto.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <form
+                    id="formDatosClienteCuenta"
+                    class="formCuenta"
+                    novalidate>
+
+                    <div class="gridCamposCuenta">
+
+                        <div class="campoCuenta">
+
+                            <label for="rutClienteCuenta">
+                                RUT
+                            </label>
+
+                            <input
+                                type="text"
+                                id="rutClienteCuenta"
+                                readonly>
+
+                        </div>
+
+                        <div class="campoCuenta">
+
+                            <label for="nombreDatosCuenta">
+                                Nombre
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nombreDatosCuenta"
+                                name="nombre"
+                                minlength="2"
+                                maxlength="80"
+                                required>
+
+                        </div>
+
+                        <div class="campoCuenta">
+
+                            <label for="apellidoDatosCuenta">
+                                Apellido
+                            </label>
+
+                            <input
+                                type="text"
+                                id="apellidoDatosCuenta"
+                                name="apellido"
+                                minlength="2"
+                                maxlength="80"
+                                required>
+
+                        </div>
+
+                        <div class="campoCuenta">
+
+                            <label for="telefonoDatosCuenta">
+                                Teléfono
+                            </label>
+
+                            <div class="campoTelefonoCuenta">
+
+                                <span>+56</span>
+
+                                <input
+                                    type="tel"
+                                    id="telefonoDatosCuenta"
+                                    name="telefono"
+                                    maxlength="9"
+                                    inputmode="numeric"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="campoCuenta campoCompletoCuenta">
+
+                            <label for="correoDatosCuenta">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                id="correoDatosCuenta"
+                                readonly>
+
+                            <small>
+                                El cambio de correo requerirá
+                                una verificación de seguridad.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        id="btnGuardarDatosCuenta"
+                        class="btnGuardarCuenta">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Guardar cambios
+
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- ===========================================
+                 MIS DIRECCIONES
+            ============================================ -->
+
+            <section
+                id="seccionDireccionesCuenta"
+                class="seccionCuenta"
+                hidden>
+
+                <div class="tituloSeccionCuenta">
+
+                    <div>
+
+                        <h2>Mis direcciones</h2>
+
+                        <p>
+                            Administre las direcciones utilizadas
+                            para sus despachos.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="btnNuevaDireccionCuenta"
+                        class="btnComprarCuenta">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Nueva dirección
+
+                    </button>
+
+                </div>
+
+                <div
+                    id="listaDireccionesCuenta"
+                    class="listaDireccionesCuenta">
+                </div>
+
+                <div
+                    id="sinDireccionesCuenta"
+                    class="sinContenidoCuenta"
+                    hidden>
+
+                    <i class="fa-solid fa-map-location-dot"></i>
+
+                    <h3>No tiene direcciones guardadas</h3>
+
+                    <p>
+                        Agregue una dirección para utilizarla
+                        durante el despacho.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- ===============================================
+         DIÁLOGO DE PEDIDO
+    ================================================ -->
+
+    <dialog
+        id="dialogPedidoCuenta"
+        class="dialogCuenta">
+
+        <div class="encabezadoDialogCuenta">
+
+            <div>
+
+                <span>Detalle del pedido</span>
+
+                <h2 id="numeroDialogPedidoCuenta"></h2>
+
+            </div>
+
+            <button
+                type="button"
+                id="btnCerrarDialogPedido"
+                aria-label="Cerrar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <div
+            id="contenidoDialogPedido"
+            class="contenidoDialogCuenta">
+        </div>
+
+    </dialog>
+
+    <!-- ===============================================
+         DIÁLOGO DE DIRECCIÓN
+    ================================================ -->
+
+    <dialog
+        id="dialogDireccionCuenta"
+        class="dialogCuenta">
+
+        <div class="encabezadoDialogCuenta">
+
+            <div>
+
+                <span>Dirección de despacho</span>
+
+                <h2 id="tituloDialogDireccion">
+                    Nueva dirección
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                id="btnCerrarDialogDireccion"
+                aria-label="Cerrar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <form
+            id="formDireccionCuenta"
+            class="contenidoDialogCuenta">
+
+            <input
+                type="hidden"
+                id="idDireccionCuenta"
+                name="id_direccion">
+
+            <div class="gridCamposCuenta">
+
+                <div class="campoCuenta campoCompletoCuenta">
+
+                    <label for="nombreDireccionCuenta">
+                        Nombre de la dirección
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombreDireccionCuenta"
+                        name="nombre_direccion"
+                        maxlength="50"
+                        placeholder="Ej.: Casa"
+                        required>
+
+                </div>
+
+                <div class="campoCuenta">
+
+                    <label for="regionDireccionCuenta">
+                        Región
+                    </label>
+
+                    <select
+                        id="regionDireccionCuenta"
+                        name="region"
+                        required>
+
+                        <option value="">
+                            Seleccione
+                        </option>
+
+                        <option value="Región Metropolitana">
+                            Región Metropolitana
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="campoCuenta">
+
+                    <label for="comunaDireccionCuenta">
+                        Comuna
+                    </label>
+
+                    <input
+                        type="text"
+                        id="comunaDireccionCuenta"
+                        name="comuna"
+                        maxlength="100"
+                        required>
+
+                </div>
+
+                <div class="campoCuenta">
+
+                    <label for="calleDireccionCuenta">
+                        Calle
+                    </label>
+
+                    <input
+                        type="text"
+                        id="calleDireccionCuenta"
+                        name="calle"
+                        maxlength="150"
+                        required>
+
+                </div>
+
+                <div class="campoCuenta">
+
+                    <label for="numeroDireccionCuenta">
+                        Número
+                    </label>
+
+                    <input
+                        type="text"
+                        id="numeroDireccionCuenta"
+                        name="numero"
+                        maxlength="20"
+                        required>
+
+                </div>
+
+                <div class="campoCuenta campoCompletoCuenta">
+
+                    <label for="departamentoDireccionCuenta">
+                        Departamento, casa u oficina
+                    </label>
+
+                    <input
+                        type="text"
+                        id="departamentoDireccionCuenta"
+                        name="departamento"
+                        maxlength="30">
+
+                </div>
+
+                <div class="campoCuenta campoCompletoCuenta">
+
+                    <label for="referenciaDireccionCuenta">
+                        Referencia
+                    </label>
+
+                    <textarea
+                        id="referenciaDireccionCuenta"
+                        name="referencia"
+                        maxlength="250">
+                    </textarea>
+
+                </div>
+
+                <label class="checkPrincipalCuenta">
+
+                    <input
+                        type="checkbox"
+                        id="principalDireccionCuenta"
+                        name="es_principal"
+                        value="1">
+
+                    <span></span>
+
+                    Usar como dirección principal
+
+                </label>
+
+            </div>
+
+            <div
+                id="mensajeDireccionCuenta"
+                class="mensajeCuenta">
+            </div>
+
+            <button
+                type="submit"
+                id="btnGuardarDireccionCuenta"
+                class="btnGuardarCuenta">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Guardar dirección
+
+            </button>
+
+        </form>
+
+    </dialog>
+
+    <!-- ===============================================
+         PIE
+    ================================================ -->
+
+    <footer class="footerCuenta">
+
+        <p>
+            &copy; 2026 AlianzaPro SPA.
+            Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+    <script
+        type="module"
+        src="./js/mi-cuenta.js?v=4">
+    </script>
+
+</body>
+
+</html>

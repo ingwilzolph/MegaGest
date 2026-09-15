@@ -1,0 +1,1570 @@
+   GESTIÓN DE SERVICIOS
+===================================================== */
+
+.seccionGestionServicios {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+}
+
+.encabezadoGestionServicios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.encabezadoGestionServicios h1 {
+    margin: 0 0 5px;
+    color: #242424;
+    font-size: 31px;
+}
+
+.encabezadoGestionServicios h1 i {
+    color: #303500;
+}
+
+.encabezadoGestionServicios p {
+    margin: 0;
+    color: #707070;
+    font-size: 14px;
+}
+
+.btnNuevoServicioAdmin {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 47px;
+    height: 47px;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #173fd1;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 5px 13px rgba(23, 63, 209, 0.3);
+    transition: 0.2s ease;
+}
+
+.btnNuevoServicioAdmin:hover {
+    background: #0e2fa9;
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+
+.resumenServiciosAdmin {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(155px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.tarjetaResumenServicio {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 96px;
+    gap: 14px;
+    padding: 17px;
+    overflow: hidden;
+    border: 1px solid #e3e5e8;
+    border-left-width: 5px;
+    border-radius: 13px;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.tarjetaResumenServicio:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tarjetaResumenServicio .iconoResumenServicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+.tarjetaResumenServicio small {
+    display: block;
+    margin-bottom: 5px;
+    color: #707070;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.tarjetaResumenServicio strong {
+    display: block;
+    font-size: 21px;
+}
+
+/* Total: azul */
+
+.tarjetaTodosServicios {
+    border-left-color: #1478f2;
+    background: linear-gradient(135deg, #ffffff, #edf6ff);
+}
+
+.tarjetaTodosServicios .iconoResumenServicio {
+    background: #dcecff;
+    color: #1478f2;
+}
+
+.tarjetaTodosServicios strong {
+    color: #1478f2;
+}
+
+.tarjetaTodosServicios.seleccionada {
+    border-color: #1478f2;
+    box-shadow: 0 0 0 3px rgba(20, 120, 242, 0.14);
+}
+
+/* Activos: verde */
+
+.tarjetaServiciosActivos {
+    border-left-color: #16865d;
+    background: linear-gradient(135deg, #ffffff, #eaf8f1);
+}
+
+.tarjetaServiciosActivos .iconoResumenServicio {
+    background: #d9f3e7;
+    color: #16865d;
+}
+
+.tarjetaServiciosActivos strong {
+    color: #16865d;
+}
+
+.tarjetaServiciosActivos.seleccionada {
+    border-color: #16865d;
+    box-shadow: 0 0 0 3px rgba(22, 134, 93, 0.14);
+}
+
+/* Ocultos: gris */
+
+.tarjetaServiciosOcultos {
+    border-left-color: #667085;
+    background: linear-gradient(135deg, #ffffff, #f0f1f3);
+}
+
+.tarjetaServiciosOcultos .iconoResumenServicio {
+    background: #e1e3e7;
+    color: #596171;
+}
+
+.tarjetaServiciosOcultos strong {
+    color: #596171;
+}
+
+.tarjetaServiciosOcultos.seleccionada {
+    border-color: #667085;
+    box-shadow: 0 0 0 3px rgba(102, 112, 133, 0.14);
+}
+
+/* Destacados: morado */
+
+.tarjetaServiciosDestacados {
+    border-left-color: #7a3fc1;
+    background: linear-gradient(135deg, #ffffff, #f5effc);
+}
+
+.tarjetaServiciosDestacados .iconoResumenServicio {
+    background: #eadcf8;
+    color: #7a3fc1;
+}
+
+.tarjetaServiciosDestacados strong {
+    color: #7a3fc1;
+}
+
+.tarjetaServiciosDestacados.seleccionada {
+    border-color: #7a3fc1;
+    box-shadow: 0 0 0 3px rgba(122, 63, 193, 0.14);
+}
+
+/* Precio promedio: naranja */
+
+.tarjetaPrecioPromedioServicio {
+    border-left-color: #e58a00;
+    background: linear-gradient(135deg, #ffffff, #fff5e5);
+    cursor: default;
+}
+
+.tarjetaPrecioPromedioServicio .iconoResumenServicio {
+    background: #ffe8c2;
+    color: #e58a00;
+}
+
+.tarjetaPrecioPromedioServicio strong {
+    color: #c97500;
+}
+
+/* =====================================================
+   PESTAÑAS Y BUSCADOR
+===================================================== */
+
+.barraServiciosAdmin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    border: 1px solid #e3e5e8;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.pestanasServiciosAdmin {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+}
+
+.btnPestanaServicio {
+    min-height: 38px;
+    padding: 8px 14px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: #f1f2f4;
+    color: #555b64;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btnPestanaServicio:hover {
+    background: #e5e7ea;
+}
+
+.btnPestanaServicio.activa {
+    background: #303500;
+    color: #ffffff;
+}
+
+.buscadorServiciosAdmin {
+    position: relative;
+    width: 290px;
+    flex-shrink: 0;
+}
+
+.buscadorServiciosAdmin i {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    color: #747a82;
+    transform: translateY(-50%);
+}
+
+.buscadorServiciosAdmin input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 41px;
+    padding: 8px 12px 8px 38px;
+    border: 1px solid #d5d8dc;
+    border-radius: 9px;
+    outline: none;
+    background: #fafafa;
+}
+
+.buscadorServiciosAdmin input:focus {
+    border-color: #1478f2;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(20, 120, 242, 0.1);
+}
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+.filtrosServiciosAdmin {
+    display: grid;
+    grid-template-columns: minmax(190px, 1fr) minmax(190px, 1fr) auto;
+    gap: 12px;
+    padding: 15px;
+    margin-bottom: 19px;
+    border: 1px solid #e1e4e8;
+    border-radius: 11px;
+    background: #f8f9fb;
+}
+
+.filtrosServiciosAdmin select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 41px;
+    padding: 7px 11px;
+    border: 1px solid #d4d7dc;
+    border-radius: 8px;
+    outline: none;
+    background: #ffffff;
+    color: #454545;
+}
+
+.filtrosServiciosAdmin select:focus {
+    border-color: #1478f2;
+}
+
+#btnLimpiarFiltrosServicio {
+    min-height: 41px;
+    padding: 0 17px;
+    border: 1px solid #cfd3d8;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #444;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#btnLimpiarFiltrosServicio:hover {
+    background: #eceff2;
+}
+
+/* =====================================================
+   ENCABEZADO DE RESULTADOS
+===================================================== */
+
+.encabezadoResultadosServicios {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin: 0 2px 14px;
+}
+
+.encabezadoResultadosServicios h2 {
+    margin: 0 0 4px;
+    color: #303500;
+    font-size: 19px;
+}
+
+.encabezadoResultadosServicios > div > p {
+    margin: 0;
+    color: #777;
+    font-size: 12px;
+}
+
+.cantidadResultadosServicios {
+    margin: 0;
+    color: #737373;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+#cantidadResultadosServicios {
+    color: #303500;
+    font-weight: 800;
+}
+
+/* =====================================================
+   TABLA
+===================================================== */
+
+.contenedorTablaServicios {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.08);
+}
+
+#table_servicio {
+    width: 100%;
+    min-width: 1150px;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+#table_servicio thead {
+    background: #303500;
+    color: #ffffff;
+}
+
+#table_servicio th {
+    padding: 13px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#table_servicio td {
+    padding: 10px;
+    border: 1px solid #d6d7d2;
+    color: #626262;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#table_servicio tbody tr:nth-child(even) {
+    background: #f8f8f5;
+}
+
+#table_servicio tbody tr:hover {
+    background: #f0f2df;
+}
+
+/* Imagen */
+
+.imagenServicioAdmin {
+    display: block;
+    width: 68px;
+    height: 55px;
+    margin: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #f5f5f5;
+    object-fit: cover;
+}
+
+/* Información */
+
+.infoServicioAdmin {
+    min-width: 145px;
+    text-align: left;
+}
+
+.infoServicioAdmin strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #292929;
+    font-size: 13px;
+}
+
+.infoServicioAdmin small {
+    color: #898989;
+    font-size: 10px;
+}
+
+.descripcionServicioAdmin {
+    width: 260px;
+    max-width: 260px;
+    line-height: 1.45;
+    text-align: left !important;
+}
+
+.duracionServicioAdmin {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 9px;
+    border-radius: 18px;
+    background: #eef3ff;
+    color: #315fc1;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.precioServicioAdmin {
+    color: #16865d !important;
+    font-size: 13px !important;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* Visibilidad */
+
+.indicadorServicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 9px;
+    border-radius: 18px;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.indicadorServicio.visible {
+    background: #e2f6eb;
+    color: #13764f;
+}
+
+.indicadorServicio.oculto {
+    background: #e8eaed;
+    color: #5d6470;
+}
+
+/* Destacado */
+
+.indicadorDestacadoServicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 9px;
+    border-radius: 18px;
+    background: #eff0f2;
+    color: #777;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.indicadorDestacadoServicio.destacado {
+    background: #f2e9fd;
+    color: #7a3fc1;
+}
+
+.indicadorDestacadoServicio.destacado i {
+    color: #e1a400;
+}
+
+/* Estado */
+
+.estadoServicioAdmin {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 18px;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.estadoServicioAdmin::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.estadoServicioAdmin.activo {
+    background: #e1f5ea;
+    color: #13764f;
+}
+
+.estadoServicioAdmin.activo::before {
+    background: #16a36a;
+}
+
+.estadoServicioAdmin.inactivo {
+    background: #ffe2df;
+    color: #b42318;
+}
+
+.estadoServicioAdmin.inactivo::before {
+    background: #d92d20;
+}
+
+.estadoServicioAdmin.oculto {
+    background: #e8e9ec;
+    color: #5b5d63;
+}
+
+.estadoServicioAdmin.oculto::before {
+    background: #70737a;
+}
+
+/* =====================================================
+   ACCIONES
+===================================================== */
+
+.accionesServicioAdmin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.btnAccionServicio {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.13);
+    transition: 0.2s ease;
+}
+
+.btnAccionServicio:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.92);
+}
+
+.btnModificarServicioAdmin {
+    background: #16a34a;
+}
+
+.btnEliminarServicioAdmin {
+    background: #d92d20;
+}
+
+/* =====================================================
+   SIN RESULTADOS
+===================================================== */
+
+.sinServiciosAdmin {
+    display: none;
+    padding: 45px 20px;
+    border: 1px dashed #cfd2d7;
+    border-radius: 12px;
+    background: #fafafa;
+    color: #747474;
+    text-align: center;
+}
+
+.sinServiciosAdmin i {
+    display: block;
+    margin-bottom: 12px;
+    color: #9ca1a8;
+    font-size: 38px;
+}
+
+.sinServiciosAdmin h3 {
+    margin: 0 0 7px;
+    color: #4c4f54;
+    font-size: 17px;
+}
+
+.sinServiciosAdmin p {
+    margin: 0;
+    font-size: 12px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .resumenServiciosAdmin {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+
+    .resumenServiciosAdmin {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .barraServiciosAdmin {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .buscadorServiciosAdmin {
+        width: 100%;
+    }
+
+    .filtrosServiciosAdmin {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #btnLimpiarFiltrosServicio {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .seccionGestionServicios {
+        padding: 3px;
+    }
+
+    .encabezadoGestionServicios h1 {
+        font-size: 24px;
+    }
+
+    .resumenServiciosAdmin {
+        grid-template-columns: 1fr;
+    }
+
+    .filtrosServiciosAdmin {
+        grid-template-columns: 1fr;
+    }
+
+    #btnLimpiarFiltrosServicio {
+        grid-column: auto;
+    }
+
+    .btnPestanaServicio {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .encabezadoResultadosServicios {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+
+/* =====================================================
+   DIÁLOGO MODIFICAR SERVICIO
+===================================================== */
+
+#dialogModificarServicio.dialogModificarProductoCompleto {
+    box-sizing: border-box;
+    width: min(1050px, 94vw);
+    max-width: 1050px;
+    height: min(760px, 90vh);
+    max-height: 90vh;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    border-radius: 15px;
+    background: #f4f5f7;
+    color: #333333;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.32);
+}
+
+#dialogModificarServicio::backdrop {
+    background: rgba(14, 18, 23, 0.68);
+    backdrop-filter: blur(3px);
+}
+
+/* Formulario */
+
+#formModificarServicio {
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100% - 82px);
+    padding: 0;
+    margin: 0;
+}
+
+/* Contenido desplazable */
+
+#dialogModificarServicio
+.contenidoDialogModificarProducto {
+
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    align-items: start;
+    gap: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Scroll */
+
+#dialogModificarServicio
+.contenidoDialogModificarProducto::-webkit-scrollbar {
+    width: 8px;
+}
+
+#dialogModificarServicio
+.contenidoDialogModificarProducto::-webkit-scrollbar-track {
+    background: #e9ebee;
+    border-radius: 10px;
+}
+
+#dialogModificarServicio
+.contenidoDialogModificarProducto::-webkit-scrollbar-thumb {
+    background: #a6abb2;
+    border-radius: 10px;
+}
+
+#dialogModificarServicio
+.contenidoDialogModificarProducto::-webkit-scrollbar-thumb:hover {
+    background: #747b85;
+}
+
+/* =====================================================
+   COLUMNA DE IMAGEN
+===================================================== */
+
+#dialogModificarServicio
+.columnaImagenModificarProducto {
+
+    position: sticky;
+    top: 0;
+    align-self: start;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #e0e2e5;
+    border-radius: 12px;
+    background: #ffffff;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+#dialogModificarServicio
+.contenedorPreviewProducto {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 210px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 2px dashed #d2d6db;
+    border-radius: 11px;
+    background: #f6f7f8;
+}
+
+#dialogModificarServicio
+#previewModificarServicio {
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+/* Ocultar input nativo */
+
+#dialogModificarServicio
+#imagenModificarServicio {
+
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#dialogModificarServicio
+.columnaImagenModificarProducto > small {
+
+    display: block;
+    margin: 10px 0 0;
+    color: #747474;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+/* Botón seleccionar imagen */
+
+#dialogModificarServicio
+.btnSeleccionarImagen {
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 42px;
+    gap: 8px;
+    padding: 9px 13px;
+    margin: 0;
+    border: none;
+    border-radius: 8px;
+    background: #1478f2;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#dialogModificarServicio
+.btnSeleccionarImagen:hover {
+    background: #0964cb;
+}
+
+/* =====================================================
+   OPCIONES DE PUBLICACIÓN
+===================================================== */
+
+#dialogModificarServicio
+.opcionesPublicacionProducto {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 16px;
+    margin-top: 17px;
+    border-top: 1px solid #e5e7ea;
+    text-align: left;
+}
+
+#dialogModificarServicio
+.opcionCheckProducto {
+
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    box-sizing: border-box;
+    padding: 11px;
+    border: 1px solid #e0e3e6;
+    border-radius: 9px;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+#dialogModificarServicio
+.opcionCheckProducto:hover {
+
+    border-color: #1478f2;
+    background: #f1f7ff;
+}
+
+#dialogModificarServicio
+.opcionCheckProducto input {
+
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    margin: 2px 0 0;
+    accent-color: #1478f2;
+}
+
+#dialogModificarServicio
+.opcionCheckProducto strong {
+
+    display: block;
+    margin-bottom: 3px;
+    color: #333333;
+    font-size: 11px;
+}
+
+#dialogModificarServicio
+.opcionCheckProducto small {
+
+    display: block;
+    color: #777777;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+/* =====================================================
+   CAMPOS DEL SERVICIO
+===================================================== */
+
+#dialogModificarServicio
+.camposDialogModificarProducto {
+    min-width: 0;
+}
+
+#dialogModificarServicio
+.grupoFormularioProducto {
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 19px;
+    margin-bottom: 17px;
+    border: 1px solid #e0e3e6;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+#dialogModificarServicio
+.grupoFormularioProducto h3 {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 11px;
+    margin: 0 0 16px;
+    border-bottom: 1px solid #e5e7e9;
+    color: #303500;
+    font-size: 15px;
+}
+
+#dialogModificarServicio
+.grupoFormularioProducto h3 i {
+    color: #1478f2;
+}
+
+#dialogModificarServicio
+.campoProducto label {
+
+    display: block;
+    margin-bottom: 7px;
+    color: #414141;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#dialogModificarServicio
+.campoProducto input,
+
+#dialogModificarServicio
+.campoProducto select,
+
+#dialogModificarServicio
+.campoProducto textarea {
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #d3d7dc;
+    border-radius: 8px;
+    outline: none;
+    background: #fafafa;
+    color: #343434;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+#dialogModificarServicio
+.campoProducto textarea {
+
+    min-height: 130px;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+#dialogModificarServicio
+.campoProducto input:focus,
+
+#dialogModificarServicio
+.campoProducto select:focus,
+
+#dialogModificarServicio
+.campoProducto textarea:focus {
+
+    border-color: #1478f2;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(20, 120, 242, 0.1);
+}
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+#dialogModificarServicio
+.botonesFormularioProducto {
+
+    position: sticky;
+    bottom: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #e0e3e6;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.07);
+    backdrop-filter: blur(5px);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    #dialogModificarServicio.dialogModificarProductoCompleto {
+        width: 96vw;
+        height: 94vh;
+        max-height: 94vh;
+    }
+
+    #dialogModificarServicio
+    .contenidoDialogModificarProducto {
+
+        grid-template-columns: 1fr;
+        padding: 14px;
+    }
+
+    #dialogModificarServicio
+    .columnaImagenModificarProducto {
+
+        position: static;
+    }
+
+    #dialogModificarServicio
+    .contenedorPreviewProducto {
+
+        max-width: 420px;
+        height: 240px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 550px) {
+
+    #dialogModificarServicio
+    .gridCamposProducto,
+
+    #dialogModificarServicio
+    .gridCamposProducto.tresColumnas {
+
+        grid-template-columns: 1fr;
+    }
+
+    #dialogModificarServicio
+    .botonesFormularioProducto {
+
+        position: static;
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+
+    #dialogModificarServicio
+    .botonesFormularioProducto button {
+        width: 100%;
+    }
+}
+
+
+#dialogModificarServicio[open] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+
+/* Servicio visible: botón para ocultar */
+
+.btnOcultarServicioAdmin {
+    background: #7a3fc1;
+}
+
+/* Servicio oculto: botón para mostrar */
+
+.btnMostrarServicioAdmin {
+    background: #16865d;
+}
+
+.btnOcultarServicioAdmin:hover,
+.btnMostrarServicioAdmin:hover {
+    filter: brightness(0.9);
+}
+
+/* =====================================================
+   ENCABEZADO DE RESULTADOS DE PRODUCTOS
+===================================================== */
+
+.encabezadoResultadosProductos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 20px;
+    margin: 0 2px 15px;
+}
+
+.encabezadoResultadosProductos h2 {
+    margin: 0 0 5px;
+    color: #303500;
+    font-size: 19px;
+}
+
+.encabezadoResultadosProductos
+#descripcionResultadosProductos {
+    margin: 0;
+    color: #737373;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.encabezadoResultadosProductos
+.cantidadResultadosProductos {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 18px;
+    margin: 0;
+    color: #737373;
+    font-size: 12px;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+#cantidadResultadosProductos {
+    color: #303500;
+    font-weight: 800;
+}
+
+/* Teléfono */
+
+@media (max-width: 550px) {
+
+    .encabezadoResultadosProductos {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+}
+
+/* =====================================================
+   FILTROS DE PRODUCTOS COMPACTOS EN UNA SOLA LÍNEA
+===================================================== */
+
+@media (min-width: 851px) {
+
+    .filtrosProductosAdmin {
+        display: grid;
+        grid-template-columns:
+            minmax(210px, 1fr) /* Buscador */
+            150px              /* Categoría */
+            145px              /* Marca */
+            155px              /* Ordenar */
+            140px;             /* Limpiar */;
+        align-items: end;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .grupoBuscadorProducto {
+        min-width: 210px;
+    }
+
+    .grupoFiltroProducto select {
+        width: 100%;
+        min-width: 0;
+        height: 41px;
+        padding-right: 28px;
+        padding-left: 10px;
+        font-size: 11px;
+    }
+
+    .grupoBuscadorProducto
+    .buscadorProductosAdmin {
+
+        width: 100%;
+        height: 41px;
+    }
+
+    #btnLimpiarFiltrosProducto {
+        width: 140px;
+        height: 41px;
+        min-height: 41px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+}
+
+
+
+/* =====================================================
+   FILTROS Y BUSCADOR DE PRODUCTOS - VERSIÓN DEFINITIVA
+===================================================== */
+
+.filtrosProductosAdmin {
+    display: grid;
+    grid-template-columns:
+        minmax(245px, 1.35fr)  /* Buscador */
+        minmax(185px, 1fr)     /* Categoría */
+        minmax(175px, 0.95fr)  /* Marca */
+        minmax(205px, 1.05fr)  /* Ordenar */
+        155px;                 /* Limpiar */;
+    align-items: end;
+    gap: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px;
+    margin: 0 0 20px;
+    border: 1px solid #dfe3e8;
+    border-radius: 12px;
+    background: #f8f9fb;
+}
+
+/* =====================================================
+   GRUPOS
+===================================================== */
+
+.grupoFiltroProducto {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 7px;
+}
+
+.grupoFiltroProducto label {
+    display: block;
+    height: 16px;
+    margin: 0;
+    color: #41464e;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+/* =====================================================
+   SELECTORES
+===================================================== */
+
+.grupoFiltroProducto select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 44px;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0 37px 0 13px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #cfd4da;
+    border-radius: 9px;
+    outline: none;
+    background-color: #ffffff;
+    color: #3d4249;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 44px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.grupoFiltroProducto select:hover {
+    border-color: #aeb5be;
+    background-color: #ffffff;
+}
+
+.grupoFiltroProducto select:focus {
+    border-color: #1478f2;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(20, 120, 242, 0.11);
+}
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+.grupoBuscadorProducto {
+    min-width: 0;
+}
+
+.grupoBuscadorProducto .buscadorProductosAdmin {
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    height: 44px;
+    min-height: 44px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #cfd4da;
+    border-radius: 9px;
+    background: #ffffff;
+    box-shadow: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.grupoBuscadorProducto
+.buscadorProductosAdmin:hover {
+
+    border-color: #aeb5be;
+}
+
+.grupoBuscadorProducto
+.buscadorProductosAdmin:focus-within {
+
+    border-color: #1478f2;
+    box-shadow: 0 0 0 3px rgba(20, 120, 242, 0.11);
+}
+
+/* Separador entre icono e input */
+
+.grupoBuscadorProducto
+.buscadorProductosAdmin::before {
+
+    content: "";
+    position: absolute;
+    top: 9px;
+    bottom: 9px;
+    left: 43px;
+    width: 1px;
+    background: #e0e3e7;
+}
+
+/* Icono */
+
+.grupoBuscadorProducto
+.buscadorProductosAdmin > i {
+
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 100%;
+    flex-shrink: 0;
+    color: #626a74;
+    font-size: 14px;
+    transform: none;
+    transition: color 0.2s ease;
+}
+
+.grupoBuscadorProducto
+.buscadorProductosAdmin:focus-within > i {
+
+    color: #1478f2;
+}
+
+/* Input */
+
+.grupoBuscadorProducto
+.buscadorProductosAdmin input {
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    padding: 0 13px;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #30343a;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.grupoBuscadorProducto
+.buscadorProductosAdmin input:focus {
+
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.grupoBuscadorProducto
+.buscadorProductosAdmin input::placeholder {
+
+    color: #858c95;
+    font-weight: 400;
+    opacity: 1;
+}
+
+/* Botón X del input search */
+
+.grupoBuscadorProducto
+.buscadorProductosAdmin
+input::-webkit-search-cancel-button {
+
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    opacity: 0.65;
+}
+
+.grupoBuscadorProducto
+.buscadorProductosAdmin
+input::-webkit-search-cancel-button:hover {
+
+    opacity: 1;
+}
+
+/* =====================================================
+   BOTÓN LIMPIAR
+===================================================== */
+
+#btnLimpiarFiltrosProducto {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 155px;
+    height: 44px;
+    min-height: 44px;
+    gap: 7px;
+    padding: 0 13px;
+    margin: 0;
+    border: 1px solid #cfd4da;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #454b53;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#btnLimpiarFiltrosProducto i {
+    flex-shrink: 0;
+    font-size: 13px;
+}
+
+#btnLimpiarFiltrosProducto:hover {
+    border-color: #d92d20;
+    background: #fff0ee;
+    color: #b42318;
+    transform: translateY(-1px);
+}
+
+/* =====================================================
+   PANTALLAS MEDIANAS
+===================================================== */
+
+@media (max-width: 1100px) and (min-width: 751px) {
+
+    .filtrosProductosAdmin {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    #btnLimpiarFiltrosProducto {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   TELÉFONOS
+===================================================== */
+
+@media (max-width: 750px) {
+
+    .filtrosProductosAdmin {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .grupoBuscadorProducto
+    .buscadorProductosAdmin,
+
+    .grupoFiltroProducto select,
+
+    #btnLimpiarFiltrosProducto {
+
+        width: 100%;
+    }
+}
+
+
+
+/* =====================================================

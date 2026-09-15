@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Finalizar compra | AlianzaPro</title>
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="./images/logoCabeza.webp">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link
+        rel="stylesheet"
+        href="./css/checkOut.css?v=1">
+
+</head>
+
+<body>
+
+    <!-- ===============================================
+         ENCABEZADO
+    ================================================ -->
+
+    <header class="encabezadoCheckout">
+
+        <div class="contenedorCheckout encabezadoCheckoutInterior">
+
+            <a
+                href="./listing-row.html"
+                class="logoCheckout">
+
+                <img
+                    src="./images/logoAlianzaPro.webp"
+                    alt="AlianzaPro">
+
+            </a>
+
+            <div class="compraSeguraCheckout">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <span>
+                    <strong>Compra segura</strong>
+                    <small>Sus datos están protegidos</small>
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ===============================================
+         PROGRESO
+    ================================================ -->
+
+    <div class="barraProgresoCheckout">
+
+        <div class="contenedorCheckout">
+
+            <div class="pasosCheckout">
+
+                <div class="pasoCheckout completado">
+
+                    <span>
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+
+                    <div>
+                        <strong>Carrito</strong>
+                        <small>Productos seleccionados</small>
+                    </div>
+
+                </div>
+
+                <div class="lineaPasoCheckout"></div>
+
+                <div class="pasoCheckout activo">
+
+                    <span>2</span>
+
+                    <div>
+                        <strong>Datos y entrega</strong>
+                        <small>Información del pedido</small>
+                    </div>
+
+                </div>
+
+                <div class="lineaPasoCheckout"></div>
+
+                <div class="pasoCheckout">
+
+                    <span>3</span>
+
+                    <div>
+                        <strong>Pago</strong>
+                        <small>Confirmación con Webpay</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===============================================
+         CONTENIDO
+    ================================================ -->
+
+    <main class="paginaCheckout">
+
+        <div class="contenedorCheckout gridCheckout">
+
+            <!-- COLUMNA IZQUIERDA -->
+
+            <form
+                id="formCheckout"
+                class="formCheckout"
+                novalidate>
+
+                <!-- VOLVER -->
+
+                <a
+                    href="./listing-row.html"
+                    class="volverTiendaCheckout">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Volver a productos
+
+                </a>
+
+                <!-- ACCESO DEL CLIENTE -->
+
+                <section
+                    id="accesoClienteCheckout"
+                    class="seccionCheckout accesoClienteCheckout">
+
+                    <div class="tituloSeccionCheckout">
+
+                        <div>
+                            <i class="fa-solid fa-user-lock"></i>
+                        </div>
+
+                        <span>
+                            <h2>Cuenta del cliente</h2>
+
+                            <p>
+                                Inicie sesión o cree su cuenta para continuar.
+                            </p>
+                        </span>
+
+                    </div>
+
+                    <!-- CLIENTE NO CONECTADO -->
+
+                    <div id="clienteNoConectadoCheckout">
+
+                        <div class="opcionesAccesoCheckout">
+
+                            <button
+                                type="button"
+                                id="btnMostrarRegistroCliente"
+                                class="btnOpcionAccesoCheckout activo">
+
+                                <i class="fa-solid fa-user-plus"></i>
+
+                                Crear cuenta
+
+                            </button>
+
+                            <button
+                                type="button"
+                                id="btnMostrarLoginCliente"
+                                class="btnOpcionAccesoCheckout">
+
+                                <i class="fa-solid fa-right-to-bracket"></i>
+
+                                Ya tengo cuenta
+
+                            </button>
+
+                        </div>
+
+                        <!-- INICIO DE SESIÓN -->
+
+                        <div
+                            id="panelLoginCliente"
+                            class="panelAccesoCliente"
+                            hidden>
+
+                            <div class="gridCamposCheckout">
+
+                                <div class="campoCheckout campoCompletoCheckout">
+
+                                    <label for="correoLoginCliente">
+                                        Correo electrónico
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="correoLoginCliente"
+                                        maxlength="150"
+                                        autocomplete="username"
+                                        placeholder="cliente@correo.cl">
+
+                                </div>
+
+                                <div class="campoCheckout campoCompletoCheckout">
+
+                                    <label for="passwordLoginCliente">
+                                        Contraseña
+                                    </label>
+
+                                    <div class="campoPasswordCheckout">
+
+                                        <input
+                                            type="password"
+                                            id="passwordLoginCliente"
+                                            minlength="8"
+                                            autocomplete="current-password"
+                                            placeholder="Ingrese su contraseña">
+
+                                        <button
+                                            type="button"
+                                            class="btnVerPasswordCheckout"
+                                            data-campo="passwordLoginCliente"
+                                            title="Mostrar contraseña">
+
+                                            <i class="fa-solid fa-eye"></i>
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                id="btnIngresarCliente"
+                                class="btnIngresarCliente">
+
+                                <i class="fa-solid fa-right-to-bracket"></i>
+
+                                Iniciar sesión
+
+                            </button>
+
+                            <button
+                                type="button"
+                                id="btnRecuperarPasswordCliente"
+                                class="btnEnlaceCheckout">
+
+                                ¿Olvidó su contraseña?
+
+                            </button>
+
+                            <div
+                                id="mensajeLoginCliente"
+                                class="mensajeCheckout"
+                                aria-live="polite">
+                            </div>
+
+                        </div>
+
+                        <!-- AVISO DE REGISTRO -->
+
+                        <div
+                            id="panelRegistroCliente"
+                            class="panelAccesoCliente">
+
+                            <div class="avisoRegistroCheckout">
+
+                                <i class="fa-solid fa-circle-info"></i>
+
+                                <p>
+                                    Complete sus datos y cree una contraseña.
+                                    Su cuenta quedará conectada para consultar
+                                    pedidos, seguir el despacho y solicitar
+                                    reembolsos cuando corresponda.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CLIENTE CONECTADO -->
+
+                    <div
+                        id="clienteConectadoCheckout"
+                        class="clienteConectadoCheckout"
+                        hidden>
+
+                        <div class="identidadClienteCheckout">
+
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+
+                            <span>
+                                <strong id="nombreSesionClienteCheckout">
+                                    Cliente conectado
+                                </strong>
+
+                                <small id="correoSesionClienteCheckout"></small>
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="btnCerrarSesionCliente"
+                            class="btnCerrarSesionCliente">
+
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                            Cerrar sesión
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- DATOS PERSONALES -->
+
+                <section class="seccionCheckout">
+
+                    <div class="tituloSeccionCheckout">
+
+                        <div>
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <span>
+                            <h2>Datos del cliente</h2>
+
+                            <p>
+                                Ingrese la información de quien
+                                realizará la compra.
+                            </p>
+                        </span>
+
+                    </div>
+
+                    <div class="gridCamposCheckout">
+
+                        <div class="campoCheckout">
+
+                            <label for="nombreCheckout">
+                                Nombre *
+                            </label>
+
+                            <input
+                                type="text"
+                                name="nombre"
+                                id="nombreCheckout"
+                                minlength="2"
+                                maxlength="60"
+                                autocomplete="given-name"
+                                required>
+
+                            <small class="errorCampoCheckout"></small>
+
+                        </div>
+
+                        <div class="campoCheckout">
+
+                            <label for="apellidoCheckout">
+                                Apellido *
+                            </label>
+
+                            <input
+                                type="text"
+                                name="apellido"
+                                id="apellidoCheckout"
+                                minlength="2"
+                                maxlength="60"
+                                autocomplete="family-name"
+                                required>
+
+                            <small class="errorCampoCheckout"></small>
+
+                        </div>
+
+                        <div class="campoCheckout">
+
+                            <label for="rutCheckout">
+                                RUT *
+                                <span>(opcional)</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                name="rut"
+                                id="rutCheckout"
+                                maxlength="12"
+                                placeholder="12.345.678-9"
+                                autocomplete="off"
+                                required>
+
+                            <small class="errorCampoCheckout"></small>
+
+                        </div>
+
+                        <div class="campoCheckout">
+
+                            <label for="telefonoCheckout">
+                                Teléfono *
+                            </label>
+
+                            <div class="campoConPrefijoCheckout">
+
+                                <span>+56</span>
+
+                                <input
+                                    type="tel"
+                                    name="telefono"
+                                    id="telefonoCheckout"
+                                    inputmode="numeric"
+                                    maxlength="9"
+                                    placeholder="912345678"
+                                    autocomplete="tel"
+                                    required>
+
+                            </div>
+
+                            <small class="errorCampoCheckout"></small>
+
+                        </div>
+
+                        <div class="campoCheckout campoCompletoCheckout">
+
+                            <label for="correoCheckout">
+                                Correo electrónico *
+                            </label>
+
+                            <input
+                                type="email"
+                                name="correo"
+                                id="correoCheckout"
+                                maxlength="150"
+                                placeholder="cliente@correo.cl"
+                                autocomplete="email"
+                                required>
+
+                            <small>
+                                Enviaremos la confirmación del pedido
+                                a este correo.
+                            </small>
+
+                            <small class="errorCampoCheckout"></small>
+
+                        </div>
+
+                        <div
+                            id="camposPasswordRegistroCliente"
+                            class="campoCompletoCheckout">
+
+                            <div class="gridCamposCheckout">
+
+                                <div class="campoCheckout">
+
+                                    <label for="passwordRegistroCliente">
+                                        Contraseña *
+                                    </label>
+
+                                    <div class="campoPasswordCheckout">
+
+                                        <input
+                                            type="password"
+                                            name="password"
+                                            id="passwordRegistroCliente"
+                                            minlength="8"
+                                            autocomplete="new-password"
+                                            placeholder="Mínimo 8 caracteres">
+
+                                        <button
+                                            type="button"
+                                            class="btnVerPasswordCheckout"
+                                            data-campo="passwordRegistroCliente"
+                                            title="Mostrar contraseña">
+
+                                            <i class="fa-solid fa-eye"></i>
+
+                                        </button>
+
+                                    </div>
+
+                                    <small>
+                                        Debe contener mayúscula, minúscula y número.
+                                    </small>
+
+                                    <small class="errorCampoCheckout"></small>
+
+                                </div>
+
+                                <div class="campoCheckout">
+
+                                    <label for="confirmarPasswordRegistroCliente">
+                                        Confirmar contraseña *
+                                    </label>
+
+                                    <div class="campoPasswordCheckout">
+
+                                        <input
+                                            type="password"
+                                            name="confirmarPassword"
+                                            id="confirmarPasswordRegistroCliente"
+                                            minlength="8"
+                                            autocomplete="new-password"
+                                            placeholder="Repita su contraseña">
+
+                                        <button
+                                            type="button"
+                                            class="btnVerPasswordCheckout"
+                                            data-campo="confirmarPasswordRegistroCliente"
+                                            title="Mostrar contraseña">
+
+                                            <i class="fa-solid fa-eye"></i>
+
+                                        </button>
+
+                                    </div>
+
+                                    <small class="errorCampoCheckout"></small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- TIPO DE ENTREGA -->
+
+                <section class="seccionCheckout">
+
+                    <div class="tituloSeccionCheckout">
+
+                        <div>
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <span>
+                            <h2>Método de entrega</h2>
+
+                            <p>
+                                Seleccione cómo desea recibir
+                                su compra.
+                            </p>
+                        </span>
+
+                    </div>
+
+                    <div class="opcionesEntregaCheckout">
+
+                        <label class="opcionEntregaCheckout activa">
+
+                            <input
+                                type="radio"
+                                name="tipo_entrega"
+                                value="retiro"
+                                checked>
+
+                            <span class="radioVisualCheckout"></span>
+
+                            <i class="fa-solid fa-store"></i>
+
+                            <span>
+                                <strong>Retiro en tienda</strong>
+
+                                <small>
+                                    Baquedano 687, Lampa
+                                </small>
+
+                                <em>Sin costo</em>
+                            </span>
+
+                        </label>
+
+                        <label class="opcionEntregaCheckout">
+
+                            <input
+                                type="radio"
+                                name="tipo_entrega"
+                                value="despacho">
+
+                            <span class="radioVisualCheckout"></span>
+
+                            <i class="fa-solid fa-truck-fast"></i>
+
+                            <span>
+                                <strong>Despacho a domicilio</strong>
+
+                                <small>
+                                    Disponible según ubicación
+                                </small>
+
+                                <em>Por calcular</em>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- INFORMACIÓN DE RETIRO -->
+
+                    <div
+                        id="informacionRetiroCheckout"
+                        class="informacionRetiroCheckout">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <div>
+
+                            <strong>
+                                Retiro en AlianzaPro
+                            </strong>
+
+                            <p>
+                                Le avisaremos por correo cuando
+                                su pedido esté listo para retirar.
+                            </p>
+
+                            <small>
+                                Baquedano 687, Lampa,
+                                Santiago de Chile.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIRECCIÓN DE DESPACHO -->
+
+                    <!-- DIRECCIONES REGISTRADAS -->
+
+                <div
+                    id="camposDespachoCheckout"
+                    class="camposDespachoCheckout"
+                    hidden>
+
+                    <div class="encabezadoDireccionesCheckout">
+
+                        <div>
+
+                            <h3>
+                                Dirección de despacho
+                            </h3>
+
+                            <p>
+                                Seleccione una de sus direcciones
+                                registradas.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="btnNuevaDireccionCheckout"
+                            class="btnNuevaDireccionCheckout">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Nueva dirección
+
+                        </button>
+
+                    </div>
+
+                    <!-- CARGANDO DIRECCIONES -->
+
+                    <div
+                        id="cargandoDireccionesCheckout"
+                        class="cargandoDireccionesCheckout"
+                        hidden>
+
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                        <span>
+                            Cargando sus direcciones...
+                        </span>
+
+                    </div>
+
+                    <!-- LISTA CON SCROLL -->
+
+                    <div
+                        id="listaDireccionesCheckout"
+                        class="listaDireccionesCheckout"
+                        role="radiogroup"
+                        aria-label="Direcciones de despacho">
+
+                        <!-- Direcciones generadas con JavaScript -->
+
+                    </div>
+
+                    <!-- CLIENTE SIN DIRECCIONES -->
+
+                    <div
+                        id="sinDireccionesCheckout"
+                        class="sinDireccionesCheckout"
+                        hidden>
+
+                        <div class="iconoSinDireccionCheckout">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                        </div>
+
+                        <strong>
+                            No tiene direcciones registradas
+                        </strong>
+
+                        <p>
+                            Agregue una dirección para solicitar
+                            despacho a domicilio.
+                        </p>
+
+                        <button
+                            type="button"
+                            id="btnPrimeraDireccionCheckout"
+                            class="btnPrimeraDireccionCheckout">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Agregar dirección
+
+                        </button>
+
+                    </div>
+
+                    <!-- ERROR DE SELECCIÓN -->
+
+                    <small
+                        id="errorDireccionCheckout"
+                        class="errorDireccionCheckout"
+                        role="alert">
+                    </small>
+
+                </div>
+
+                </section>
+
+
+                <!-- OBSERVACIONES -->
+
+                <section class="seccionCheckout">
+
+                    <div class="tituloSeccionCheckout">
+
+                        <div>
+                            <i class="fa-solid fa-message"></i>
+                        </div>
+
+                        <span>
+                            <h2>Observaciones</h2>
+
+                            <p>
+                                Información adicional para preparar
+                                o entregar el pedido.
+                            </p>
+                        </span>
+
+                    </div>
+
+                    <div class="campoCheckout">
+
+                        <label for="observacionesCheckout">
+                            Comentario
+                            <span>(opcional)</span>
+                        </label>
+
+                        <textarea
+                            name="observaciones"
+                            id="observacionesCheckout"
+                            maxlength="500"
+                            placeholder="Escriba aquí alguna indicación importante"></textarea>
+
+                        <div class="contadorComentarioCheckout">
+
+                            <span id="contadorObservacionesCheckout">
+                                0
+                            </span>/500
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- CONDICIONES -->
+
+                <label class="aceptarCondicionesCheckout">
+
+                    <input
+                        type="checkbox"
+                        name="acepta_condiciones"
+                        id="aceptaCondicionesCheckout"
+                        value="1"
+                        required>
+
+                    <span></span>
+
+                    <p>
+                        Confirmo que los datos ingresados son
+                        correctos y acepto los términos de compra
+                        y tratamiento de datos.
+                    </p>
+
+                </label>
+
+                <div
+                    id="mensajeCheckout"
+                    class="mensajeCheckout"
+                    role="status"
+                    aria-live="polite">
+                </div>
+
+            </form>
+
+
+            <!-- COLUMNA DERECHA -->
+
+            <aside class="resumenCheckout">
+
+                <div class="encabezadoResumenCheckout">
+
+                    <div>
+                        <h2>Resumen del pedido</h2>
+
+                        <p id="cantidadResumenCheckout">
+                            0 productos
+                        </p>
+                    </div>
+
+                    <a href="./listing-row.html">
+                        Editar
+                    </a>
+
+                </div>
+
+                <div
+                    id="productosResumenCheckout"
+                    class="productosResumenCheckout">
+
+                    <div class="cargandoResumenCheckout">
+
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                        Cargando carrito...
+
+                    </div>
+
+                </div>
+
+                <div class="totalesCheckout">
+
+                    <div>
+                        <span>Neto</span>
+                        <strong id="netoCheckout">$0</strong>
+                    </div>
+
+                    <div>
+                        <span>IVA incluido (19%)</span>
+                        <strong id="ivaCheckout">$0</strong>
+                    </div>
+
+                    <div>
+                        <span>Despacho</span>
+                        <strong id="despachoCheckout">$0</strong>
+                    </div>
+
+                    <div class="totalCheckout">
+                        <span>Total</span>
+                        <strong id="totalCheckout">$0</strong>
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    form="formCheckout"
+                    id="btnConfirmarPedido"
+                    class="btnConfirmarPedido">
+
+                    <span>Continuar al pago</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+                <div class="seguridadResumenCheckout">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <p>
+                        El precio y el stock serán verificados
+                        nuevamente antes de iniciar el pago.
+                    </p>
+
+                </div>
+
+                <div class="metodosPagoCheckout">
+
+                    <span>Pago procesado mediante</span>
+
+                    <div><img class="imgWebpay" src="./images/webpay.webp" alt="Webpay plus"></div>
+
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- ===============================================
+     DIÁLOGO DE DIRECCIÓN
+================================================ -->
+
+    <dialog
+        id="dialogDireccionCheckout"
+        class="dialogDireccionCheckout">
+
+        <div class="contenidoDialogDireccion">
+
+            <header class="encabezadoDialogDireccion">
+
+                <div class="tituloDialogDireccion">
+
+                    <div class="iconoDialogDireccion">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2 id="tituloDialogDireccion">
+                            Agregar dirección
+                        </h2>
+
+                        <p>
+                            Complete los datos para el despacho.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="btnCerrarDialogDireccion"
+                    class="btnCerrarDialogDireccion"
+                    aria-label="Cerrar">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </header>
+
+            <form
+                id="formDireccionCheckout"
+                class="formDireccionCheckout"
+                autocomplete="on"
+                novalidate>
+
+                <input
+                    type="hidden"
+                    name="id_direccion"
+                    id="idDireccionCheckout">
+
+                <input
+                    type="hidden"
+                    name="region"
+                    value="Región Metropolitana">
+
+                <div class="gridDireccionCheckout">
+
+                    <!-- NOMBRE DE LA DIRECCIÓN -->
+
+                    <div
+                        class="campoDireccionCheckout
+                            campoCompletoDireccion">
+
+                        <label for="nombreDireccionCheckout">
+
+                            Nombre de la dirección
+                            <span>(opcional)</span>
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="nombre_direccion"
+                            id="nombreDireccionCheckout"
+                            maxlength="80"
+                            placeholder="Ej.: Casa, trabajo, bodega">
+
+                        <small class="errorCampoDireccion"></small>
+
+                    </div>
+
+                    <!-- REGIÓN -->
+
+                    <div class="campoDireccionCheckout">
+
+                        <label for="regionVisibleCheckout">
+                            Región
+                        </label>
+
+                        <input
+                            type="text"
+                            id="regionVisibleCheckout"
+                            value="Región Metropolitana"
+                            readonly>
+
+                        <small>
+                            Por ahora el despacho está disponible
+                            solamente en esta región.
+                        </small>
+
+                    </div>
+
+                    <!-- COMUNA -->
+
+                    <div class="campoDireccionCheckout">
+
+                        <label for="comunaDireccionCheckout">
+                            Comuna *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="comuna"
+                            id="comunaDireccionCheckout"
+                            maxlength="100"
+                            placeholder="Ej.: Lampa"
+                            autocomplete="address-level2"
+                            required>
+
+                        <small class="errorCampoDireccion"></small>
+
+                    </div>
+
+                    <!-- CALLE -->
+
+                    <div
+                        class="campoDireccionCheckout
+                            campoCompletoDireccion">
+
+                        <label for="calleDireccionCheckout">
+                            Calle *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="calle"
+                            id="calleDireccionCheckout"
+                            maxlength="150"
+                            placeholder="Ej.: Baquedano"
+                            autocomplete="address-line1"
+                            required>
+
+                        <small class="errorCampoDireccion"></small>
+
+                    </div>
+
+                    <!-- NÚMERO -->
+
+                    <div class="campoDireccionCheckout">
+
+                        <label for="numeroDireccionCheckout">
+                            Número *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="numero"
+                            id="numeroDireccionCheckout"
+                            maxlength="20"
+                            placeholder="Ej.: 687"
+                            autocomplete="address-line2"
+                            required>
+
+                        <small class="errorCampoDireccion"></small>
+
+                    </div>
+
+                    <!-- DEPARTAMENTO -->
+
+                    <div class="campoDireccionCheckout">
+
+                        <label for="departamentoDireccionCheckout">
+
+                            Departamento
+                            <span>(opcional)</span>
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="departamento"
+                            id="departamentoDireccionCheckout"
+                            maxlength="30"
+                            placeholder="Ej.: Depto. 32">
+
+                        <small class="errorCampoDireccion"></small>
+
+                    </div>
+
+                    <!-- REFERENCIA -->
+
+                    <div
+                        class="campoDireccionCheckout
+                            campoCompletoDireccion">
+
+                        <label for="referenciaDireccionCheckout">
+
+                            Referencia
+                            <span>(opcional)</span>
+
+                        </label>
+
+                        <textarea
+                            name="referencia"
+                            id="referenciaDireccionCheckout"
+                            maxlength="250"
+                            placeholder="Ej.: Casa azul, portón negro"></textarea>
+
+                        <div class="contadorReferenciaDireccion">
+
+                            <span id="contadorReferenciaDireccion">
+                                0
+                            </span>/250
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- DIRECCIÓN PRINCIPAL -->
+
+                <label class="principalDireccionCheckout">
+
+                    <input
+                        type="checkbox"
+                        name="es_principal"
+                        id="principalDireccionCheckout"
+                        value="1">
+
+                    <span class="checkDireccionCheckout">
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            Utilizar como dirección principal
+                        </strong>
+
+                        <small>
+                            Se seleccionará automáticamente
+                            en sus próximas compras.
+                        </small>
+
+                    </span>
+
+                </label>
+
+                <!-- MENSAJE -->
+
+                <div
+                    id="mensajeDireccionCheckout"
+                    class="mensajeDireccionCheckout"
+                    role="="status"
+                    aria-live="polite">
+                </div>
+
+                <!-- ACCIONES -->
+
+                <footer class="accionesDialogDireccion">
+
+                    <button
+                        type="button"
+                        id="btnCancelarDireccionCheckout"
+                        class="btnCancelarDireccionCheckout">
+
+                        Cancelar
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="btnGuardarDireccionCheckout"
+                        class="btnGuardarDireccionCheckout">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        <span>
+                            Guardar dirección
+                        </span>
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </div>
+
+    </dialog>
+
+
+    <!-- ===============================================
+     RECUPERAR CONTRASEÑA DEL CLIENTE
+================================================ -->
+
+
+    <dialog
+        id="dialogRecuperarCliente"
+        class="dialogRecuperarCliente">
+
+        <div class="encabezadoRecuperarCliente">
+
+            <div>
+
+                <span>Seguridad de la cuenta</span>
+
+                <h2>Recuperar contraseña</h2>
+
+            </div>
+
+            <button
+                type="button"
+                id="btnCerrarRecuperarCliente"
+                aria-label="Cerrar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <!-- INDICADOR DE PASOS -->
+
+        <div class="pasosRecuperacionCliente">
+
+            <span
+                id="pasoIndicadorCorreo"
+                class="activo">
+                1
+            </span>
+
+            <i></i>
+
+            <span id="pasoIndicadorCodigo">
+                2
+            </span>
+
+            <i></i>
+
+            <span id="pasoIndicadorPassword">
+                3
+            </span>
+
+        </div>
+
+        <div class="contenidoRecuperarCliente">
+
+            <!-- PASO 1: CORREO -->
+
+            <form
+                id="formEnviarCodigoCliente"
+                class="pasoRecuperacionCliente">
+
+                <div class="iconoRecuperacionCliente">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+                <h3>Ingrese su correo</h3>
+
+                <p>
+                    Enviaremos un código de seis dígitos
+                    al correo asociado a su cuenta.
+                </p>
+
+                <div class="campoRecuperacionCliente">
+
+                    <label for="correoRecuperacionCliente">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correoRecuperacionCliente"
+                        autocomplete="email"
+                        placeholder="cliente@correo.cl"
+                        required>
+
+                </div>
+
+                <button
+                    type="submit"
+                    id="btnEnviarCodigoCliente"
+                    class="btnPrincipalRecuperacion">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Enviar código
+
+                </button>
+
+            </form>
+
+            <!-- PASO 2: CÓDIGO -->
+
+            <form
+                id="formVerificarCodigoCliente"
+                class="pasoRecuperacionCliente"
+                hidden>
+
+                <div class="iconoRecuperacionCliente">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <h3>Verifique el código</h3>
+
+                <p>
+                    Ingrese el código enviado a
+                    <strong id="correoCodigoCliente"></strong>.
+                </p>
+
+                <div class="campoRecuperacionCliente">
+
+                    <label for="codigoRecuperacionCliente">
+                        Código de verificación
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigoRecuperacionCliente"
+                        class="inputCodigoRecuperacion"
+                        inputmode="numeric"
+                        maxlength="6"
+                        autocomplete="one-time-code"
+                        placeholder="000000"
+                        required>
+
+                </div>
+
+                <small class="tiempoCodigoCliente">
+
+                    El código vence en
+                    <strong id="tiempoCodigoCliente">
+                        10:00
+                    </strong>
+
+                </small>
+
+                <button
+                    type="submit"
+                    id="btnVerificarCodigoCliente"
+                    class="btnPrincipalRecuperacion">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Verificar código
+
+                </button>
+
+                <button
+                    type="button"
+                    id="btnReenviarCodigoCliente"
+                    class="btnSecundarioRecuperacion">
+
+                    Reenviar código
+
+                </button>
+
+            </form>
+
+            <!-- PASO 3: NUEVA CONTRASEÑA -->
+
+            <form
+                id="formNuevaPasswordCliente"
+                class="pasoRecuperacionCliente"
+                hidden>
+
+                <div class="iconoRecuperacionCliente">
+
+                    <i class="fa-solid fa-key"></i>
+
+                </div>
+
+                <h3>Cree una nueva contraseña</h3>
+
+                <p>
+                    Debe incluir mayúscula, minúscula,
+                    número y al menos ocho caracteres.
+                </p>
+
+                <div class="campoRecuperacionCliente">
+
+                    <label for="nuevaPasswordCliente">
+                        Nueva contraseña
+                    </label>
+
+                    <div class="campoPasswordRecuperacion">
+
+                        <input
+                            type="password"
+                            id="nuevaPasswordCliente"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="btnVerPasswordRecuperacion"
+                            data-campo="nuevaPasswordCliente">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="campoRecuperacionCliente">
+
+                    <label for="confirmarNuevaPasswordCliente">
+                        Confirmar contraseña
+                    </label>
+
+                    <div class="campoPasswordRecuperacion">
+
+                        <input
+                            type="password"
+                            id="confirmarNuevaPasswordCliente"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="btnVerPasswordRecuperacion"
+                            data-campo="confirmarNuevaPasswordCliente">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    id="btnCambiarPasswordCliente"
+                    class="btnPrincipalRecuperacion">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    Guardar contraseña
+
+                </button>
+
+            </form>
+
+            <!-- MENSAJE -->
+
+            <div
+                id="mensajeRecuperacionCliente"
+                class="mensajeRecuperacionCliente"
+                aria-live="polite">
+            </div>
+
+        </div>
+
+    </dialog>
+
+
+    <!-- ===============================================
+         PIE
+    ================================================ -->
+
+    <footer class="pieCheckout">
+
+        <div class="contenedorCheckout">
+
+            <p>
+                © 2026 AlianzaPro SPA.
+                Todos los derechos reservados.
+            </p>
+
+            <a href="./contacto.html">
+                ¿Necesita ayuda?
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script
+        type="module"
+        src="./js/checkout.js?v=6">
+    </script>
+
+</body>
+
+</html>

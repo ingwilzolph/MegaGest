@@ -1,0 +1,1900 @@
+/* GESTIÓN ADMINISTRATIVA DE PEDIDOS */
+
+.gestionPedidosAdmin {
+    --pedido-azul: #155fd4;
+    --pedido-azul-oscuro: #0c49a9;
+    --pedido-verde: #128454;
+    --pedido-verde-claro: #e7f7ef;
+    --pedido-rojo: #b8464f;
+    --pedido-rojo-claro: #fcebed;
+    --pedido-naranjo: #c87908;
+    --pedido-naranjo-claro: #fff3dd;
+    --pedido-violeta: #7443c5;
+    --pedido-violeta-claro: #f1eafd;
+    --pedido-oliva: #303900;
+    --pedido-texto: #303641;
+    --pedido-secundario: #747d8c;
+    --pedido-borde: #dfe4eb;
+    --pedido-fondo: #f6f8fb;
+    --pedido-blanco: #ffffff;
+
+    width: 100%;
+    padding: 22px;
+    color: var(--pedido-texto);
+}
+
+/* =====================================================
+   ENCABEZADO
+===================================================== */
+
+.encabezadoModuloPedidos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 27px;
+}
+
+.tituloModuloPedidos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.iconoTituloPedidos {
+    display: flex;
+    flex: 0 0 54px;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: #e6efff;
+    color: var(--pedido-azul);
+    font-size: 25px;
+}
+
+.tituloModuloPedidos h1 {
+    margin: 0 0 5px;
+    color: var(--pedido-texto);
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.tituloModuloPedidos p {
+    margin: 0;
+    color: var(--pedido-secundario);
+    font-size: 14px;
+}
+
+.btnNuevaVentaPedido {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 48px;
+    padding: 0 21px;
+    border: none;
+    border-radius: 12px;
+    background: var(--pedido-azul);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 750;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(21, 95, 212, 0.22);
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btnNuevaVentaPedido:hover {
+    background: var(--pedido-azul-oscuro);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 11px 23px rgba(21, 95, 212, 0.3);
+}
+
+/* =====================================================
+   RESUMEN
+===================================================== */
+
+.resumenPedidosAdmin {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(160px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.tarjetaResumenPedido {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-height: 112px;
+    padding: 18px;
+    overflow: hidden;
+    border: 1px solid var(--pedido-borde);
+    border-radius: 16px;
+    background: var(--pedido-blanco);
+    box-shadow: 0 7px 22px rgba(35, 45, 65, 0.06);
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.tarjetaResumenPedido::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 5px;
+    background: #b8c1ce;
+    content: "";
+}
+
+.tarjetaResumenPedido:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(35, 45, 65, 0.1);
+}
+
+.tarjetaResumenPedido.seleccionada {
+    border-color: #9bbcec;
+    background: #f8fbff;
+    box-shadow: 0 9px 25px rgba(21, 95, 212, 0.12);
+}
+
+.tarjetaResumenPedido[data-filtro="Todos"]::before {
+    background: var(--pedido-azul);
+}
+
+.tarjetaResumenPedido[data-filtro="pendiente_pago"]::before {
+    background: var(--pedido-naranjo);
+}
+
+.tarjetaResumenPedido[data-filtro="pagado"]::before {
+    background: var(--pedido-verde);
+}
+
+.tarjetaResumenPedido[data-filtro="preparando"]::before {
+    background: var(--pedido-violeta);
+}
+
+.tarjetaResumenPedido[data-filtro="listo_retiro"]::before {
+    background: #1685a2;
+}
+
+.tarjetaResumenPedido.ventas {
+    cursor: default;
+}
+
+.tarjetaResumenPedido.ventas::before {
+    background: #7a3cc2;
+}
+
+.tarjetaResumenPedido.ventas:hover {
+    transform: none;
+}
+
+.iconoResumenPedido {
+    display: flex;
+    flex: 0 0 48px;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    font-size: 21px;
+}
+
+.iconoResumenPedido.total {
+    background: #e7efff;
+    color: var(--pedido-azul);
+}
+
+.iconoResumenPedido.pendiente {
+    background: var(--pedido-naranjo-claro);
+    color: var(--pedido-naranjo);
+}
+
+.iconoResumenPedido.pagado {
+    background: var(--pedido-verde-claro);
+    color: var(--pedido-verde);
+}
+
+.iconoResumenPedido.preparando {
+    background: var(--pedido-violeta-claro);
+    color: var(--pedido-violeta);
+}
+
+.iconoResumenPedido.listo {
+    background: #e3f5f8;
+    color: #137c94;
+}
+
+.iconoResumenPedido.ingresos {
+    background: #f2e9fc;
+    color: #7435bd;
+}
+
+.tarjetaResumenPedido > div:last-child {
+    min-width: 0;
+}
+
+.tarjetaResumenPedido span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--pedido-secundario);
+    font-size: 11px;
+    font-weight: 650;
+    line-height: 1.25;
+}
+
+.tarjetaResumenPedido strong {
+    display: block;
+    color: var(--pedido-texto);
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.tarjetaResumenPedido small {
+    display: block;
+    margin-top: 7px;
+    color: var(--pedido-secundario);
+    font-size: 10px;
+}
+
+/* =====================================================
+   PESTAÑAS
+===================================================== */
+
+.pestanasPedidosAdmin {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 21px;
+    padding: 12px;
+    overflow-x: auto;
+    border: 1px solid var(--pedido-borde);
+    border-radius: 15px;
+    background: var(--pedido-blanco);
+    scrollbar-width: thin;
+}
+
+.btnPestanaPedido {
+    flex: 0 0 auto;
+    min-height: 43px;
+    padding: 0 17px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: #f1f3f6;
+    color: #646c79;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.btnPestanaPedido:hover {
+    border-color: #ccd5e1;
+    background: #e9edf3;
+    color: var(--pedido-texto);
+}
+
+.btnPestanaPedido.activa {
+    border-color: var(--pedido-oliva);
+    background: var(--pedido-oliva);
+    color: #ffffff;
+}
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+.filtrosPedidosAdmin {
+    display: grid;
+    grid-template-columns:
+        minmax(270px, 1.6fr)
+        minmax(160px, 0.75fr)
+        minmax(175px, 0.85fr)
+        minmax(175px, 0.85fr)
+        minmax(155px, auto);
+    align-items: end;
+    gap: 13px;
+    margin-bottom: 29px;
+    padding: 19px;
+    border: 1px solid var(--pedido-borde);
+    border-radius: 16px;
+    background: var(--pedido-fondo);
+}
+
+.campoFiltroPedido {
+    min-width: 0;
+}
+
+.campoFiltroPedido label {
+    display: block;
+    margin-bottom: 7px;
+    color: #454c58;
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.campoFiltroPedido select,
+.inputBusquedaPedido {
+    width: 100%;
+    height: 47px;
+    border: 1px solid #cfd6e1;
+    border-radius: 11px;
+    background: #ffffff;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.campoFiltroPedido select {
+    padding: 0 37px 0 13px;
+    color: var(--pedido-texto);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.inputBusquedaPedido {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.inputBusquedaPedido i {
+    flex: 0 0 auto;
+    margin-left: 15px;
+    color: #7d8795;
+    font-size: 15px;
+}
+
+.inputBusquedaPedido input {
+    width: 100%;
+    height: 100%;
+    padding: 0 14px 0 11px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--pedido-texto);
+    font-size: 12px;
+}
+
+.inputBusquedaPedido input::placeholder {
+    color: #98a0ac;
+}
+
+.inputBusquedaPedido:focus-within,
+.campoFiltroPedido select:focus {
+    border-color: #7fa9e7;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(21, 95, 212, 0.1);
+}
+
+.btnLimpiarFiltrosPedido {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 47px;
+    padding: 0 15px;
+    border: 1px solid #cbd3df;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #4d5561;
+    font-size: 11px;
+    font-weight: 750;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btnLimpiarFiltrosPedido:hover {
+    border-color: #aab5c5;
+    background: #f6f8fa;
+    color: var(--pedido-texto);
+}
+
+/* =====================================================
+   ENCABEZADO RESULTADOS
+===================================================== */
+
+.encabezadoResultadosPedidos {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 3px 15px;
+}
+
+.encabezadoResultadosPedidos h2 {
+    margin: 0 0 5px;
+    color: var(--pedido-oliva);
+    font-size: 21px;
+    font-weight: 780;
+}
+
+.encabezadoResultadosPedidos p {
+    margin: 0;
+    color: var(--pedido-secundario);
+    font-size: 12px;
+}
+
+.contadorResultadosPedidos {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    color: var(--pedido-secundario);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.contadorResultadosPedidos strong {
+    color: var(--pedido-oliva);
+    font-size: 17px;
+}
+
+/* =====================================================
+   TABLA
+===================================================== */
+
+.contenedorTablaPedidos {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--pedido-borde);
+    border-radius: 15px;
+    background: var(--pedido-blanco);
+    box-shadow: 0 7px 24px rgba(38, 47, 65, 0.06);
+}
+
+.tablaPedidosAdmin {
+    width: 100%;
+    min-width: 1180px;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.tablaPedidosAdmin thead {
+    background: var(--pedido-oliva);
+}
+
+.tablaPedidosAdmin th {
+    padding: 17px 14px;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.tablaPedidosAdmin th:last-child {
+    border-right: none;
+}
+
+.tablaPedidosAdmin td {
+    padding: 16px 14px;
+    border-right: 1px solid #e7eaf0;
+    border-bottom: 1px solid #e2e6ec;
+    color: #505865;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tablaPedidosAdmin td:last-child {
+    border-right: none;
+}
+
+.tablaPedidosAdmin tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tablaPedidosAdmin tbody tr {
+    transition: background 0.2s ease;
+}
+
+.tablaPedidosAdmin tbody tr:hover {
+    background: #f8faff;
+}
+
+/* =====================================================
+   CELDAS
+===================================================== */
+
+.infoNumeroPedido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 155px;
+    text-align: left;
+}
+
+.infoNumeroPedido strong {
+    color: var(--pedido-texto);
+    font-size: 12px;
+}
+
+.infoNumeroPedido small {
+    margin-top: 5px;
+    color: #8992a0;
+    font-size: 10px;
+}
+
+.infoClientePedido {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 210px;
+    text-align: left;
+}
+
+.avatarClientePedido {
+    display: flex;
+    flex: 0 0 42px;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #5e6878;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.infoClientePedido > div:last-child {
+    min-width: 0;
+}
+
+.infoClientePedido strong,
+.infoClientePedido small {
+    display: block;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.infoClientePedido strong {
+    color: var(--pedido-texto);
+    font-size: 12px;
+}
+
+.infoClientePedido small {
+    margin-top: 5px;
+    color: #818a98;
+    font-size: 10px;
+}
+
+.canalPedidoAdmin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 100px;
+    color: #545d69;
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.canalPedidoAdmin i {
+    color: var(--pedido-azul);
+}
+
+.cantidadProductosPedido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cantidadProductosPedido strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 31px;
+    padding: 0 8px;
+    border-radius: 17px;
+    background: #edf1f6;
+    color: #414956;
+    font-size: 12px;
+}
+
+.cantidadProductosPedido span {
+    margin-top: 4px;
+    color: #8b94a1;
+    font-size: 9px;
+}
+
+.totalPedidoAdmin {
+    color: var(--pedido-texto);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* =====================================================
+   ESTADO DEL PAGO
+===================================================== */
+
+.estadoPagoPedidoAdmin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 92px;
+    padding: 8px 11px;
+    border-radius: 22px;
+    font-size: 10px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.estadoPagoPedidoAdmin > span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.estadoPagoPedidoAdmin.aprobado {
+    background: var(--pedido-verde-claro);
+    color: #087345;
+}
+
+.estadoPagoPedidoAdmin.aprobado > span {
+    background: #14945d;
+}
+
+.estadoPagoPedidoAdmin.pendiente {
+    background: var(--pedido-naranjo-claro);
+    color: #966006;
+}
+
+.estadoPagoPedidoAdmin.pendiente > span {
+    background: #d98a0e;
+}
+
+.estadoPagoPedidoAdmin.rechazado {
+    background: var(--pedido-rojo-claro);
+    color: #a63a44;
+}
+
+.estadoPagoPedidoAdmin.rechazado > span {
+    background: #c14953;
+}
+
+.estadoPagoPedidoAdmin.anulado,
+.estadoPagoPedidoAdmin.reembolsado {
+    background: #edf0f4;
+    color: #646d7a;
+}
+
+.estadoPagoPedidoAdmin.anulado > span,
+.estadoPagoPedidoAdmin.reembolsado > span {
+    background: #7b8491;
+}
+
+/* =====================================================
+   ESTADO DEL PEDIDO
+===================================================== */
+
+.estadoPedidoAdmin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 104px;
+    padding: 8px 11px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.estadoPedidoAdmin.pendiente {
+    background: #fff3dd;
+    color: #976108;
+}
+
+.estadoPedidoAdmin.pagado {
+    background: #e8f7ef;
+    color: #087346;
+}
+
+.estadoPedidoAdmin.preparando {
+    background: #efe9fc;
+    color: #6737ad;
+}
+
+.estadoPedidoAdmin.listo {
+    background: #e2f5f8;
+    color: #0f7189;
+}
+
+.estadoPedidoAdmin.enviado {
+    background: #e6efff;
+    color: #175aaa;
+}
+
+.estadoPedidoAdmin.entregado {
+    background: #e3f6ec;
+    color: #087444;
+}
+
+.estadoPedidoAdmin.cancelado {
+    background: #fcebed;
+    color: #a43943;
+}
+
+/* =====================================================
+   FECHA Y ACCIONES
+===================================================== */
+
+.fechaPedidoAdmin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 92px;
+    color: #68717e;
+    white-space: nowrap;
+}
+
+.fechaPedidoAdmin i {
+    color: #788391;
+}
+
+.accionesPedidoAdmin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnAccionPedido {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    border: 1px solid #aac4ed;
+    border-radius: 10px;
+    background: #edf4ff;
+    color: #1557b1;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btnAccionPedido:hover {
+    background: var(--pedido-azul);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   CARGANDO, ERROR Y SIN RESULTADOS
+===================================================== */
+
+.cargandoPedidosAdmin,
+.errorPedidosAdmin {
+    height: 150px;
+    text-align: center !important;
+}
+
+.cargandoPedidosAdmin i,
+.errorPedidosAdmin i {
+    margin-right: 8px;
+}
+
+.cargandoPedidosAdmin {
+    color: #798290 !important;
+}
+
+.errorPedidosAdmin {
+    color: var(--pedido-rojo) !important;
+}
+
+.sinPedidosAdmin {
+    display: none;
+    min-height: 310px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.sinPedidosAdmin > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 73px;
+    height: 73px;
+    margin-bottom: 17px;
+    border-radius: 50%;
+    background: #edf2fa;
+    color: #69809f;
+    font-size: 28px;
+}
+
+.sinPedidosAdmin h3 {
+    margin: 0 0 8px;
+    color: var(--pedido-texto);
+    font-size: 18px;
+}
+
+.sinPedidosAdmin p {
+    margin: 0 0 20px;
+    color: var(--pedido-secundario);
+    font-size: 12px;
+}
+
+.sinPedidosAdmin button {
+    min-height: 41px;
+    padding: 0 17px;
+    border: 1px solid #bcc7d6;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #4c5664;
+    font-size: 11px;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+/* =====================================================
+   RESPONSIVE PEDIDOS
+===================================================== */
+
+@media (max-width: 1450px) {
+
+    .resumenPedidosAdmin {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1180px) {
+
+    .filtrosPedidosAdmin {
+        grid-template-columns:
+            minmax(260px, 1.4fr)
+            repeat(3, minmax(155px, 1fr));
+    }
+
+    .btnLimpiarFiltrosPedido {
+        grid-column: 1 / -1;
+        justify-self: end;
+        min-width: 170px;
+    }
+}
+
+@media (max-width: 850px) {
+
+    .gestionPedidosAdmin {
+        padding: 17px;
+    }
+
+    .encabezadoModuloPedidos {
+        align-items: flex-start;
+    }
+
+    .resumenPedidosAdmin {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filtrosPedidosAdmin {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .buscadorPedido {
+        grid-column: 1 / -1;
+    }
+
+    .btnLimpiarFiltrosPedido {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .gestionPedidosAdmin {
+        padding: 13px;
+    }
+
+    .encabezadoModuloPedidos {
+        flex-direction: column;
+    }
+
+    .btnNuevaVentaPedido {
+        width: 100%;
+    }
+
+    .tituloModuloPedidos {
+        align-items: flex-start;
+    }
+
+    .resumenPedidosAdmin {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjetaResumenPedido {
+        min-height: 95px;
+    }
+
+    .filtrosPedidosAdmin {
+        grid-template-columns: 1fr;
+        padding: 14px;
+    }
+
+    .buscadorPedido,
+    .btnLimpiarFiltrosPedido {
+        grid-column: auto;
+    }
+
+    .encabezadoResultadosPedidos {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .contadorResultadosPedidos {
+        align-self: flex-end;
+    }
+}
+
+
+/* =====================================================
+   FILTROS PEDIDOS EN UNA SOLA LÍNEA
+===================================================== */
+
+.gestionPedidosAdmin .filtrosPedidosAdmin {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-end !important;
+
+    width: 100% !important;
+    gap: 12px !important;
+    padding: 18px !important;
+
+    overflow-x: auto !important;
+
+    border: 1px solid #dfe4eb !important;
+    border-radius: 16px !important;
+
+    background: #f6f8fb !important;
+}
+
+/* =====================================================
+   CAMPO BUSCADOR
+===================================================== */
+
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.buscadorPedido {
+    flex: 1 1 270px !important;
+
+    width: auto !important;
+    min-width: 230px !important;
+
+    grid-column: auto !important;
+}
+
+/* =====================================================
+   CAMPOS SELECT
+===================================================== */
+
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.campoFiltroPedido:not(.buscadorPedido) {
+    flex: 0 0 165px !important;
+
+    width: 165px !important;
+    min-width: 165px !important;
+
+    grid-column: auto !important;
+}
+
+/* Un poco más grande para Estado del pedido */
+
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.campoFiltroPedido:nth-of-type(4) {
+    flex-basis: 175px !important;
+
+    width: 175px !important;
+    min-width: 175px !important;
+}
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.campoFiltroPedido label {
+    display: block !important;
+
+    margin: 0 0 7px !important;
+
+    color: #454c58 !important;
+
+    font-size: 11px !important;
+    font-weight: 750 !important;
+
+    white-space: nowrap !important;
+}
+
+/* =====================================================
+   INPUT Y SELECT
+===================================================== */
+
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.inputBusquedaPedido,
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.campoFiltroPedido select {
+    width: 100% !important;
+    height: 47px !important;
+    min-height: 47px !important;
+
+    margin: 0 !important;
+
+    border: 1px solid #cfd6e1 !important;
+    border-radius: 11px !important;
+
+    background: #ffffff !important;
+}
+
+/* SELECT */
+
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.campoFiltroPedido select {
+    padding: 0 35px 0 12px !important;
+
+    color: #303641 !important;
+
+    font-size: 11px !important;
+
+    cursor: pointer !important;
+}
+
+/* BUSCADOR */
+
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.inputBusquedaPedido {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.inputBusquedaPedido input {
+    flex: 1 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    padding: 0 12px !important;
+
+    border: none !important;
+    outline: none !important;
+
+    background: transparent !important;
+
+    font-size: 11px !important;
+}
+
+/* =====================================================
+   BOTÓN LIMPIAR
+===================================================== */
+
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.btnLimpiarFiltrosPedido {
+    position: static !important;
+
+    display: inline-flex !important;
+    flex: 0 0 155px !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    align-self: flex-end !important;
+
+    grid-column: auto !important;
+    grid-row: auto !important;
+
+    width: 155px !important;
+    min-width: 155px !important;
+    height: 47px !important;
+    min-height: 47px !important;
+
+    margin: 0 !important;
+    padding: 0 13px !important;
+
+    border: 1px solid #cbd3df !important;
+    border-radius: 11px !important;
+
+    background: #ffffff !important;
+    color: #4d5561 !important;
+
+    font-size: 11px !important;
+    font-weight: 750 !important;
+
+    white-space: nowrap !important;
+
+    cursor: pointer !important;
+}
+
+.gestionPedidosAdmin
+.filtrosPedidosAdmin
+.btnLimpiarFiltrosPedido:hover {
+    border-color: #155fd4 !important;
+
+    background: #edf4ff !important;
+    color: #155fd4 !important;
+}
+
+/* =====================================================
+   COMPUTADORES CON MENOR ANCHO
+===================================================== */
+
+@media (max-width: 1250px) {
+
+    .gestionPedidosAdmin
+    .filtrosPedidosAdmin {
+        overflow-x: auto !important;
+        padding-bottom: 20px !important;
+    }
+
+    /*
+     * Los campos continúan en una sola línea.
+     * Si no caben, se desplazan horizontalmente.
+     */
+
+    .gestionPedidosAdmin
+    .filtrosPedidosAdmin
+    .buscadorPedido {
+        flex-basis: 240px !important;
+        min-width: 240px !important;
+    }
+}
+
+/* =====================================================
+   TELÉFONO
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .gestionPedidosAdmin
+    .filtrosPedidosAdmin {
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+
+        overflow-x: visible !important;
+
+        padding: 14px !important;
+    }
+
+    .gestionPedidosAdmin
+    .filtrosPedidosAdmin
+    .buscadorPedido,
+    .gestionPedidosAdmin
+    .filtrosPedidosAdmin
+    .campoFiltroPedido:not(.buscadorPedido),
+    .gestionPedidosAdmin
+    .filtrosPedidosAdmin
+    .btnLimpiarFiltrosPedido {
+        flex: none !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+
+
+
+
+
+/* =====================================================
+   DIALOG - REEMBOLSO PRESENCIAL
+===================================================== */
+
+#dialogReembolsoPresencial {
+    width: min(760px, calc(100% - 32px));
+    max-height: 90vh;
+    padding: 0;
+    border: none;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+    overflow: hidden;
+}
+
+#dialogReembolsoPresencial::backdrop {
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(3px);
+}
+
+
+/* =====================================================
+   FORMULARIO
+===================================================== */
+
+#dialogReembolsoPresencial form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 28px;
+    margin: 0;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
+/* =====================================================
+   TITULO
+===================================================== */
+
+#dialogReembolsoPresencial h2 {
+    margin: -28px -28px 4px;
+    padding: 26px 28px;
+    background: linear-gradient(
+        135deg,
+        #0d6efd,
+        #1769e8
+    );
+    color: #ffffff;
+    font-size: 1.65rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+
+/* =====================================================
+   RESUMEN PEDIDO
+===================================================== */
+
+#dialogReembolsoPresencial [data-resumen] {
+    margin: 0;
+    padding: 16px 18px;
+    border: 1px solid #cfe2ff;
+    border-radius: 14px;
+    background: #f0f6ff;
+    color: #1e3a5f;
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   TEXTO INFORMATIVO
+===================================================== */
+
+#dialogReembolsoPresencial form > p:not([data-resumen]):not([data-mensaje]) {
+    margin: -8px 0 0;
+    color: #667085;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+
+/* =====================================================
+   FIELDSET
+===================================================== */
+
+#dialogReembolsoPresencial fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+
+/* =====================================================
+   LABELS
+===================================================== */
+
+#dialogReembolsoPresencial fieldset p {
+    margin: 0;
+}
+
+#dialogReembolsoPresencial label {
+    display: block;
+    color: #344054;
+    font-size: 0.94rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   INPUTS / SELECT / TEXTAREA
+===================================================== */
+
+#dialogReembolsoPresencial textarea,
+#dialogReembolsoPresencial select,
+#dialogReembolsoPresencial input[type="text"] {
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px 14px;
+    border: 1px solid #d0d5dd;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #101828;
+    font-size: 0.96rem;
+    font-family: inherit;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    box-sizing: border-box;
+}
+
+#dialogReembolsoPresencial textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#dialogReembolsoPresencial select {
+    min-height: 50px;
+    cursor: pointer;
+}
+
+#dialogReembolsoPresencial input[type="text"] {
+    min-height: 48px;
+}
+
+
+/* =====================================================
+   FOCUS
+===================================================== */
+
+#dialogReembolsoPresencial textarea:focus,
+#dialogReembolsoPresencial select:focus,
+#dialogReembolsoPresencial input[type="text"]:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.12);
+}
+
+
+/* =====================================================
+   CHECKBOX
+===================================================== */
+
+#dialogReembolsoPresencial input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+    accent-color: #0d6efd;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+#dialogReembolsoPresencial label:has(
+    input[type="checkbox"]
+) {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 14px 16px;
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+    background: #f9fafb;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   MENSAJE DE RESPUESTA
+===================================================== */
+
+#dialogReembolsoPresencial [data-mensaje] {
+    min-height: 20px;
+    margin: 0;
+    padding: 0;
+    color: #475467;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+#dialogReembolsoPresencial button {
+    min-height: 48px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 750;
+    cursor: pointer;
+    transition:
+        transform 0.15s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#dialogReembolsoPresencial button[type="submit"] {
+    background: #0d6efd;
+    color: #ffffff;
+    box-shadow: 0 7px 18px rgba(13, 110, 253, 0.2);
+}
+
+#dialogReembolsoPresencial button[type="submit"]:hover {
+    background: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+#dialogReembolsoPresencial button[data-cerrar] {
+    background: #f2f4f7;
+    color: #344054;
+}
+
+#dialogReembolsoPresencial button[data-cerrar]:hover {
+    background: #e4e7ec;
+}
+
+#dialogReembolsoPresencial button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =====================================================
+   BOTONES UNO AL LADO DEL OTRO
+===================================================== */
+
+#dialogReembolsoPresencial form > button {
+    align-self: flex-end;
+}
+
+#dialogReembolsoPresencial button[type="submit"] {
+    margin-top: 2px;
+}
+
+#dialogReembolsoPresencial button[data-cerrar] {
+    margin-top: -66px;
+    margin-right: 0;
+    transform: translateX(0);
+}
+
+
+/* =====================================================
+   MOVIL
+===================================================== */
+
+@media (max-width: 600px) {
+
+    #dialogReembolsoPresencial {
+        width: calc(100% - 20px);
+        max-height: 94vh;
+        border-radius: 18px;
+    }
+
+    #dialogReembolsoPresencial form {
+        padding: 20px;
+        gap: 16px;
+        max-height: 94vh;
+    }
+
+    #dialogReembolsoPresencial h2 {
+        margin: -20px -20px 2px;
+        padding: 22px 20px;
+        font-size: 1.35rem;
+    }
+
+    #dialogReembolsoPresencial textarea {
+        min-height: 105px;
+    }
+
+    #dialogReembolsoPresencial button {
+        width: 100%;
+    }
+
+    #dialogReembolsoPresencial form > button {
+        align-self: stretch;
+    }
+
+    #dialogReembolsoPresencial button[data-cerrar] {
+        margin-top: 0;
+    }
+}
+
+
+
+
+.accionesReembolsoPresencial {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid #eaecf0;
+}
+
+.accionesReembolsoPresencial button[type="submit"] {
+    min-width: 260px;
+}
+
+.accionesReembolsoPresencial button[data-cerrar] {
+    min-width: 120px;
+    margin: 0 !important;
+}
+
+@media (max-width: 600px) {
+
+    .accionesReembolsoPresencial {
+        flex-direction: column;
+    }
+
+    .accionesReembolsoPresencial button {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+
+
+
+/* =====================================================
+   DIALOG - REEMBOLSO WEBPAY
+===================================================== */
+
+#dialogReembolsoWebpay {
+    width: min(720px, calc(100% - 32px));
+    max-height: 90vh;
+    padding: 0;
+    border: none;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+    overflow: hidden;
+}
+
+#dialogReembolsoWebpay::backdrop {
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(3px);
+}
+
+
+/* =====================================================
+   FORMULARIO
+===================================================== */
+
+#dialogReembolsoWebpay form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 28px;
+    margin: 0;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
+/* =====================================================
+   TITULO
+===================================================== */
+
+#dialogReembolsoWebpay h2 {
+    margin: -28px -28px 4px;
+    padding: 26px 28px;
+
+    background: linear-gradient(
+        135deg,
+        #0d6efd,
+        #1769e8
+    );
+
+    color: #ffffff;
+
+    font-size: 1.65rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+
+/* =====================================================
+   RESUMEN DEL PEDIDO
+===================================================== */
+
+#dialogReembolsoWebpay [data-resumen] {
+    margin: 0;
+    padding: 16px 18px;
+
+    border: 1px solid #cfe2ff;
+    border-radius: 14px;
+
+    background: #f0f6ff;
+
+    color: #1e3a5f;
+
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   TEXTO INFORMATIVO
+===================================================== */
+
+#dialogReembolsoWebpay form > p:not([data-resumen]):not([data-mensaje]) {
+    margin: -8px 0 0;
+
+    color: #667085;
+
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+
+/* =====================================================
+   FIELDSET
+===================================================== */
+
+#dialogReembolsoWebpay fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+}
+
+
+/* =====================================================
+   LABELS
+===================================================== */
+
+#dialogReembolsoWebpay label {
+    display: block;
+
+    color: #344054;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+#dialogReembolsoWebpay textarea {
+    width: 100%;
+    min-height: 130px;
+
+    margin-top: 8px;
+    padding: 14px 15px;
+
+    border: 1px solid #d0d5dd;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #101828;
+
+    font-family: inherit;
+    font-size: 0.96rem;
+
+    resize: vertical;
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#dialogReembolsoWebpay textarea:focus {
+    border-color: #0d6efd;
+
+    box-shadow:
+        0 0 0 4px rgba(13, 110, 253, 0.12);
+}
+
+
+/* =====================================================
+   CHECKBOX
+===================================================== */
+
+#dialogReembolsoWebpay input[type="checkbox"] {
+    width: 21px;
+    height: 21px;
+
+    margin: 2px 0 0;
+
+    accent-color: #0d6efd;
+
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+#dialogReembolsoWebpay label:has(
+    input[type="checkbox"]
+) {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 15px 16px;
+
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+
+    background: #f9fafb;
+
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+
+/* =====================================================
+   MENSAJE
+===================================================== */
+
+#dialogReembolsoWebpay [data-mensaje] {
+    min-height: 20px;
+
+    margin: 0;
+
+    color: #475467;
+
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+#dialogReembolsoWebpay button {
+    min-height: 48px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* BOTON PRINCIPAL */
+
+#dialogReembolsoWebpay button[type="submit"] {
+    background: #0d6efd;
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 18px rgba(13, 110, 253, 0.20);
+}
+
+#dialogReembolsoWebpay button[type="submit"]:hover {
+    background: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+
+/* BOTON CERRAR */
+
+#dialogReembolsoWebpay button[data-cerrar] {
+    background: #f2f4f7;
+    color: #344054;
+}
+
+#dialogReembolsoWebpay button[data-cerrar]:hover {
+    background: #e4e7ec;
+}
+
+
+/* DESHABILITADO */
+
+#dialogReembolsoWebpay button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =====================================================
+   ACCIONES
+===================================================== */
+
+.accionesReembolsoWebpay {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eaecf0;
+}
+
+.accionesReembolsoWebpay button[type="submit"] {
+    min-width: 245px;
+}
+
+.accionesReembolsoWebpay button[data-cerrar] {
+    min-width: 120px;
+}
+
+
+/* =====================================================
+   MOVIL
+===================================================== */
+
+@media (max-width: 600px) {
+
+    #dialogReembolsoWebpay {
+        width: calc(100% - 20px);
+        max-height: 94vh;
+        border-radius: 18px;
+    }
+
+    #dialogReembolsoWebpay form {
+        padding: 20px;
+        gap: 16px;
+        max-height: 94vh;
+    }
+
+    #dialogReembolsoWebpay h2 {
+        margin: -20px -20px 2px;
+
+        padding: 22px 20px;
+
+        font-size: 1.35rem;
+    }
+
+    #dialogReembolsoWebpay textarea {
+        min-height: 110px;
+    }
+
+    .accionesReembolsoWebpay {
+        flex-direction: column;
+    }
+
+    .accionesReembolsoWebpay button {
+        width: 100%;
+        min-width: 0;
+    }
+}

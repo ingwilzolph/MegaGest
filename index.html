@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="AlianzaPro: taller automotriz y repuestos. Reserve su cita y encuentre productos para su vehículo.">
+    <title>AlianzaPro | Taller y repuestos</title>
+    <link rel="icon" type="image/png" href="./images/logoCabeza.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/carrito.css?v=12">
+    <link rel="stylesheet" href="css/index.css?v=1">
+    <link rel="stylesheet" href="css/carritoUnificado.css?v=1">
+</head>
+<body>
+<a class="saltoContenido" href="#contenidoPrincipal">Saltar al contenido</a>
+<header class="cabeceraInicio" id="cabeceraInicio">
+    <div class="barraContacto"><div class="contenedorInicio barraContactoInterior">
+        <span><i class="fa-solid fa-location-dot"></i> Santiago, Chile</span>
+        <span><i class="fa-regular fa-clock"></i> Lun–Vie 09:00–18:00 · Sáb 09:00–14:00</span>
+        <a href="contacto.html"><i class="fa-solid fa-phone"></i> Contáctenos</a>
+    </div></div>
+    <nav class="navegacionInicio contenedorInicio" aria-label="Navegación principal">
+        <a class="marcaInicio" href="index.html"><img src="images/logoAlianzaPro.webp" alt="AlianzaPro"></a>
+        <button class="botonMenuInicio" id="botonMenuInicio" type="button" aria-expanded="false" aria-controls="menuInicio"><span></span><span></span><span></span><b>Menú</b></button>
+        <div class="menuInicio" id="menuInicio"><a class="activo" href="index.html">Inicio</a><a href="services.html">Servicios</a><a href="listing-row.html">Repuestos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a><a href="page-login.html"><i class="fa-regular fa-circle-user"></i> Admin</a></div>
+        <div class="accionesCabecera">
+            <a class="botonCuentaInicio" href="mi-cuenta.html" aria-label="Mi cuenta"><i class="fa-regular fa-user"></i></a>
+            <button class="botonCarritoInicio" id="abrirCarritoInicio" type="button" aria-label="Abrir carrito"><i class="fa-solid fa-cart-shopping"></i><span id="contadorCarrito">0</span></button>
+            <a class="botonReservaCabecera" href="services.html#formCita">Reservar cita</a>
+        </div>
+    </nav>
+</header>
+
+<aside class="carritoLateral carritoLateralInicio" id="carritoLateralInicio" aria-hidden="true" aria-label="Carrito de compras">
+    <header class="tituloCarrito">
+        <div class="tituloCarritoTexto">
+            <div class="iconoTituloCarrito"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div><h4 id="titleCarrito">Carrito (0)</h4><small>Resumen de su compra</small></div>
+        </div>
+        <div class="accionesTituloCarrito">
+            <button type="button" id="btnVaciarCarrito" class="btnVaciarCarrito" title="Vaciar carrito" aria-label="Vaciar carrito"><i class="fa-solid fa-trash-can"></i></button>
+            <button type="button" id="cerrarCarritoInicio" class="btnCerrarCarritoUnificado" aria-label="Cerrar carrito"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </header>
+    <div id="mi-elemento" class="contenidoCarrito"></div>
+    <div id="footerCarrito" class="footerCarrito"></div>
+</aside>
+<button class="fondoCarritoInicio" id="fondoCarritoInicio" type="button" aria-label="Cerrar carrito" hidden></button>
+
+<main id="contenidoPrincipal">
+<section class="heroInicio">
+    <div class="heroDecoracion uno"></div><div class="heroDecoracion dos"></div>
+    <div class="contenedorInicio heroContenido">
+        <div class="heroTexto" data-revelar>
+            <span class="etiquetaHero"><i class="fa-solid fa-shield-halved"></i> Taller y repuestos de confianza</span>
+            <h1>Su auto merece una atención <strong>profesional.</strong></h1>
+            <p>Servicios automotrices, repuestos y seguimiento en un solo lugar. En AlianzaPro cuidamos cada detalle para que vuelva a la ruta con tranquilidad.</p>
+            <div class="accionesHero"><a class="botonPrimarioInicio" href="services.html#formCita"><i class="fa-regular fa-calendar-check"></i> Reservar una cita</a><a class="botonSecundarioInicio" href="listing-row.html">Explorar repuestos <i class="fa-solid fa-arrow-right"></i></a></div>
+            <div class="confianzaHero"><div><strong>Atención clara</strong><span>Información antes de intervenir</span></div><div><strong>Stock actualizado</strong><span>Disponibilidad en línea</span></div></div>
+        </div>
+        <div class="heroVisual" data-revelar><div class="marcoHero"><img src="images/cabesaRepuestos.webp" alt="Repuestos automotrices"><div class="selloHero"><i class="fa-solid fa-wrench"></i><span><strong>Solución integral</strong>Taller + repuestos</span></div></div></div>
+    </div>
+</section>
+
+<section class="accesosRapidos contenedorInicio">
+    <a href="services.html#formCita" data-revelar><i class="fa-regular fa-calendar-check"></i><span><strong>Agendar servicio</strong><small>Elija fecha y horario</small></span><b>→</b></a>
+    <a href="listing-row.html" data-revelar><i class="fa-solid fa-gears"></i><span><strong>Buscar repuestos</strong><small>Catálogo con stock real</small></span><b>→</b></a>
+    <a href="mi-cuenta.html" data-revelar><i class="fa-regular fa-user"></i><span><strong>Mi cuenta</strong><small>Pedidos y datos personales</small></span><b>→</b></a>
+</section>
+
+<section class="seccionInicio seccionServiciosInicio" id="servicios"><div class="contenedorInicio">
+    <div class="encabezadoSeccion" data-revelar><div><span class="sobreTitulo">Servicios de taller</span><h2>Todo lo que su vehículo necesita</h2><p>Atención profesional desde la reserva hasta la entrega.</p></div><a href="services.html">Ver todos <i class="fa-solid fa-arrow-right"></i></a></div>
+    <div class="gridServiciosInicio" id="serviciosInicio" aria-live="polite"><div class="estadoCargaInicio"><i class="fa-solid fa-spinner fa-spin"></i> Cargando servicios…</div></div>
+</div></section>
+
+<section class="bandaCompromiso"><div class="contenedorInicio compromisoInterior">
+    <div data-revelar><span class="sobreTitulo claro">Nuestro compromiso</span><h2>Diagnóstico claro.<br>Trabajo responsable.</h2></div>
+    <p data-revelar>Queremos que entienda qué necesita su vehículo y por qué. Organizamos citas, órdenes de trabajo, repuestos y atención para ofrecer un servicio transparente.</p>
+    <div class="datosCompromiso" data-revelar><div><i class="fa-solid fa-clipboard-check"></i><strong>Seguimiento</strong><span>Orden de trabajo organizada</span></div><div><i class="fa-solid fa-box-open"></i><strong>Stock real</strong><span>Disponibilidad actualizada</span></div><div><i class="fa-solid fa-headset"></i><strong>Atención</strong><span>Acompañamiento personalizado</span></div></div>
+</div></section>
+
+<section class="seccionInicio" id="ofertas"><div class="contenedorInicio">
+    <div class="encabezadoSeccion" data-revelar><div><span class="sobreTitulo naranja">Oportunidades</span><h2>Productos destacados y en oferta</h2><p>Precios obtenidos directamente desde el catálogo de AlianzaPro.</p></div><a href="listing-row.html">Ir a la tienda <i class="fa-solid fa-arrow-right"></i></a></div>
+    <div class="gridProductosInicio" id="productosInicio" aria-live="polite"><div class="estadoCargaInicio"><i class="fa-solid fa-spinner fa-spin"></i> Cargando productos…</div></div>
+</div></section>
+
+<section class="seccionInicio pasosInicio"><div class="contenedorInicio">
+    <div class="encabezadoCentrado" data-revelar><span class="sobreTitulo">Una experiencia simple</span><h2>Reserve su atención en tres pasos</h2></div>
+    <div class="gridPasosInicio"><article data-revelar><span>01</span><i class="fa-solid fa-list-check"></i><h3>Elija el servicio</h3><p>Seleccione lo que necesita y complete los datos de su vehículo.</p></article><article data-revelar><span>02</span><i class="fa-regular fa-calendar"></i><h3>Seleccione horario</h3><p>Consulte la disponibilidad y reserve una fecha conveniente.</p></article><article data-revelar><span>03</span><i class="fa-regular fa-circle-check"></i><h3>Reciba confirmación</h3><p>Obtenga su número de reserva y la información de su cita.</p></article></div>
+</div></section>
+
+<section class="llamadaInicio"><div class="contenedorInicio llamadaInterior" data-revelar><div><span>¿Su vehículo necesita atención?</span><h2>Estamos listos para ayudarle.</h2><p>Reserve su cita en pocos minutos o comuníquese con nuestro equipo.</p></div><div><a class="botonClaroInicio" href="services.html#formCita">Reservar ahora</a><a class="botonWhatsappInicio" href="https://wa.me/" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></div></div></section>
+</main>
+
+<footer class="pieInicio"><div class="contenedorInicio pieGrid">
+    <div class="pieMarca"><img src="images/logoAlianzaPro.webp" alt="AlianzaPro"><p>Servicios automotrices y repuestos con una atención cercana, ordenada y transparente.</p><div class="redesInicio"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+    <div><h3>Navegación</h3><a href="services.html">Servicios</a><a href="listing-row.html">Repuestos</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></div>
+    <div><h3>Atención</h3><p>Lunes a viernes<br><strong>09:00 a 18:00</strong></p><p>Sábado<br><strong>09:00 a 14:00</strong></p></div>
+    <div><h3>Accesos</h3><a href="mi-cuenta.html">Mi cuenta</a><a href="services.html#formCita">Reservar cita</a><a href="page-login.html">Acceso administrativo</a></div>
+</div><div class="contenedorInicio pieInferior"><span>© <span id="anioInicio"></span> AlianzaPro SPA</span><span>Su auto, nuestro compromiso.</span></div></footer>
+<a class="whatsappFlotante"
+   href="https://wa.me/56933339047?text=Hola%20AlianzaPro%2C%20necesito%20informaci%C3%B3n%20sobre%20sus%20servicios."
+   target="_blank"
+   rel="noopener"
+   aria-label="Contactar a AlianzaPro por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+<button class="volverArribaInicio" id="volverArribaInicio" type="button" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></button>
+<script type="module" src="js/carrito-global.js?v=8"></script><script type="module" src="js/index.js?v=2"></script>
+</body></html>

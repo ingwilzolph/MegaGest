@@ -1,0 +1,2868 @@
+/* =====================================================
+   VARIABLES Y BASE
+===================================================== */
+
+:root {
+    --checkout-azul: #075fd8;
+    --checkout-azul-oscuro: #0349aa;
+    --checkout-verde: #168851;
+    --checkout-rojo: #bf343d;
+    --checkout-texto: #323740;
+    --checkout-secundario: #757c87;
+    --checkout-borde: #dfe3e8;
+    --checkout-fondo: #f5f7fa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    background: var(--checkout-fondo);
+    color: var(--checkout-texto);
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+.contenedorCheckout {
+    width: min(1200px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   ENCABEZADO
+===================================================== */
+
+.encabezadoCheckout {
+    min-height: 80px;
+    border-bottom: 1px solid var(--checkout-borde);
+    background: #ffffff;
+}
+
+.encabezadoCheckoutInterior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+}
+
+.logoCheckout {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logoCheckout img {
+    display: block;
+    width: auto;
+    height: 62px;
+    object-fit: contain;
+}
+
+.compraSeguraCheckout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.compraSeguraCheckout > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background: #e5f6ed;
+    color: var(--checkout-verde);
+}
+
+.compraSeguraCheckout strong,
+.compraSeguraCheckout small {
+    display: block;
+}
+
+.compraSeguraCheckout strong {
+    color: #3b4048;
+    font-size: 12px;
+}
+
+.compraSeguraCheckout small {
+    margin-top: 2px;
+    color: #838a94;
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   PROGRESO
+===================================================== */
+
+.barraProgresoCheckout {
+    padding: 19px 0;
+    border-bottom: 1px solid var(--checkout-borde);
+    background: #ffffff;
+}
+
+.pasosCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pasoCheckout {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #9298a2;
+}
+
+.pasoCheckout > span {
+    flex: 0 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #d4d9df;
+    border-radius: 50%;
+    background: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.pasoCheckout strong,
+.pasoCheckout small {
+    display: block;
+}
+
+.pasoCheckout strong {
+    font-size: 11px;
+}
+
+.pasoCheckout small {
+    margin-top: 2px;
+    font-size: 9px;
+}
+
+.pasoCheckout.activo {
+    color: var(--checkout-azul);
+}
+
+.pasoCheckout.activo > span {
+    border-color: var(--checkout-azul);
+    background: var(--checkout-azul);
+    color: #ffffff;
+}
+
+.pasoCheckout.completado {
+    color: var(--checkout-verde);
+}
+
+.pasoCheckout.completado > span {
+    border-color: var(--checkout-verde);
+    background: var(--checkout-verde);
+    color: #ffffff;
+}
+
+.lineaPasoCheckout {
+    width: 100px;
+    height: 2px;
+    margin: 0 14px;
+    background: #dde1e6;
+}
+
+
+/* =====================================================
+   DISTRIBUCIÓN
+===================================================== */
+
+.paginaCheckout {
+    padding: 38px 0 60px;
+}
+
+.gridCheckout {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(350px, 0.75fr);
+    align-items: start;
+    gap: 25px;
+}
+
+.formCheckout {
+    min-width: 0;
+}
+
+.volverTiendaCheckout {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 17px;
+    color: #59616c;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.volverTiendaCheckout:hover {
+    color: var(--checkout-azul);
+}
+
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+.seccionCheckout {
+    margin-bottom: 20px;
+    padding: 23px;
+    border: 1px solid var(--checkout-borde);
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 5px 14px rgba(24, 31, 44, 0.045);
+}
+
+.tituloSeccionCheckout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e8ebef;
+}
+
+.tituloSeccionCheckout > div {
+    flex: 0 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #e5efff;
+    color: var(--checkout-azul);
+}
+
+.tituloSeccionCheckout h2 {
+    margin: 0 0 3px;
+    color: #343942;
+    font-size: 16px;
+}
+
+.tituloSeccionCheckout p {
+    margin: 0;
+    color: #7d848f;
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   CAMPOS
+===================================================== */
+
+.gridCamposCheckout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.campoCheckout {
+    position: relative;
+    min-width: 0;
+}
+
+.campoCompletoCheckout {
+    grid-column: 1 / -1;
+}
+
+.campoCheckout label {
+    display: block;
+    margin-bottom: 7px;
+    color: #4a5059;
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.campoCheckout label span {
+    color: #8b919a;
+    font-weight: 500;
+}
+
+.campoCheckout input,
+.campoCheckout select,
+.campoCheckout textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccd2da;
+    border-radius: 9px;
+    outline: none;
+    background: #ffffff;
+    color: #373c44;
+    font-size: 13px;
+}
+
+.campoCheckout input,
+.campoCheckout select {
+    height: 44px;
+    padding: 0 12px;
+}
+
+.campoCheckout select {
+    padding-right: 35px;
+    cursor: pointer;
+}
+
+.campoCheckout textarea {
+    min-height: 105px;
+    padding: 12px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.campoCheckout input:focus,
+.campoCheckout select:focus,
+.campoCheckout textarea:focus {
+    border-color: var(--checkout-azul);
+    box-shadow: 0 0 0 3px rgba(7, 95, 216, 0.1);
+}
+
+.campoCheckout > small {
+    display: block;
+    margin-top: 5px;
+    color: #858c96;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.errorCampoCheckout {
+    color: var(--checkout-rojo) !important;
+}
+
+.campoCheckout.invalido input,
+.campoCheckout.invalido select,
+.campoCheckout.invalido textarea {
+    border-color: var(--checkout-rojo);
+}
+
+.campoConPrefijoCheckout {
+    display: flex;
+    overflow: hidden;
+    border: 1px solid #ccd2da;
+    border-radius: 9px;
+}
+
+.campoConPrefijoCheckout:focus-within {
+    border-color: var(--checkout-azul);
+    box-shadow: 0 0 0 3px rgba(7, 95, 216, 0.1);
+}
+
+.campoConPrefijoCheckout > span {
+    display: flex;
+    align-items: center;
+    padding: 0 11px;
+    border-right: 1px solid #d8dde3;
+    background: #f1f3f6;
+    color: #626974;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.campoConPrefijoCheckout input {
+    border: none;
+    border-radius: 0;
+    box-shadow: none !important;
+}
+
+.contadorComentarioCheckout {
+    margin-top: 5px;
+    color: #8a919b;
+    font-size: 9px;
+    text-align: right;
+}
+
+
+/* =====================================================
+   ENTREGA
+===================================================== */
+
+.opcionesEntregaCheckout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    margin-bottom: 17px;
+}
+
+.opcionEntregaCheckout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 18px 38px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    min-height: 105px;
+    padding: 15px;
+    border: 2px solid #e0e4e9;
+    border-radius: 12px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.opcionEntregaCheckout.activa {
+    border-color: var(--checkout-azul);
+    background: #f3f7ff;
+}
+
+.opcionEntregaCheckout input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.radioVisualCheckout {
+    width: 17px;
+    height: 17px;
+    border: 2px solid #b9c0ca;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.opcionEntregaCheckout.activa
+.radioVisualCheckout {
+    border: 5px solid var(--checkout-azul);
+}
+
+.opcionEntregaCheckout > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    background: #e8eef8;
+    color: #66758c;
+}
+
+.opcionEntregaCheckout.activa > i {
+    background: #dce9ff;
+    color: var(--checkout-azul);
+}
+
+.opcionEntregaCheckout strong,
+.opcionEntregaCheckout small,
+.opcionEntregaCheckout em {
+    display: block;
+}
+
+.opcionEntregaCheckout strong {
+    margin-bottom: 3px;
+    color: #3c414a;
+    font-size: 12px;
+}
+
+.opcionEntregaCheckout small {
+    color: #7f8691;
+    font-size: 9px;
+}
+
+.opcionEntregaCheckout em {
+    margin-top: 5px;
+    color: var(--checkout-verde);
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 750;
+}
+
+.informacionRetiroCheckout {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 14px;
+    border: 1px solid #cbdcf7;
+    border-radius: 10px;
+    background: #f1f6ff;
+}
+
+.informacionRetiroCheckout > i {
+    margin-top: 2px;
+    color: var(--checkout-azul);
+}
+
+.informacionRetiroCheckout strong {
+    color: #3b4657;
+    font-size: 11px;
+}
+
+.informacionRetiroCheckout p,
+.informacionRetiroCheckout small {
+    display: block;
+    margin: 4px 0 0;
+    color: #737d8c;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.camposDespachoCheckout {
+    display: none;
+    margin-top: 17px;
+    padding-top: 17px;
+    border-top: 1px solid #e7eaee;
+}
+
+
+/* =====================================================
+   CONDICIONES
+===================================================== */
+
+.aceptarCondicionesCheckout {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 17px;
+    padding: 15px;
+    border: 1px solid var(--checkout-borde);
+    border-radius: 11px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.aceptarCondicionesCheckout input {
+    position: absolute;
+    opacity: 0;
+}
+
+.aceptarCondicionesCheckout > span {
+    flex: 0 0 19px;
+    width: 19px;
+    height: 19px;
+    border: 2px solid #b9c0c9;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+.aceptarCondicionesCheckout
+input:checked + span {
+    position: relative;
+    border-color: var(--checkout-azul);
+    background: var(--checkout-azul);
+}
+
+.aceptarCondicionesCheckout
+input:checked + span::after {
+    content: "✓";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.aceptarCondicionesCheckout p {
+    margin: 0;
+    color: #68707b;
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.mensajeCheckout {
+    display: none;
+    padding: 12px 14px;
+    border-radius: 9px;
+    font-size: 11px;
+    font-weight: 650;
+    text-align: center;
+}
+
+.mensajeCheckout.error {
+    display: block;
+    border: 1px solid #edbec3;
+    background: #fbedee;
+    color: #a92e38;
+}
+
+.mensajeCheckout.correcto {
+    display: block;
+    border: 1px solid #b8e4ca;
+    background: #e8f7ee;
+    color: #147845;
+}
+
+
+/* =====================================================
+   RESUMEN
+===================================================== */
+
+.resumenCheckout {
+    position: sticky;
+    top: 20px;
+    overflow: hidden;
+    border: 1px solid var(--checkout-borde);
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(24, 31, 44, 0.08);
+}
+
+.encabezadoResumenCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 19px;
+    border-bottom: 1px solid #e4e7eb;
+}
+
+.encabezadoResumenCheckout h2 {
+    margin: 0 0 3px;
+    color: #343942;
+    font-size: 16px;
+}
+
+.encabezadoResumenCheckout p {
+    margin: 0;
+    color: #848b95;
+    font-size: 10px;
+}
+
+.encabezadoResumenCheckout a {
+    color: var(--checkout-azul);
+    font-size: 10px;
+    font-weight: 750;
+    text-decoration: none;
+}
+
+.productosResumenCheckout {
+    max-height: 340px;
+    padding: 8px 18px;
+    overflow-y: auto;
+}
+
+.cargandoResumenCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 130px;
+    color: #7e8590;
+    font-size: 11px;
+}
+
+.itemResumenCheckout {
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid #eceef1;
+}
+
+.itemResumenCheckout:last-child {
+    border-bottom: none;
+}
+
+.itemResumenCheckout img {
+    width: 62px;
+    height: 62px;
+    padding: 4px;
+    border-radius: 8px;
+    background: #f4f5f7;
+    object-fit: contain;
+}
+
+.itemResumenCheckout strong,
+.itemResumenCheckout small {
+    display: block;
+}
+
+.itemResumenCheckout
+.informacionResumenProducto strong {
+    margin-bottom: 3px;
+    overflow: hidden;
+    color: #40454e;
+    font-size: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.itemResumenCheckout
+.informacionResumenProducto small {
+    color: #858c96;
+    font-size: 9px;
+}
+
+.precioResumenProducto {
+    color: #1553b7;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.totalesCheckout {
+    padding: 17px 19px;
+    border-top: 1px solid #e4e7eb;
+    background: #fafbfc;
+}
+
+.totalesCheckout > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 8px;
+    color: #666e79;
+    font-size: 11px;
+}
+
+.totalesCheckout > div strong {
+    color: #4b515a;
+}
+
+.totalesCheckout .totalCheckout {
+    margin: 13px 0 0;
+    padding-top: 13px;
+    border-top: 1px solid #dfe3e8;
+    color: #2d3239;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.totalesCheckout
+.totalCheckout strong {
+    color: var(--checkout-azul);
+    font-size: 20px;
+}
+
+.btnConfirmarPedido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: calc(100% - 38px);
+    height: 51px;
+    margin: 18px 19px 13px;
+    border: none;
+    border-radius: 10px;
+    background: var(--checkout-azul);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 750;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(7, 95, 216, 0.22);
+}
+
+.btnConfirmarPedido:hover {
+    background: var(--checkout-azul-oscuro);
+}
+
+.btnConfirmarPedido:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.seguridadResumenCheckout {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0 19px 14px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #edf6f1;
+    color: #397259;
+}
+
+.seguridadResumenCheckout p {
+    margin: 0;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.metodosPagoCheckout {
+    padding: 13px 19px;
+    border-top: 1px solid #e4e7eb;
+    text-align: center;
+}
+
+.metodosPagoCheckout span,
+.metodosPagoCheckout strong {
+    display: block;
+}
+
+.metodosPagoCheckout span {
+    margin-bottom: 4px;
+    color: #8a919b;
+    font-size: 9px;
+}
+
+.metodosPagoCheckout strong {
+    color: #cf252d;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   PIE
+===================================================== */
+
+.pieCheckout {
+    padding: 22px 0;
+    border-top: 1px solid var(--checkout-borde);
+    background: #ffffff;
+}
+
+.pieCheckout .contenedorCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.pieCheckout p {
+    margin: 0;
+    color: #7d848e;
+    font-size: 10px;
+}
+
+.pieCheckout a {
+    color: var(--checkout-azul);
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .gridCheckout {
+        grid-template-columns: 1fr;
+    }
+
+    .resumenCheckout {
+        position: static;
+        grid-row: 1;
+    }
+
+    .productosResumenCheckout {
+        max-height: 280px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .contenedorCheckout {
+        width: calc(100% - 20px);
+    }
+
+    .compraSeguraCheckout small {
+        display: none;
+    }
+
+    .lineaPasoCheckout {
+        width: 25px;
+        margin: 0 5px;
+    }
+
+    .pasoCheckout div {
+        display: none;
+    }
+
+    .paginaCheckout {
+        padding: 25px 0 45px;
+    }
+
+    .seccionCheckout {
+        padding: 17px;
+    }
+
+    .gridCamposCheckout,
+    .opcionesEntregaCheckout {
+        grid-template-columns: 1fr;
+    }
+
+    .campoCompletoCheckout {
+        grid-column: auto;
+    }
+
+    .pieCheckout .contenedorCheckout {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+
+
+/* =====================================================
+   CUENTA DEL CLIENTE
+===================================================== */
+
+.accesoClienteCheckout {
+    position: relative;
+}
+
+.opcionesAccesoCheckout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.btnOpcionAccesoCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 48px;
+    padding: 12px 18px;
+
+    border: 1px solid #d8dee8;
+    border-radius: 10px;
+
+    background-color: #f7f9fc;
+    color: #596579;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btnOpcionAccesoCheckout:hover {
+    color: #1e5aa0;
+    border-color: #1e5aa0;
+    background-color: #f1f6fc;
+    transform: translateY(-1px);
+}
+
+.btnOpcionAccesoCheckout.activo {
+    color: #ffffff;
+    border-color: #1e5aa0;
+    background-color: #1e5aa0;
+
+    box-shadow:
+        0 8px 18px
+        rgba(30, 90, 160, 0.18);
+}
+
+.btnOpcionAccesoCheckout.activo i {
+    color: #f39744;
+}
+
+
+/* =====================================================
+   PANEL DE ACCESO
+===================================================== */
+
+.panelAccesoCliente {
+    padding: 20px;
+
+    border: 1px solid #e0e6ef;
+    border-radius: 12px;
+
+    background-color: #f9fbfd;
+}
+
+.panelAccesoCliente[hidden] {
+    display: none !important;
+}
+
+.avisoRegistroCheckout {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 15px 16px;
+
+    border: 1px solid #cfe0f3;
+    border-radius: 10px;
+
+    background-color: #eef6ff;
+    color: #40546c;
+}
+
+.avisoRegistroCheckout i {
+    flex: 0 0 auto;
+    margin-top: 3px;
+
+    color: #1e5aa0;
+    font-size: 18px;
+}
+
+.avisoRegistroCheckout p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   CAMPO DE CONTRASEÑA
+===================================================== */
+
+.campoPasswordCheckout {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.campoPasswordCheckout input {
+    width: 100%;
+    padding-right: 48px !important;
+}
+
+.btnVerPasswordCheckout {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    padding: 0;
+
+    border: 0;
+    border-radius: 8px;
+
+    background-color: transparent;
+    color: #78869a;
+
+    cursor: pointer;
+    transform: translateY(-50%);
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.btnVerPasswordCheckout:hover {
+    color: #1e5aa0;
+    background-color: #edf3fa;
+}
+
+.btnVerPasswordCheckout:focus-visible {
+    outline: 2px solid #1e5aa0;
+    outline-offset: 1px;
+}
+
+
+/* =====================================================
+   BOTÓN INICIAR SESIÓN
+===================================================== */
+
+.btnIngresarCliente {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    width: 100%;
+    min-height: 48px;
+    margin-top: 8px;
+    padding: 12px 20px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background-color: #1e5aa0;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px
+        rgba(30, 90, 160, 0.18);
+
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btnIngresarCliente:hover:not(:disabled) {
+    background-color: #174c89;
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 22px
+        rgba(30, 90, 160, 0.24);
+}
+
+.btnIngresarCliente:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   BOTÓN TIPO ENLACE
+===================================================== */
+
+.btnEnlaceCheckout {
+    display: block;
+
+    margin: 14px auto 0;
+    padding: 5px;
+
+    border: 0;
+
+    background: transparent;
+    color: #1e5aa0;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.btnEnlaceCheckout:hover {
+    color: #f39744;
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   CLIENTE CONECTADO
+===================================================== */
+
+.clienteConectadoCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    padding: 16px 18px;
+
+    border: 1px solid #bcdcc9;
+    border-radius: 12px;
+
+    background-color: #f0faf4;
+}
+
+.clienteConectadoCheckout[hidden] {
+    display: none !important;
+}
+
+.identidadClienteCheckout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.identidadClienteCheckout > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background-color: #198754;
+    color: #ffffff;
+}
+
+.identidadClienteCheckout > div i {
+    font-size: 19px;
+}
+
+.identidadClienteCheckout span {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.identidadClienteCheckout strong {
+    color: #233044;
+    font-size: 15px;
+}
+
+.identidadClienteCheckout small {
+    overflow: hidden;
+
+    margin-top: 3px;
+
+    color: #68778b;
+    font-size: 13px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   CERRAR SESIÓN
+===================================================== */
+
+.btnCerrarSesionCliente {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    gap: 7px;
+
+    min-height: 40px;
+    padding: 9px 14px;
+
+    border: 1px solid #d5dde8;
+    border-radius: 9px;
+
+    background-color: #ffffff;
+    color: #5d6878;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.btnCerrarSesionCliente:hover {
+    color: #b42318;
+    border-color: #e5a5a0;
+    background-color: #fff5f4;
+}
+
+
+/* =====================================================
+   CAMPOS DEL CLIENTE CONECTADO
+===================================================== */
+
+.formCheckout input[readonly] {
+    border-color: #dce3ec;
+    background-color: #f3f6f9;
+    color: #526174;
+    cursor: default;
+}
+
+.formCheckout input[readonly]:focus {
+    border-color: #dce3ec;
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   MENSAJE DEL LOGIN
+===================================================== */
+
+#mensajeLoginCliente {
+    margin-top: 14px;
+}
+
+#mensajeLoginCliente:empty {
+    display: none;
+}
+
+
+/* =====================================================
+   ESTADOS DE FOCO
+===================================================== */
+
+.btnOpcionAccesoCheckout:focus-visible,
+.btnIngresarCliente:focus-visible,
+.btnCerrarSesionCliente:focus-visible,
+.btnEnlaceCheckout:focus-visible {
+    outline: 3px solid
+        rgba(243, 151, 68, 0.35);
+
+    outline-offset: 2px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 640px) {
+
+    .opcionesAccesoCheckout {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .btnOpcionAccesoCheckout {
+        min-height: 45px;
+    }
+
+    .panelAccesoCliente {
+        padding: 15px;
+    }
+
+    .clienteConectadoCheckout {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .btnCerrarSesionCliente {
+        width: 100%;
+    }
+
+    .avisoRegistroCheckout {
+        padding: 13px;
+    }
+}
+
+
+
+
+/* =====================================================
+   DIÁLOGO RECUPERAR CONTRASEÑA
+===================================================== */
+
+.dialogRecuperarCliente {
+    width: min(510px, calc(100% - 24px));
+    max-height: 92vh;
+    padding: 0;
+
+    border: 0;
+    border-radius: 16px;
+
+    background: #ffffff;
+    color: #263548;
+
+    box-shadow:
+        0 28px 80px
+        rgba(17, 31, 48, 0.3);
+}
+
+.dialogRecuperarCliente::backdrop {
+    background: rgba(17, 31, 48, 0.68);
+    backdrop-filter: blur(4px);
+}
+
+.encabezadoRecuperarCliente {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 19px 22px;
+
+    border-bottom: 1px solid #e0e6ee;
+}
+
+.encabezadoRecuperarCliente span {
+    color: #788599;
+    font-size: 12px;
+}
+
+.encabezadoRecuperarCliente h2 {
+    margin: 4px 0 0;
+    font-size: 21px;
+}
+
+.encabezadoRecuperarCliente > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #f1f4f8;
+    color: #526174;
+
+    cursor: pointer;
+}
+
+.pasosRecuperacionCliente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 30px 5px;
+}
+
+.pasosRecuperacionCliente span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+
+    border: 2px solid #d9e0e9;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #8793a3;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.pasosRecuperacionCliente span.activo,
+.pasosRecuperacionCliente span.completado {
+    border-color: #1e5aa0;
+    background: #1e5aa0;
+    color: #ffffff;
+}
+
+.pasosRecuperacionCliente i {
+    width: 56px;
+    height: 2px;
+
+    background: #d9e0e9;
+}
+
+.contenidoRecuperarCliente {
+    overflow-y: auto;
+    max-height: calc(92vh - 125px);
+    padding: 20px 25px 25px;
+}
+
+.pasoRecuperacionCliente {
+    text-align: center;
+}
+
+.iconoRecuperacionCliente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #edf5ff;
+    color: #1e5aa0;
+
+    font-size: 23px;
+}
+
+.pasoRecuperacionCliente h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+}
+
+.pasoRecuperacionCliente > p {
+    margin: 0 auto 19px;
+    max-width: 390px;
+
+    color: #6d798a;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.campoRecuperacionCliente {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.campoRecuperacionCliente label {
+    display: block;
+    margin-bottom: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.campoRecuperacionCliente input {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 13px;
+
+    border: 1px solid #dce3ec;
+    border-radius: 9px;
+
+    color: #263548;
+    outline: none;
+}
+
+.campoRecuperacionCliente input:focus {
+    border-color: #1e5aa0;
+    box-shadow:
+        0 0 0 3px
+        rgba(30, 90, 160, 0.11);
+}
+
+.inputCodigoRecuperacion {
+    font-size: 25px !important;
+    font-weight: 800;
+    letter-spacing: 10px;
+    text-align: center;
+}
+
+.tiempoCodigoCliente {
+    display: block;
+    margin: -3px 0 16px;
+    color: #7b8796;
+}
+
+.btnPrincipalRecuperacion,
+.btnSecundarioRecuperacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btnPrincipalRecuperacion {
+    border: 0;
+    background: #1e5aa0;
+    color: #ffffff;
+}
+
+.btnSecundarioRecuperacion {
+    margin-top: 9px;
+
+    border: 1px solid #dce3ec;
+    background: #ffffff;
+    color: #1e5aa0;
+}
+
+.btnPrincipalRecuperacion:disabled,
+.btnSecundarioRecuperacion:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.campoPasswordRecuperacion {
+    position: relative;
+}
+
+.campoPasswordRecuperacion input {
+    padding-right: 48px;
+}
+
+.btnVerPasswordRecuperacion {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+
+    width: 35px;
+    height: 35px;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: transparent;
+    color: #788599;
+
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.mensajeRecuperacionCliente {
+    display: none;
+
+    margin-top: 15px;
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.mensajeRecuperacionCliente.correcto {
+    display: block;
+    background: #effaf3;
+    color: #176b3b;
+}
+
+.mensajeRecuperacionCliente.error {
+    display: block;
+    background: #fff3f2;
+    color: #a32a20;
+}
+
+
+
+
+.imgWebpay{
+    height: 100px;
+    width: 100 px;
+}
+
+
+
+/* =====================================================
+   DIRECCIONES REGISTRADAS
+===================================================== */
+
+.camposDespachoCheckout[hidden],
+.cargandoDireccionesCheckout[hidden],
+.listaDireccionesCheckout[hidden],
+.sinDireccionesCheckout[hidden] {
+    display: none !important;
+}
+
+.camposDespachoCheckout {
+    margin-top: 24px;
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f9fbff,
+            #f3f7fc
+        );
+
+    border: 1px solid #dce5f0;
+    border-radius: 18px;
+}
+
+/* =====================================================
+   ENCABEZADO DE DIRECCIONES
+===================================================== */
+
+.encabezadoDireccionesCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+.encabezadoDireccionesCheckout h3 {
+    margin: 0 0 5px;
+
+    color: #202633;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.encabezadoDireccionesCheckout p {
+    margin: 0;
+
+    color: #77808d;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =====================================================
+   BOTÓN NUEVA DIRECCIÓN
+===================================================== */
+
+.btnNuevaDireccionCheckout,
+.btnPrimeraDireccionCheckout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 43px;
+    padding: 10px 16px;
+
+    color: #1e5aa0;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+
+    background: #ffffff;
+    border: 1px solid #bdd1eb;
+    border-radius: 11px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btnNuevaDireccionCheckout:hover,
+.btnPrimeraDireccionCheckout:hover {
+    color: #ffffff;
+    background: #1e5aa0;
+    border-color: #1e5aa0;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(30, 90, 160, 0.2);
+}
+
+.btnNuevaDireccionCheckout:focus-visible,
+.btnPrimeraDireccionCheckout:focus-visible {
+    outline: 3px solid rgba(30, 90, 160, 0.2);
+    outline-offset: 3px;
+}
+
+/* =====================================================
+   LISTA CON SCROLL
+===================================================== */
+
+.listaDireccionesCheckout {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    /*
+     * Después de aproximadamente cuatro direcciones,
+     * aparece el scroll vertical.
+     */
+
+    max-height: 410px;
+    padding: 3px 9px 3px 2px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        #9eb7d8
+        #e9eff7;
+}
+
+/* Chrome, Edge y Safari */
+
+.listaDireccionesCheckout::-webkit-scrollbar {
+    width: 9px;
+}
+
+.listaDireccionesCheckout::-webkit-scrollbar-track {
+    background: #e9eff7;
+    border-radius: 20px;
+}
+
+.listaDireccionesCheckout::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            180deg,
+            #aec3df,
+            #829fc6
+        );
+
+    border: 2px solid #e9eff7;
+    border-radius: 20px;
+}
+
+.listaDireccionesCheckout::-webkit-scrollbar-thumb:hover {
+    background: #658ab9;
+}
+
+/* =====================================================
+   TARJETA DE DIRECCIÓN
+===================================================== */
+
+.tarjetaDireccionCheckout {
+    position: relative;
+
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+    min-height: 112px;
+
+    background: #ffffff;
+    border: 2px solid #e0e7ef;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.tarjetaDireccionCheckout:hover {
+    border-color: #a9c1df;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(34, 67, 107, 0.09);
+}
+
+.tarjetaDireccionCheckout.seleccionada {
+    background:
+        linear-gradient(
+            135deg,
+            #f3f8ff,
+            #ffffff
+        );
+
+    border-color: #1e5aa0;
+
+    box-shadow:
+        0 8px 22px rgba(30, 90, 160, 0.14);
+}
+
+.tarjetaDireccionCheckout.seleccionada::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1e5aa0,
+            #f39744
+        );
+}
+
+/* =====================================================
+   CONTENIDO DE LA TARJETA
+===================================================== */
+
+.contenidoTarjetaDireccion {
+    display: grid;
+    grid-template-columns: 23px 48px 1fr;
+    align-items: center;
+    gap: 13px;
+
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 17px 56px 17px 19px;
+
+    cursor: pointer;
+}
+
+/*
+ * Oculta visualmente el radio, pero permanece
+ * disponible para teclado y lectores de pantalla.
+ */
+
+.contenidoTarjetaDireccion > input[type="radio"] {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =====================================================
+   SELECTOR RADIO
+===================================================== */
+
+.selectorDireccionCheckout {
+    position: relative;
+
+    display: block;
+
+    width: 21px;
+    height: 21px;
+
+    background: #ffffff;
+    border: 2px solid #aeb8c5;
+    border-radius: 50%;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.tarjetaDireccionCheckout.seleccionada
+.selectorDireccionCheckout {
+    border-color: #1e5aa0;
+
+    box-shadow:
+        0 0 0 4px rgba(30, 90, 160, 0.1);
+}
+
+.tarjetaDireccionCheckout.seleccionada
+.selectorDireccionCheckout::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    background: #1e5aa0;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+/* =====================================================
+   ICONO
+===================================================== */
+
+.iconoDireccionCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    color: #1e5aa0;
+    font-size: 18px;
+
+    background: #edf4ff;
+    border-radius: 13px;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.tarjetaDireccionCheckout.seleccionada
+.iconoDireccionCheckout {
+    color: #ffffff;
+    background: #1e5aa0;
+}
+
+/* =====================================================
+   DATOS DE LA DIRECCIÓN
+===================================================== */
+
+.datosDireccionCheckout {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.datosDireccionCheckout strong {
+    color: #27303d;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.datosDireccionCheckout > span {
+    color: #525d6c;
+    font-size: 14px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.datosDireccionCheckout small {
+    color: #7d8795;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.datosDireccionCheckout em {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    width: max-content;
+    margin-top: 4px;
+    padding: 4px 8px;
+
+    color: #a66612;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    background: #fff5df;
+    border-radius: 20px;
+}
+
+.datosDireccionCheckout em i {
+    color: #f39744;
+}
+
+/* =====================================================
+   BOTÓN EDITAR
+===================================================== */
+
+.btnEditarDireccionCheckout {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 37px;
+    height: 37px;
+    padding: 0;
+
+    color: #627187;
+    font-size: 14px;
+
+    background: #f1f5fa;
+    border: 1px solid #dce4ed;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btnEditarDireccionCheckout:hover {
+    color: #ffffff;
+    background: #1e5aa0;
+    border-color: #1e5aa0;
+
+    transform: scale(1.05);
+}
+
+.btnEditarDireccionCheckout:focus-visible {
+    outline: 3px solid rgba(30, 90, 160, 0.2);
+    outline-offset: 2px;
+}
+
+/* =====================================================
+   CARGANDO DIRECCIONES
+===================================================== */
+
+.cargandoDireccionesCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 115px;
+    padding: 20px;
+
+    color: #657287;
+    font-size: 14px;
+
+    background: #ffffff;
+    border: 1px dashed #cbd8e7;
+    border-radius: 14px;
+}
+
+.cargandoDireccionesCheckout i {
+    color: #1e5aa0;
+    font-size: 20px;
+}
+
+/* =====================================================
+   SIN DIRECCIONES
+===================================================== */
+
+.sinDireccionesCheckout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 29px 20px;
+
+    text-align: center;
+
+    background: #ffffff;
+    border: 1px dashed #c8d7e8;
+    border-radius: 15px;
+}
+
+.iconoSinDireccionCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+    margin-bottom: 14px;
+
+    color: #1e5aa0;
+    font-size: 25px;
+
+    background: #edf4ff;
+    border-radius: 20px;
+}
+
+.sinDireccionesCheckout strong {
+    margin-bottom: 6px;
+
+    color: #2d3542;
+    font-size: 16px;
+}
+
+.sinDireccionesCheckout p {
+    max-width: 350px;
+    margin: 0 0 17px;
+
+    color: #7c8694;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.errorDireccionCheckout {
+    display: block;
+    min-height: 18px;
+    margin-top: 8px;
+
+    color: #b23636;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =====================================================
+   DIÁLOGO DE DIRECCIÓN
+===================================================== */
+
+.dialogDireccionCheckout {
+    width: calc(100% - 30px);
+    max-width: 720px;
+    max-height: calc(100vh - 30px);
+    margin: auto;
+    padding: 0;
+
+    background: transparent;
+    border: 0;
+    border-radius: 20px;
+
+    overflow: visible;
+}
+
+.dialogDireccionCheckout[open] {
+    animation:
+        aparecerDialogDireccion 0.22s ease-out;
+}
+
+.dialogDireccionCheckout::backdrop {
+    background: rgba(12, 23, 39, 0.68);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+@keyframes aparecerDialogDireccion {
+    from {
+        opacity: 0;
+        transform:
+            translateY(18px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+.contenidoDialogDireccion {
+    max-height: calc(100vh - 30px);
+
+    background: #ffffff;
+    border-radius: 20px;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25);
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        #a4b9d5
+        #edf2f7;
+}
+
+.contenidoDialogDireccion::-webkit-scrollbar {
+    width: 8px;
+}
+
+.contenidoDialogDireccion::-webkit-scrollbar-track {
+    background: #edf2f7;
+}
+
+.contenidoDialogDireccion::-webkit-scrollbar-thumb {
+    background: #9eb5d2;
+    border-radius: 20px;
+}
+
+/* =====================================================
+   ENCABEZADO DEL DIÁLOGO
+===================================================== */
+
+.encabezadoDialogDireccion {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 20px 24px;
+
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e5eaf0;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.tituloDialogDireccion {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.iconoDialogDireccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    color: #ffffff;
+    font-size: 19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1e5aa0,
+            #17487f
+        );
+
+    border-radius: 14px;
+}
+
+.tituloDialogDireccion h2 {
+    margin: 0 0 3px;
+
+    color: #252d39;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.tituloDialogDireccion p {
+    margin: 0;
+
+    color: #7d8794;
+    font-size: 12px;
+}
+
+.btnCerrarDialogDireccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    color: #697586;
+    font-size: 18px;
+
+    background: #f1f4f8;
+    border: 0;
+    border-radius: 11px;
+
+    cursor: pointer;
+}
+
+.btnCerrarDialogDireccion:hover {
+    color: #ffffff;
+    background: #cf4242;
+}
+
+/* =====================================================
+   FORMULARIO DEL DIÁLOGO
+===================================================== */
+
+.formDireccionCheckout {
+    padding: 24px;
+}
+
+.gridDireccionCheckout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.campoCompletoDireccion {
+    grid-column: 1 / -1;
+}
+
+.campoDireccionCheckout {
+    position: relative;
+}
+
+.campoDireccionCheckout label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #374151;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.campoDireccionCheckout label span {
+    color: #929aa5;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.campoDireccionCheckout input,
+.campoDireccionCheckout select,
+.campoDireccionCheckout textarea {
+    width: 100%;
+    min-height: 47px;
+    padding: 11px 13px;
+
+    color: #29313d;
+    font-family: inherit;
+    font-size: 14px;
+
+    background: #ffffff;
+    border: 1px solid #ced8e4;
+    border-radius: 10px;
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.campoDireccionCheckout textarea {
+    min-height: 95px;
+    resize: vertical;
+}
+
+.campoDireccionCheckout input:focus,
+.campoDireccionCheckout select:focus,
+.campoDireccionCheckout textarea:focus {
+    border-color: #1e5aa0;
+
+    box-shadow:
+        0 0 0 4px rgba(30, 90, 160, 0.11);
+}
+
+.campoDireccionCheckout input[readonly] {
+    color: #5c6878;
+    background: #f2f5f9;
+    cursor: not-allowed;
+}
+
+.campoDireccionCheckout > small {
+    display: block;
+    margin-top: 5px;
+
+    color: #818b98;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.errorCampoDireccion {
+    color: #b23636 !important;
+}
+
+.contadorReferenciaDireccion {
+    margin-top: 5px;
+
+    color: #8a94a1;
+    font-size: 11px;
+    text-align: right;
+}
+
+/* =====================================================
+   DIRECCIÓN PRINCIPAL
+===================================================== */
+
+.principalDireccionCheckout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 22px 0;
+    padding: 14px 16px;
+
+    background: #f5f8fc;
+    border: 1px solid #dce5ef;
+    border-radius: 12px;
+
+    cursor: pointer;
+}
+
+.principalDireccionCheckout > input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkDireccionCheckout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 23px;
+    width: 23px;
+    height: 23px;
+
+    color: transparent;
+    font-size: 11px;
+
+    background: #ffffff;
+    border: 2px solid #aeb9c6;
+    border-radius: 7px;
+}
+
+.principalDireccionCheckout
+> input:checked
++ .checkDireccionCheckout {
+    color: #ffffff;
+    background: #1e5aa0;
+    border-color: #1e5aa0;
+}
+
+.principalDireccionCheckout strong {
+    display: block;
+    margin-bottom: 2px;
+
+    color: #354052;
+    font-size: 13px;
+}
+
+.principalDireccionCheckout small {
+    display: block;
+
+    color: #7d8794;
+    font-size: 11px;
+}
+
+/* =====================================================
+   MENSAJES DEL DIÁLOGO
+===================================================== */
+
+.mensajeDireccionCheckout {
+    display: none;
+    margin-bottom: 16px;
+    padding: 12px 14px;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+.mensajeDireccionCheckout.error {
+    display: block;
+
+    color: #a12e2e;
+    background: #fff1f1;
+    border-color: #f0c6c6;
+}
+
+.mensajeDireccionCheckout.correcto {
+    display: block;
+
+    color: #17683b;
+    background: #edf9f2;
+    border-color: #bce3cb;
+}
+
+/* =====================================================
+   ACCIONES DEL DIÁLOGO
+===================================================== */
+
+.accionesDialogDireccion {
+    display: flex;
+    justify-content: flex-end;
+    gap: 11px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #e7ebf0;
+}
+
+.btnCancelarDireccionCheckout,
+.btnGuardarDireccionCheckout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 45px;
+    padding: 10px 19px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.btnCancelarDireccionCheckout {
+    color: #5d6878;
+    background: #f2f4f7;
+    border: 1px solid #d8dee7;
+}
+
+.btnCancelarDireccionCheckout:hover {
+    color: #29313c;
+    background: #e7ebf0;
+}
+
+.btnGuardarDireccionCheckout {
+    color: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #1e5aa0,
+            #174779
+        );
+
+    border: 0;
+
+    box-shadow:
+        0 8px 18px rgba(30, 90, 160, 0.22);
+}
+
+.btnGuardarDireccionCheckout:hover:not(:disabled) {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 11px 24px rgba(30, 90, 160, 0.3);
+}
+
+.btnGuardarDireccionCheckout:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+/* =====================================================
+   TABLET Y MÓVIL
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .camposDespachoCheckout {
+        padding: 18px;
+    }
+
+    .encabezadoDireccionesCheckout {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .btnNuevaDireccionCheckout {
+        width: 100%;
+    }
+
+    .listaDireccionesCheckout {
+        max-height: 360px;
+    }
+
+    .contenidoTarjetaDireccion {
+        grid-template-columns: 21px 42px 1fr;
+        gap: 10px;
+
+        padding:
+            15px
+            50px
+            15px
+            14px;
+    }
+
+    .iconoDireccionCheckout {
+        width: 41px;
+        height: 41px;
+    }
+
+    .gridDireccionCheckout {
+        grid-template-columns: 1fr;
+    }
+
+    .campoCompletoDireccion {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .camposDespachoCheckout {
+        margin-top: 18px;
+        padding: 14px;
+
+        border-radius: 14px;
+    }
+
+    .listaDireccionesCheckout {
+        max-height: 330px;
+        padding-right: 5px;
+    }
+
+    .tarjetaDireccionCheckout {
+        min-height: 105px;
+    }
+
+    .contenidoTarjetaDireccion {
+        grid-template-columns: 20px 1fr;
+        align-items: flex-start;
+
+        padding:
+            15px
+            47px
+            15px
+            14px;
+    }
+
+    .iconoDireccionCheckout {
+        display: none;
+    }
+
+    .selectorDireccionCheckout {
+        margin-top: 2px;
+    }
+
+    .datosDireccionCheckout strong {
+        font-size: 14px;
+    }
+
+    .datosDireccionCheckout > span {
+        font-size: 13px;
+    }
+
+    .btnEditarDireccionCheckout {
+        top: 10px;
+        right: 10px;
+
+        width: 34px;
+        height: 34px;
+    }
+
+    .dialogDireccionCheckout {
+        width: calc(100% - 16px);
+        max-height: calc(100vh - 16px);
+    }
+
+    .contenidoDialogDireccion {
+        max-height: calc(100vh - 16px);
+        border-radius: 15px;
+    }
+
+    .encabezadoDialogDireccion {
+        padding: 16px;
+    }
+
+    .iconoDialogDireccion {
+        width: 42px;
+        height: 42px;
+    }
+
+    .tituloDialogDireccion h2 {
+        font-size: 17px;
+    }
+
+    .tituloDialogDireccion p {
+        display: none;
+    }
+
+    .formDireccionCheckout {
+        padding: 17px;
+    }
+
+    .accionesDialogDireccion {
+        flex-direction: column-reverse;
+    }
+
+    .btnCancelarDireccionCheckout,
+    .btnGuardarDireccionCheckout {
+        width: 100%;
+    }
+}
+
+
+
+/* =====================================================
+   ACCIONES DE DIRECCIÓN
+===================================================== */
+
+.accionesDireccionCheckout {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+/*
+ * Dejamos espacio para los botones
+ * editar y eliminar.
+ */
+
+.contenidoTarjetaDireccion {
+    padding-right: 108px;
+}
+
+/* =====================================================
+   BOTONES EDITAR Y ELIMINAR
+===================================================== */
+
+.accionesDireccionCheckout
+.btnEditarDireccionCheckout,
+.accionesDireccionCheckout
+.btnEliminarDireccionCheckout {
+    position: static;
+    top: auto;
+    right: auto;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 37px;
+    height: 37px;
+    padding: 0;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* EDITAR */
+
+.accionesDireccionCheckout
+.btnEditarDireccionCheckout {
+    color: #1e5aa0;
+    background: #edf4ff;
+    border: 1px solid #cbdcf1;
+}
+
+.accionesDireccionCheckout
+.btnEditarDireccionCheckout:hover {
+    color: #ffffff;
+    background: #1e5aa0;
+    border-color: #1e5aa0;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 14px rgba(30, 90, 160, 0.2);
+}
+
+/* ELIMINAR */
+
+.btnEliminarDireccionCheckout {
+    color: #b33939;
+    background: #fff1f1;
+    border: 1px solid #f0cccc;
+}
+
+.btnEliminarDireccionCheckout:hover:not(:disabled) {
+    color: #ffffff;
+    background: #c93e3e;
+    border-color: #c93e3e;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 14px rgba(201, 62, 62, 0.22);
+}
+
+.btnEliminarDireccionCheckout:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .accionesDireccionCheckout {
+        top: 10px;
+        right: 10px;
+        gap: 5px;
+    }
+
+    .accionesDireccionCheckout
+    .btnEditarDireccionCheckout,
+    .accionesDireccionCheckout
+    .btnEliminarDireccionCheckout {
+        width: 33px;
+        height: 33px;
+
+        font-size: 12px;
+        border-radius: 8px;
+    }
+
+    .contenidoTarjetaDireccion {
+        padding-right: 87px;
+    }
+}

@@ -1,0 +1,763 @@
+:root {
+--contacto-azul:#1769e8;
+--contacto-azul-oscuro:#092554;
+--contacto-naranja:#ff8b2d;
+--contacto-texto:#172238;
+--contacto-gris:#69758a;
+--contacto-borde:#dce4ef;
+--contacto-fondo:#f5f8fc;
+--contacto-verde:#18a76b
+}
+
+html {
+scroll-behavior:smooth
+}
+
+.portadaContacto {
+position:relative;
+overflow:hidden;
+background:linear-gradient(125deg,#071d42 0%,#0b326d 58%,#145ec5 100%);
+color:#fff;
+padding:82px 0 110px
+}
+
+.portadaContacto:after {
+content:"";
+position:absolute;
+inset:auto 0 0;
+height:80px;
+background:linear-gradient(to bottom,transparent,rgba(3,18,43,.22));
+pointer-events:none
+}
+
+.decoracionContacto {
+position:absolute;
+border-radius:50%;
+filter:blur(1px);
+pointer-events:none
+}
+
+.decoracionContacto.uno {
+width:380px;
+height:380px;
+right:-100px;
+top:-170px;
+background:rgba(59,139,255,.19)
+}
+
+.decoracionContacto.dos {
+width:260px;
+height:260px;
+left:-130px;
+bottom:-140px;
+background:rgba(255,139,45,.13)
+}
+
+.portadaContactoGrid {
+position:relative;
+z-index:1;
+display:grid;
+grid-template-columns:minmax(0,1.06fr) minmax(380px,.82fr);
+gap:80px;
+align-items:center
+}
+
+.migaContacto {
+display:flex;
+align-items:center;
+gap:11px;
+margin-bottom:34px;
+font-size:14px;
+color:#c8d7ed
+}
+
+.migaContacto a {
+color:#fff
+}
+
+.migaContacto i {
+font-size:9px;
+color:#72a9f9
+}
+
+.textoPortadaContacto h1 {
+max-width:760px;
+margin:13px 0 22px;
+font-size:clamp(42px,5vw,70px);
+line-height:1.04;
+letter-spacing:-3px
+}
+
+.textoPortadaContacto h1 strong {
+color:#80b4ff
+}
+
+.textoPortadaContacto>p {
+max-width:680px;
+color:#d4deec;
+font-size:18px;
+line-height:1.75
+}
+
+.accionesPortadaContacto {
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:32px
+}
+
+.accionesPortadaContacto a {
+display:inline-flex;
+align-items:center;
+gap:10px;
+min-height:54px;
+padding:0 22px;
+border:1px solid rgba(255,255,255,.24);
+border-radius:13px;
+color:#fff;
+font-weight:800;
+transition:.25s
+}
+
+.accionesPortadaContacto a:first-child {
+background:var(--contacto-verde);
+border-color:var(--contacto-verde);
+box-shadow:0 12px 30px rgba(9,157,97,.25)
+}
+
+.accionesPortadaContacto a:hover {
+transform:translateY(-3px);
+background:#fff;
+color:var(--contacto-azul-oscuro)
+}
+
+.panelRapidoContacto {
+padding:34px;
+background:rgba(255,255,255,.98);
+color:var(--contacto-texto);
+border:1px solid rgba(255,255,255,.6);
+border-radius:24px;
+box-shadow:0 25px 70px rgba(0,14,38,.3)
+}
+
+.panelRapidoContacto>span {
+color:var(--contacto-azul);
+font-size:12px;
+font-weight:900;
+letter-spacing:1.4px;
+text-transform:uppercase
+}
+
+.panelRapidoContacto h2 {
+margin:8px 0 22px;
+font-size:27px
+}
+
+.panelRapidoContacto>a {
+display:grid;
+grid-template-columns:46px 1fr auto;
+gap:15px;
+align-items:center;
+padding:16px 0;
+border-top:1px solid #e5eaf1;
+color:var(--contacto-texto)
+}
+
+.panelRapidoContacto>a>i:first-child {
+display:grid;
+place-items:center;
+width:46px;
+height:46px;
+border-radius:13px;
+background:#eaf2ff;
+color:var(--contacto-azul);
+font-size:19px
+}
+
+.panelRapidoContacto>a>i:last-child {
+color:#9aa7ba;
+transition:.2s
+}
+
+.panelRapidoContacto>a:hover>i:last-child {
+color:var(--contacto-naranja);
+transform:translateX(4px)
+}
+
+.panelRapidoContacto strong,.panelRapidoContacto small {
+display:block
+}
+
+.panelRapidoContacto small {
+margin-top:4px;
+color:var(--contacto-gris);
+font-size:12px
+}
+
+.canalesContacto {
+position:relative;
+z-index:3;
+margin-top:-42px
+}
+
+.gridCanalesContacto {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px
+}
+
+.gridCanalesContacto>a {
+display:flex;
+gap:18px;
+align-items:center;
+min-width:0;
+padding:27px;
+background:#fff;
+border:1px solid var(--contacto-borde);
+border-radius:18px;
+color:var(--contacto-texto);
+box-shadow:0 15px 40px rgba(29,49,77,.1);
+transition:.25s
+}
+
+.gridCanalesContacto>a:hover {
+transform:translateY(-5px);
+border-color:#9fc4fa
+}
+
+.gridCanalesContacto>a>i {
+display:grid;
+place-items:center;
+flex:0 0 52px;
+width:52px;
+height:52px;
+border-radius:15px;
+background:#eaf2ff;
+color:var(--contacto-azul);
+font-size:20px
+}
+
+.gridCanalesContacto>a:nth-child(2)>i {
+background:#fff1e5;
+color:#e97212
+}
+
+.gridCanalesContacto>a:nth-child(3)>i {
+background:#e7f9f1;
+color:#129563
+}
+
+.gridCanalesContacto span,.gridCanalesContacto strong,.gridCanalesContacto small {
+display:block
+}
+
+.gridCanalesContacto span {
+margin-bottom:4px;
+color:var(--contacto-gris);
+font-size:12px;
+font-weight:700
+}
+
+.gridCanalesContacto strong {
+overflow-wrap:anywhere;
+font-size:15px
+}
+
+.gridCanalesContacto small {
+margin-top:5px;
+color:#8994a6;
+font-size:11px
+}
+
+.seccionFormularioContacto {
+padding:100px 0;
+background:#fff
+}
+
+.contactoContenidoGrid {
+display:grid;
+grid-template-columns:minmax(0,1.45fr) minmax(320px,.72fr);
+gap:34px;
+align-items:start
+}
+
+.columnaFormularioContacto {
+padding:40px;
+border:1px solid var(--contacto-borde);
+border-radius:24px;
+box-shadow:0 14px 50px rgba(25,47,77,.07)
+}
+
+.encabezadoFormularioContacto {
+margin-bottom:32px
+}
+
+.encabezadoFormularioContacto h2,.tarjetaHorarioContacto h2,.encabezadoUbicacionContacto h2 {
+margin:8px 0 10px;
+color:var(--contacto-texto);
+font-size:clamp(28px,3vw,39px);
+letter-spacing:-1.4px
+}
+
+.encabezadoFormularioContacto p,.encabezadoUbicacionContacto p {
+color:var(--contacto-gris);
+line-height:1.7
+}
+
+#formContacto {
+display:grid;
+gap:22px
+}
+
+.gridCamposContacto {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px
+}
+
+#formContacto label {
+display:block;
+color:#303a4c;
+font-size:13px;
+font-weight:800
+}
+
+#formContacto label>span {
+display:block;
+margin-bottom:9px
+}
+
+#formContacto label>div {
+position:relative
+}
+
+#formContacto label div>i {
+position:absolute;
+z-index:1;
+left:17px;
+top:18px;
+color:#8390a4
+}
+
+#formContacto input,#formContacto textarea {
+width:100%;
+border:1px solid #cfd8e6;
+border-radius:12px;
+background:#fbfcfe;
+color:var(--contacto-texto);
+font:inherit;
+outline:0;
+transition:.2s
+}
+
+#formContacto input {
+height:54px;
+padding:0 16px 0 47px
+}
+
+#formContacto textarea {
+min-height:145px;
+padding:16px 16px 16px 47px;
+resize:vertical;
+line-height:1.55
+}
+
+#formContacto input:focus,#formContacto textarea:focus {
+background:#fff;
+border-color:var(--contacto-azul);
+box-shadow:0 0 0 4px rgba(23,105,232,.1)
+}
+
+#formContacto label>small {
+display:block;
+margin-top:7px;
+text-align:right;
+color:#8a95a5;
+font-weight:500
+}
+
+.filaCaptchaContacto {
+display:grid;
+grid-template-columns:1fr auto;
+gap:16px;
+align-items:end
+}
+
+.captchaContacto {
+display:flex;
+align-items:center;
+height:48px;
+border:1px solid #cfd8e6;
+border-radius:12px;
+overflow:hidden;
+background:#f5f7fa
+}
+
+.captchaContacto img {
+display:block;
+width:200px;
+height:100px;
+padding:4px 6px;
+object-fit:contain;
+object-position:center
+}
+
+.captchaContacto button {
+width:44px;
+height:100%;
+border:0;
+border-left:1px solid #dce3ed;
+background:#fff;
+color:var(--contacto-azul);
+cursor:pointer
+}
+
+.captchaContacto button:hover {
+background:#eaf2ff
+}
+
+.accionesFormularioContacto {
+display:flex;
+justify-content:flex-end;
+gap:12px;
+padding-top:8px
+}
+
+.accionesFormularioContacto button {
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:9px;
+min-height:52px;
+padding:0 22px;
+border-radius:12px;
+font:inherit;
+font-weight:800;
+cursor:pointer
+}
+
+.accionesFormularioContacto button:first-child {
+border:1px solid var(--contacto-borde);
+background:#f1f5fa;
+color:#526075
+}
+
+.accionesFormularioContacto button:last-child {
+border:1px solid var(--contacto-azul);
+background:var(--contacto-azul);
+color:#fff;
+box-shadow:0 10px 25px rgba(23,105,232,.23)
+}
+
+.accionesFormularioContacto button:disabled {
+opacity:.62;
+cursor:wait
+}
+
+.mensajeFormularioContacto {
+display:none;
+padding:13px 16px;
+border-radius:10px;
+font-size:13px;
+font-weight:700
+}
+
+.mensajeFormularioContacto.visible {
+display:block
+}
+
+.mensajeFormularioContacto.correcto {
+background:#e8f8f1;
+color:#08754b;
+border:1px solid #bcebd7
+}
+
+.mensajeFormularioContacto.error {
+background:#fff0ef;
+color:#ba3028;
+border:1px solid #f3c7c4
+}
+
+.informacionContacto {
+display:grid;
+gap:22px
+}
+
+.tarjetaHorarioContacto {
+padding:34px;
+border-radius:23px;
+background:var(--contacto-fondo);
+border:1px solid var(--contacto-borde)
+}
+
+.tarjetaHorarioContacto h2 {
+font-size:28px
+}
+
+.tarjetaHorarioContacto>div {
+display:flex;
+justify-content:space-between;
+gap:20px;
+padding:17px 0;
+border-bottom:1px solid #dce3ec;
+color:#536075
+}
+
+.tarjetaHorarioContacto>div strong {
+color:var(--contacto-texto)
+}
+
+.tarjetaHorarioContacto>div.cerrado strong {
+color:#d0463e
+}
+
+.tarjetaHorarioContacto>p {
+display:flex;
+gap:10px;
+margin:22px 0;
+color:var(--contacto-gris);
+font-size:13px;
+line-height:1.6
+}
+
+.tarjetaHorarioContacto>p i {
+margin-top:3px;
+color:var(--contacto-azul)
+}
+
+.tarjetaHorarioContacto>a {
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 17px;
+border-radius:11px;
+background:var(--contacto-azul);
+color:#fff;
+font-weight:800
+}
+
+.tarjetaRedesContacto {
+padding:28px;
+border-radius:22px;
+background:var(--contacto-azul-oscuro);
+color:#fff
+}
+
+.tarjetaRedesContacto h3 {
+margin:0 0 8px
+}
+
+.tarjetaRedesContacto p {
+margin:0;
+color:#b9c7dc;
+font-size:13px;
+line-height:1.6
+}
+
+.tarjetaRedesContacto>div {
+display:flex;
+gap:10px;
+margin-top:20px
+}
+
+.tarjetaRedesContacto a {
+display:grid;
+place-items:center;
+width:42px;
+height:42px;
+border-radius:11px;
+background:rgba(255,255,255,.1);
+color:#fff
+}
+
+.tarjetaRedesContacto a:hover {
+background:var(--contacto-naranja);
+transform:translateY(-2px)
+}
+
+.ubicacionContacto {
+padding:85px 0 0;
+background:var(--contacto-fondo)
+}
+
+.encabezadoUbicacionContacto {
+display:flex;
+justify-content:space-between;
+align-items:end;
+gap:30px;
+margin-bottom:32px
+}
+
+.encabezadoUbicacionContacto>a {
+display:inline-flex;
+align-items:center;
+gap:9px;
+padding:14px 19px;
+border:1px solid #b9c8da;
+border-radius:11px;
+color:var(--contacto-texto);
+font-weight:800;
+background:#fff
+}
+
+.encabezadoUbicacionContacto>a:hover {
+border-color:var(--contacto-azul);
+color:var(--contacto-azul)
+}
+
+#mapaContacto {
+height:460px;
+border-top:1px solid var(--contacto-borde);
+background:#dce5ef;
+z-index:1
+}
+
+.marcadorLogoContacto {
+display:grid!important;
+place-items:center;
+background:#fff;
+border:4px solid var(--contacto-azul);
+border-radius:50%;
+box-shadow:0 6px 18px rgba(8,35,77,.3)
+}
+
+.marcadorLogoContacto img {
+width:38px;
+height:38px;
+object-fit:contain
+}
+
+.popupContacto {
+text-align:center;
+line-height:1.45
+}
+
+.popupContacto strong {
+color:var(--contacto-azul-oscuro);
+font-size:14px
+}
+
+@media(max-width:1050px) {
+.portadaContactoGrid {
+grid-template-columns:1fr 390px;
+gap:38px
+}
+
+.contactoContenidoGrid {
+grid-template-columns:1fr 330px
+}
+
+.gridCanalesContacto>a {
+padding:22px 18px
+}
+
+}
+
+@media(max-width:850px) {
+.portadaContacto {
+padding:65px 0 95px
+}
+
+.portadaContactoGrid,.contactoContenidoGrid {
+grid-template-columns:1fr
+}
+
+.panelRapidoContacto {
+max-width:620px
+}
+
+.gridCanalesContacto {
+grid-template-columns:1fr
+}
+
+.canalesContacto {
+margin-top:-30px
+}
+
+.informacionContacto {
+grid-template-columns:1fr 1fr
+}
+
+.textoPortadaContacto h1 {
+letter-spacing:-2px
+}
+
+.seccionFormularioContacto {
+padding:75px 0
+}
+
+}
+
+@media(max-width:650px) {
+.portadaContacto {
+padding:46px 0 78px
+}
+
+.migaContacto {
+margin-bottom:25px
+}
+
+.textoPortadaContacto h1 {
+font-size:39px
+}
+
+.textoPortadaContacto>p {
+font-size:16px
+}
+
+.accionesPortadaContacto {
+flex-direction:column
+}
+
+.accionesPortadaContacto a {
+justify-content:center
+}
+
+.panelRapidoContacto {
+padding:25px 20px
+}
+
+.columnaFormularioContacto {
+padding:27px 19px
+}
+
+.gridCamposContacto,.filaCaptchaContacto,.informacionContacto {
+grid-template-columns:1fr
+}
+
+.captchaContacto {
+width:max-content;
+max-width:100%
+}
+
+.accionesFormularioContacto {
+flex-direction:column-reverse
+}
+
+.accionesFormularioContacto button {
+width:100%
+}
+
+.encabezadoUbicacionContacto {
+align-items:flex-start;
+flex-direction:column
+}
+
+.ubicacionContacto {
+padding-top:65px
+}
+
+#mapaContacto {
+height:380px
+}
+
+}
+
+.captchaContacto img {
+    display: block;
+    width: 200px;
+    height: 100px;
+    padding: 2px 4px;
+    object-fit: contain;
+    object-position: center;
+}
