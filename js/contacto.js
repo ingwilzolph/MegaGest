@@ -94,7 +94,7 @@ function inicializarMapaContacto() {
     if (!contenedor || typeof window.L === "undefined") return;
     const posicion = [-33.28230838622429, -70.87951755816192];
     const mapa = window.L.map(contenedor, {scrollWheelZoom:false}).setView(posicion, 16);
-    window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.webp", {attribution:"&copy; OpenStreetMap contributors",maxZoom:19}).addTo(mapa);
+    window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {attribution:"&copy; OpenStreetMap contributors",maxZoom:19}).addTo(mapa);
     const icono = window.L.divIcon({className:"marcadorLogoContacto",html:'<img src="images/logoAlianzaPro.webp" alt="">',iconSize:[58,58],iconAnchor:[29,58],popupAnchor:[0,-55]});
     window.L.marker(posicion, {icon:icono}).addTo(mapa).bindPopup('<div class="popupContacto"><strong>AlianzaPro SPA</strong><br>Baquedano 687, Lampa<br>Su auto, nuestro compromiso.</div>').openPopup();
 }
