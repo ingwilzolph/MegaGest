@@ -387,20 +387,18 @@ button[hidden] {
 #tablaInventarioAdmin td,
 #tablaProveedoresInventario th,
 #tablaProveedoresInventario td,
-#tablaMovimientosInventario th,
-#tablaMovimientosInventario td,
-#tablaEntradasInventario th,
-#tablaEntradasInventario td {
+.tablaHistorialInventario th,
+.tablaHistorialInventario td {
     border-bottom: 1px solid #e5e7eb;
     padding: 14px 13px;
     text-align: left;
     vertical-align: middle;
 }
 
+/* Encabezados */
 #tablaInventarioAdmin th,
 #tablaProveedoresInventario th,
-#tablaMovimientosInventario th,
-#tablaEntradasInventario th  {
+.tablaHistorialInventario th {
     background: var(--inventario-oliva);
     color: #fff;
     font-size: 13px;
