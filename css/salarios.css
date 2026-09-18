@@ -202,6 +202,15 @@
     font-weight:750;
     white-space:nowrap
 }
+
+.salarios-dinero small {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #7b8496;
+}
+
 .salarios-total {
     color:#079669
 }

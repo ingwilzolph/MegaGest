@@ -1279,6 +1279,9 @@ function crearFilaProductoVenta(producto) {
 
     const fila = document.createElement("tr");
 
+    fila.classList.add("filaProductoVentaClickeable");
+
+
     const stock =
         Number(producto.cantidad) || 0;
 
@@ -1396,6 +1399,19 @@ function crearFilaProductoVenta(producto) {
             );
         }
     );
+
+    fila.addEventListener("click", function (event) {
+
+        if (
+            event.target.closest(
+                ".btnAgregarProductoVenta"
+            )
+        ) {
+            return;
+        }
+
+        abrirDetalleProductoVenta(producto);
+    });
 
     return fila;
 }
@@ -3736,4 +3752,234 @@ function mostrarPrecioProductoVenta(producto) {
             ${formatearPrecioVenta(efectivo)}
         </strong>
     `;
+}
+
+
+
+
+function abrirDetalleProductoVenta(producto) {
+
+    cerrarDetalleProductoVenta();
+
+    const stock = Number(producto.cantidad) || 0;
+    const precioNormal = Number(producto.precio) || 0;
+    const precioOferta = Number(producto.precio_oferta) || 0;
+    const enOferta = Number(producto.en_oferta) === 1;
+
+    const precioActual =
+        enOferta && precioOferta > 0
+            ? precioOferta
+            : precioNormal;
+
+    const descuento =
+        enOferta && precioNormal > 0
+            ? Math.round(
+                ((precioNormal - precioOferta) / precioNormal) * 100
+            )
+            : 0;
+
+    const modal = document.createElement("div");
+
+    modal.id = "modalDetalleProductoVenta";
+    modal.className = "modalDetalleProductoVenta";
+
+    modal.innerHTML = `
+        <div class="detalleProductoVenta">
+
+            <button
+                type="button"
+                class="cerrarDetalleProductoVenta"
+                aria-label="Cerrar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="detalleProductoVentaImagen">
+
+                ${
+                    enOferta
+                        ? `
+                            <span class="badgeOfertaDetalleVenta">
+                                -${descuento}%
+                            </span>
+                        `
+                        : ""
+                }
+
+                <img
+                    src="./images/productos/${Number(producto.id_producto)}.webp?v=${Date.now()}"
+                    alt="${escaparHTMLVenta(producto.nombre)}"
+                    id="imagenDetalleProductoVenta">
+
+            </div>
+
+            <div class="detalleProductoVentaInfo">
+
+                <span class="categoriaDetalleProductoVenta">
+                    <i class="fa-solid fa-circle"></i>
+                    ${escaparHTMLVenta(producto.categoria || "Sin categoría")}
+                </span>
+
+                <small class="skuDetalleProductoVenta">
+                    SKU: ${escaparHTMLVenta(producto.sku || "Sin SKU")}
+                </small>
+
+                <h2>
+                    ${escaparHTMLVenta(producto.nombre || "")}
+                </h2>
+
+                <p class="descripcionDetalleProductoVenta">
+                    ${escaparHTMLVenta(
+                        producto.descripcion ||
+                        "Sin descripción disponible."
+                    )}
+                </p>
+
+                <div class="precioDetalleProductoVenta">
+
+                    ${
+                        enOferta
+                            ? `
+                                <span class="precioNormalDetalleVenta">
+                                    ${formatearPrecioVenta(precioNormal)}
+                                </span>
+                            `
+                            : ""
+                    }
+
+                    <strong>
+                        ${formatearPrecioVenta(precioActual)}
+                    </strong>
+
+                </div>
+
+                <div class="
+                    stockDetalleProductoVenta
+                    ${stock <= 0 ? "agotado" : ""}
+                ">
+                    <i class="fa-solid ${
+                        stock > 0
+                            ? "fa-circle-check"
+                            : "fa-circle-xmark"
+                    }"></i>
+
+                    ${
+                        stock > 0
+                            ? `Disponible (${stock})`
+                            : "Agotado"
+                    }
+                </div>
+
+                <div class="datosDetalleProductoVenta">
+
+                    <div>
+                        <span>Marca</span>
+                        <strong>
+                            ${escaparHTMLVenta(producto.marca || "No especificada")}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Stock actual</span>
+                        <strong>${stock} unidades</strong>
+                    </div>
+
+                    <div>
+                        <span>Garantía</span>
+                        <strong>
+                            ${escaparHTMLVenta(producto.garantia || "No especificada")}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Ubicacíon</span>
+                        <strong>
+                            ${escaparHTMLVenta(producto.ubicacion || "No especificada")}
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="compatibilidadDetalleProductoVenta">
+
+                    <h3>
+                        <i class="fa-solid fa-car"></i>
+                        Autos compatibles
+                    </h3>
+
+                    <p>
+                        ${escaparHTMLVenta(
+                            producto.compatibilidad ||
+                            "Compatibilidad no especificada."
+                        )}
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btnAgregarDesdeDetalleVenta"
+                    ${stock <= 0 ? "disabled" : ""}>
+
+                    <i class="fa-solid fa-cart-plus"></i>
+
+                    ${stock > 0 ? "Agregar a la venta" : "Agotado"}
+
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const imagen =
+        modal.querySelector("#imagenDetalleProductoVenta");
+
+    imagen.onerror = function () {
+        this.onerror = null;
+        this.src = "./images/productos/no-image.webp";
+    };
+
+    modal
+        .querySelector(".cerrarDetalleProductoVenta")
+        .addEventListener(
+            "click",
+            cerrarDetalleProductoVenta
+        );
+
+    modal.addEventListener("click", event => {
+
+        if (event.target === modal) {
+            cerrarDetalleProductoVenta();
+        }
+
+    });
+
+    const botonAgregar =
+        modal.querySelector(".btnAgregarDesdeDetalleVenta");
+
+    if (stock > 0) {
+
+        botonAgregar.addEventListener("click", () => {
+
+            agregarProductoVenta(
+                Number(producto.id_producto)
+            );
+
+            cerrarDetalleProductoVenta();
+
+        });
+    }
+}
+
+
+function cerrarDetalleProductoVenta() {
+
+    const modal =
+        document.getElementById("modalDetalleProductoVenta");
+
+    if (modal) {
+        modal.remove();
+    }
 }

@@ -771,6 +771,8 @@ function crearTarjetaProducto(producto) {
 
     tarjeta.className = "tarjetaProductoTienda";
 
+    tarjeta.classList.add("tarjetaProductoTiendaClickeable");
+
     const descuento =
         calcularDescuentoProducto(producto);
 
@@ -983,8 +985,320 @@ function crearTarjetaProducto(producto) {
         );
     }
 
+    tarjeta.addEventListener("click", function (evento) {
+
+        if (evento.target.closest(".btnAgregarCarritoTienda")) {
+            return;
+        }
+
+        abrirDetalleProductoTienda(producto);
+    });
+
     return tarjeta;
 }
+
+function abrirDetalleProductoTienda(producto) {
+
+    cerrarDetalleProductoTienda();
+
+    const agotado =
+        Number(producto.cantidad) <= 0;
+
+    const bajoStock =
+        !agotado &&
+        Number(producto.cantidad) <=
+        Number(producto.stock_minimo);
+
+    const descuento =
+        calcularDescuentoProducto(producto);
+
+    const modal =
+        document.createElement("div");
+
+    modal.id = "modalDetalleProductoTienda";
+    modal.className = "modalDetalleProductoTienda";
+
+    modal.innerHTML = `
+
+        <div class="detalleProductoTienda">
+
+            <button
+                type="button"
+                class="cerrarDetalleProductoTienda"
+                aria-label="Cerrar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="detalleProductoTiendaImagen">
+
+                ${
+                    producto.en_oferta
+                        ? `
+                            <span class="ofertaDetalleProductoTienda">
+                                -${descuento}%
+                            </span>
+                        `
+                        : ""
+                }
+
+                ${
+                    producto.destacado
+                        ? `
+                            <span class="destacadoDetalleProductoTienda">
+                                <i class="fa-solid fa-star"></i>
+                                Destacado
+                            </span>
+                        `
+                        : ""
+                }
+
+                <img
+                    src="./images/productos/${producto.id_producto}.webp?v=${Date.now()}"
+                    alt="${escaparHTMLTienda(producto.nombre)}">
+
+            </div>
+
+
+            <div class="detalleProductoTiendaContenido">
+
+                <div class="categoriaDetalleProductoTienda">
+
+                    <span></span>
+
+                    ${escaparHTMLTienda(
+                        producto.categoria ||
+                        "Sin categoría"
+                    )}
+
+                </div>
+
+
+                <small class="skuDetalleProductoTienda">
+
+                    SKU:
+                    ${escaparHTMLTienda(
+                        producto.sku ||
+                        `PRO-${producto.id_producto}`
+                    )}
+
+                </small>
+
+
+                <h2>
+                    ${escaparHTMLTienda(
+                        producto.nombre ||
+                        "Producto sin nombre"
+                    )}
+                </h2>
+
+
+                <p class="descripcionDetalleProductoTienda">
+
+                    ${escaparHTMLTienda(
+                        producto.descripcion ||
+                        "Sin descripción disponible."
+                    )}
+
+                </p>
+
+
+                <div class="precioDetalleProductoTienda">
+
+                    ${
+                        producto.en_oferta
+                            ? `
+                                <small>
+                                    ${formatearPrecioTienda(
+                                        producto.precio_normal
+                                    )}
+                                </small>
+                            `
+                            : ""
+                    }
+
+                    <strong>
+                        ${formatearPrecioTienda(
+                            producto.precio
+                        )}
+                    </strong>
+
+                </div>
+
+
+                <div class="
+                    stockDetalleProductoTienda
+                    ${
+                        agotado
+                            ? "agotado"
+                            : bajoStock
+                                ? "bajo"
+                                : ""
+                    }
+                ">
+
+                    <i class="fa-solid ${
+                        agotado
+                            ? "fa-circle-xmark"
+                            : bajoStock
+                                ? "fa-triangle-exclamation"
+                                : "fa-circle-check"
+                    }"></i>
+
+                    ${
+                        agotado
+                            ? "Agotado"
+                            : bajoStock
+                                ? `Últimas ${producto.cantidad} unidades`
+                                : `Disponible (${producto.cantidad})`
+                    }
+
+                </div>
+
+
+                <div class="datosDetalleProductoTienda">
+
+                    <div>
+
+                        <span>Marca</span>
+
+                        <strong>
+                            ${escaparHTMLTienda(
+                                producto.marca ||
+                                "No especificada"
+                            )}
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Garantía</span>
+
+                        <strong>
+                            ${escaparHTMLTienda(
+                                producto.garantia ||
+                                "No especificada"
+                            )}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="compatibilidadDetalleProductoTienda">
+
+                    <h3>
+                        <i class="fa-solid fa-car"></i>
+                        Autos compatibles
+                    </h3>
+
+                    <p>
+                        ${escaparHTMLTienda(
+                            producto.compatibilidad ||
+                            "Compatibilidad no especificada."
+                        )}
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="btnAgregarDetalleProductoTienda"
+                    ${agotado ? "disabled" : ""}>
+
+                    <i class="fa-solid ${
+                        agotado
+                            ? "fa-ban"
+                            : "fa-cart-plus"
+                    }"></i>
+
+                    ${
+                        agotado
+                            ? "Producto agotado"
+                            : "Agregar al carrito"
+                    }
+
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+
+    document.body.appendChild(modal);
+
+
+    const imagen =
+        modal.querySelector(
+            ".detalleProductoTiendaImagen img"
+        );
+
+    imagen.onerror = function () {
+
+        this.onerror = null;
+
+        this.src =
+            "./images/productos/no-image.webp";
+    };
+
+
+    modal
+        .querySelector(".cerrarDetalleProductoTienda")
+        .addEventListener(
+            "click",
+            cerrarDetalleProductoTienda
+        );
+
+
+    modal.addEventListener("click", evento => {
+
+        if (evento.target === modal) {
+
+            cerrarDetalleProductoTienda();
+        }
+    });
+
+
+    const boton =
+        modal.querySelector(
+            ".btnAgregarDetalleProductoTienda"
+        );
+
+
+    if (!agotado) {
+
+        boton.addEventListener(
+            "click",
+            function () {
+
+                agregarProductoDesdeTienda(
+                    producto,
+                    this
+                );
+            }
+        );
+    }
+}
+
+
+    function cerrarDetalleProductoTienda() {
+
+        const modal =
+            document.getElementById(
+                "modalDetalleProductoTienda"
+            );
+
+        if (modal) {
+            modal.remove();
+        }
+    }
 
 
 /* =====================================================

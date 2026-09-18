@@ -1091,3 +1091,434 @@
         height: 48px;
     }
 }
+
+
+
+
+
+/* =========================================================
+   DETALLE PRODUCTO - TIENDA
+========================================================= */
+
+.tarjetaProductoTiendaClickeable {
+    cursor: pointer;
+}
+
+.modalDetalleProductoTienda {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(15, 23, 42, 0.58);
+    backdrop-filter: blur(4px);
+}
+
+.detalleProductoTienda {
+    position: relative;
+
+    display: grid;
+    grid-template-columns:
+        minmax(320px, 0.95fr)
+        minmax(420px, 1.05fr);
+
+    width: min(1050px, 96vw);
+    max-height: 92vh;
+
+    overflow: hidden;
+
+    background: #fff;
+    border-radius: 24px;
+
+    box-shadow:
+        0 30px 80px rgba(15, 23, 42, 0.28);
+}
+
+
+/* CERRAR */
+
+.cerrarDetalleProductoTienda {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #f1f5f9;
+    color: #475569;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.cerrarDetalleProductoTienda:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+
+/* IMAGEN */
+
+.detalleProductoTiendaImagen {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 0;
+    height: 100%;
+
+    padding: 45px;
+
+    background: #f8fafc;
+}
+
+.detalleProductoTiendaImagen img {
+    width: 100%;
+    max-width: 430px;
+    max-height: 480px;
+
+    object-fit: contain;
+}
+
+
+/* ETIQUETAS */
+
+.ofertaDetalleProductoTienda,
+.destacadoDetalleProductoTienda {
+    position: absolute;
+    top: 25px;
+
+    z-index: 2;
+
+    padding: 7px 13px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.ofertaDetalleProductoTienda {
+    left: 25px;
+
+    background: #ef4444;
+    color: #fff;
+}
+
+.destacadoDetalleProductoTienda {
+    left: 95px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+
+/* CONTENIDO */
+
+.detalleProductoTiendaContenido {
+    display: flex;
+    flex-direction: column;
+
+    max-height: 92vh;
+    overflow-y: auto;
+
+    padding: 42px 44px 32px;
+}
+
+.categoriaDetalleProductoTienda {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 6px;
+
+    color: #64748b;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.categoriaDetalleProductoTienda span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+}
+
+.skuDetalleProductoTienda {
+    margin-bottom: 14px;
+
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.detalleProductoTiendaContenido h2 {
+    margin: 0 45px 12px 0;
+
+    color: #0f172a;
+
+    font-size: clamp(23px, 2.2vw, 31px);
+    line-height: 1.15;
+}
+
+.descripcionDetalleProductoTienda {
+    margin: 0 0 20px;
+
+    color: #64748b;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* PRECIO */
+
+.precioDetalleProductoTienda {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 9px;
+}
+
+.precioDetalleProductoTienda small {
+    color: #94a3b8;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: line-through;
+}
+
+.precioDetalleProductoTienda strong {
+    color: #0f172a;
+
+    font-size: 31px;
+    font-weight: 900;
+}
+
+
+/* STOCK */
+
+.stockDetalleProductoTienda {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 22px;
+
+    color: #16a34a;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.stockDetalleProductoTienda.bajo {
+    color: #d97706;
+}
+
+.stockDetalleProductoTienda.agotado {
+    color: #dc2626;
+}
+
+
+/* INFORMACIÓN */
+
+.datosDetalleProductoTienda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.datosDetalleProductoTienda > div {
+    padding: 14px 16px;
+}
+
+.datosDetalleProductoTienda > div:first-child {
+    border-right: 1px solid #e2e8f0;
+}
+
+.datosDetalleProductoTienda span,
+.datosDetalleProductoTienda strong {
+    display: block;
+}
+
+.datosDetalleProductoTienda span {
+    margin-bottom: 5px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.datosDetalleProductoTienda strong {
+    color: #334155;
+
+    font-size: 13px;
+}
+
+
+/* COMPATIBILIDAD */
+
+.compatibilidadDetalleProductoTienda {
+    margin-bottom: 22px;
+
+    padding: 17px 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+}
+
+.compatibilidadDetalleProductoTienda h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 0 0 8px;
+
+    color: #0f172a;
+    font-size: 14px;
+}
+
+.compatibilidadDetalleProductoTienda h3 i {
+    color: #2563eb;
+}
+
+.compatibilidadDetalleProductoTienda p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    white-space: pre-line;
+}
+
+
+/* BOTÓN */
+
+.btnAgregarDetalleProductoTienda {
+    flex-shrink: 0;
+
+    width: 100%;
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 14px 18px;
+
+    border: 0;
+    border-radius: 11px;
+
+    background: #2563eb;
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btnAgregarDetalleProductoTienda:hover {
+    background: #1d4ed8;
+}
+
+.btnAgregarDetalleProductoTienda.agregado {
+    background: #16a34a;
+}
+
+.btnAgregarDetalleProductoTienda:disabled {
+    cursor: not-allowed;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 800px) {
+
+    .modalDetalleProductoTienda {
+        padding: 10px;
+    }
+
+    .detalleProductoTienda {
+        display: block;
+
+        width: 100%;
+        max-height: 95vh;
+
+        overflow-y: auto;
+    }
+
+    .detalleProductoTiendaImagen {
+        height: 280px;
+        padding: 28px;
+    }
+
+    .detalleProductoTiendaImagen img {
+        max-height: 230px;
+    }
+
+    .detalleProductoTiendaContenido {
+        max-height: none;
+        overflow: visible;
+
+        padding: 28px 22px;
+    }
+
+    .detalleProductoTiendaContenido h2 {
+        margin-right: 35px;
+        font-size: 23px;
+    }
+
+    .datosDetalleProductoTienda {
+        grid-template-columns: 1fr;
+    }
+
+    .datosDetalleProductoTienda > div:first-child {
+        border-right: 0;
+        border-bottom: 1px solid #e2e8f0;
+    }
+}
