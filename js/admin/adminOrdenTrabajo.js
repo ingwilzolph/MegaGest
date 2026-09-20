@@ -157,7 +157,7 @@ async function cargarServiciosOT(){
         select.innerHTML =
             "<option value=''>Seleccione un servicio</option>";
 
-        resultado.datos.forEach(servicio=>{
+        resultado.datos.filter(servicio => servicio.nombre.trim().toLowerCase() !== "otro servicio").forEach(servicio => {
 
             select.innerHTML += `
                 <option
@@ -168,7 +168,6 @@ async function cargarServiciosOT(){
 
                 </option>
             `;
-
         });
 
     }catch(error){

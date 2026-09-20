@@ -2095,7 +2095,7 @@ async function cerrarSesionCuenta() {
     } finally {
 
         window.location.replace(
-            "./listing-row.html"
+            "./repuestos.html"
         );
     }
 }

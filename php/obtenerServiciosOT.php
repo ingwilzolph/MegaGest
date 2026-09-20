@@ -13,6 +13,7 @@ SELECT
     nombre,
     precio_min
 FROM servicios
+WHERE LOWER(TRIM(nombre)) <> 'otro servicio'
 ORDER BY nombre
 ";
 

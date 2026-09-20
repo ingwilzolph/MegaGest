@@ -2487,7 +2487,7 @@ function mostrarCarritoVacio() {
                 Agregue productos antes de continuar con la compra.
             </p>
 
-            <a href="./listing-row.html">
+            <a href="./repuestos.html">
                 Volver a productos
             </a>
         </div>

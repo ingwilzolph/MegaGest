@@ -409,7 +409,7 @@ body {
             rgba(10, 22, 40, 0.30) 72%,
             rgba(10, 22, 40, 0.10) 100%
         ),
-        url("../images/cabesaRepuestos.png")
+        url("../images/cabesaRepuestos.webp")
         center / cover no-repeat;
 
     transform: scale(1.02);
@@ -572,7 +572,7 @@ body {
                 rgba(10, 22, 40, 0.95),
                 rgba(10, 22, 40, 0.72)
             ),
-            url("../images/cabesaRepuestos.png")
+            url("../images/cabesaRepuestos.webp")
             center / cover no-repeat;
     }
 

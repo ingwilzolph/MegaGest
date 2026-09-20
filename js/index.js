@@ -86,7 +86,7 @@ async function cargarProductosInicio() {
             return `
                 <article class="tarjetaProductoInicio">
                     ${oferta ? '<span class="insigniaProductoInicio">Oferta</span>' : (Number(producto.destacado) ? '<span class="insigniaProductoInicio">Destacado</span>' : "")}
-                    <a class="imagenProductoInicio" href="listing-row.html"><img src="images/productos/${Number(producto.id_producto)}.webp" alt="${escapar(producto.nombre)}" loading="lazy" onerror="this.onerror=null;this.src='images/productos/no-image.webp'"></a>
+                    <a class="imagenProductoInicio" href="repuestos.html"><img src="images/productos/${Number(producto.id_producto)}.webp" alt="${escapar(producto.nombre)}" loading="lazy" onerror="this.onerror=null;this.src='images/productos/no-image.webp'"></a>
                     <div class="contenidoProductoInicio">
                         <small>${escapar(producto.marca || producto.categoria || "Repuesto")}</small>
                         <h3>${escapar(producto.nombre)}</h3>

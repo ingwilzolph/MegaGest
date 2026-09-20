@@ -417,3 +417,18 @@
         padding: 18px 16px 22px;
     }
 }
+
+
+
+
+
+/* Quitar fondo azul del título del detalle de cotización */
+#gestionCotizacionesAdmin
+.dialogDetalleCotizacion
+.cabeceraDetalleCotizacion h2 {
+    background: transparent !important;
+    color: #202838 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}

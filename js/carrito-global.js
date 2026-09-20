@@ -141,7 +141,7 @@ function actualizarCarritoGlobal() {
                 </p>
 
                 <a
-                    href="./listing-row.html"
+                    href="./repuestos.html"
                     class="btnIrProductosCarrito">
 
                     Ver productos
